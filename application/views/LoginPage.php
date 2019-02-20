@@ -36,15 +36,17 @@
 </head>
 
 <body class="animsition">
-    <div class="page-wrapper">
+    <div class="page-wrapper" >
         <div class="page-content--bge5">
-            <div class="container">
+            <div class="container" style="padding-top: 0;margin-top: 0 " >
                 <div class="login-wrap">
-                    <div class="login-content">
+                    <div  class="login-content">
                         <div class="login-logo">
                             <a href="#">
                                 <img style="max-width: 300px" src="<?php echo base_url(''); ?>asset/images/icon/logologo.png" alt="CoolAdmin">
                             </a>
+                            <H3 style="padding-top: 10px">MONITORING EVALUASI</H3>
+                            <H6>PEGADAIAN AREA MALANG</H6>
                         </div>
                         <div class="login-form">
                             <form action="" method="post">
