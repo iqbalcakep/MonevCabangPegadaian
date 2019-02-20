@@ -5,7 +5,7 @@ class LoginPage extends CI_Controller {
 
 	public function index()
 	{
-		$this->load->view('loginPage');	
+		$this->load->view('LoginPage');	
 	}
 
 }
