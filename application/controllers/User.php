@@ -8,6 +8,7 @@ class User extends CI_Controller {
 		$this->load->model('userModel');
 		$data['user']=$this->userModel->selectUser();
 		$this->load->view('user/tryuser', $data);
+		// $this->load->view('user/insertAdmin',$data);
 	}
 
 	public function input()
