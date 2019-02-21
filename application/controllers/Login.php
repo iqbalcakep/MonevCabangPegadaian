@@ -11,10 +11,10 @@ class Login extends CI_Controller {
 	public function index()
 	{
 		if($this->session->userdata('sesslogin')){
-			redirect('home','refresh');
+			redirect('Home','refresh');
 	
 	}else{
-		$this->load->view('LoginPage');	
+		$this->load->view('loginPage');	
 	}
 	}
 

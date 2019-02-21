@@ -36,9 +36,9 @@
 </head>
 
 <body class="animsition">
-    <div class="page-wrapper" >
-        <div class="page-content--bge5">
-            <div class="container" style="padding-top: 0;margin-top: 0 " >
+    <div  class="page-wrapper">
+        <div class="page-content--bge5"  style="background-image: url('http://localhost/MonevCabangPegadaian/asset/images/bgg.jpg'); background-size: 1400px;" >
+            <div class="container" style="padding-top: 0;margin-top: 0" >
                 <div class="login-wrap">
                     <div  class="login-content" style="background-color:rgba(255,255,255,0.5)">
                         <div class="login-logo">
@@ -51,11 +51,11 @@
                         <div class="login-form">
                         <?php echo form_open('Login/cekLogin'); ?>
                                 <div class="form-group">
-                                    <label>Username</label>
+                                    <!-- <label>Username</label> -->
                                     <input class="au-input au-input--full" type="username" name="username" placeholder="Username">
                                 </div>
                                 <div class="form-group">
-                                    <label>Password</label>
+                                    <!-- <label>Password</label> -->
                                     <input class="au-input au-input--full" type="password" name="password" placeholder="Password">
                                 </div>
                                 
