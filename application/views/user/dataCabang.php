@@ -5,7 +5,7 @@
          <div class="row">
             <div class="col-md-12">
                <!-- DATA TABLE -->
-               <h3 class="title-5 m-b-35">data table</h3>
+               <h3 class="title-5 m-b-35">Data Cabang</h3>
                <div class="table-data__tool">
                   <!-- <div class="table-data__tool-left">
                      <div class="rs-select2--light rs-select2--md">
@@ -52,10 +52,10 @@
                         </tr>
                      </thead>
                      <tbody>
-                        <?php foreach ($user as $key): ?>
+                        <?php $i=1; foreach ($user as $key): ?>
                          <!-- ini yg dipake -->
                         <tr class="tr-shadow">
-                           <td>1</td>
+                           <td><?php echo $i ?></td>
                            <td><?php echo $key->id_user ?></td>
                            <td><?php echo $key->nama ?></td>
                            <td><?php echo $key->username ?></td>
@@ -78,6 +78,7 @@
                         </tr>
                         <tr class="spacer"></tr>
                         <!-- ini end yg dipake -->
+                        <?php $i++; ?>
                         <?php endforeach ?>
                      </tbody>
                   </table>

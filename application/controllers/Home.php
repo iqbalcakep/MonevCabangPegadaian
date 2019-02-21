@@ -29,6 +29,8 @@ class Home extends CI_Controller {
     
 	}
 
+	
+
 	/**
 	 * Index Page for this controller.
 	 *
@@ -47,8 +49,8 @@ class Home extends CI_Controller {
 	public function index()
 	{
 		$this->load->view('partials/header');
-		// $this->load->view('home');
-		$this->load->view('user/dataCabang');
+		$this->load->view('home');
+		// $this->load->view('user/dataCabang');
 		$this->load->view('partials/footer');
 		
 	}

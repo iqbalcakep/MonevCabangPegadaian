@@ -6,10 +6,10 @@
          <div class="row">
             <div class="col-lg-12">
                <!-- <center> -->
-               <div class="col-lg-6" style="margin:0 auto;">
+               <div class="col-lg-6" style="color:black;margin:0 auto;">
                   <div class="card">
                      <div class="card-header">User Pegadaian</div>
-                     <div class="card-body">
+                     <div class="card-body" >
                         <div class="card-title">
                            <h3 class="text-center title-2">Tambahkan Data Cabang</h3>
                         </div>
