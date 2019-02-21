@@ -7,9 +7,22 @@ class User extends CI_Controller {
 	{
 		$this->load->model('userModel');
 		$data['user']=$this->userModel->selectUser();
-		$this->load->view('user/tryuser', $data);
-		// $this->load->view('user/insertAdmin',$data);
-	}
+		//$this->load->view('user/tryuser', $data);
+		$this->load->view('partials/header');
+		$this->load->view('user/dataCabang',$data);
+		$this->load->view('partials/footer');
+		
+		}
+		public function createUser()
+		{
+			$this->load->model('userModel');
+			//$data['user']=$this->userModel->selectUser();
+			//$this->load->view('user/tryuser', $data);
+			$this->load->view('partials/header');
+			$this->load->view('user/insertCabang');
+			$this->load->view('partials/footer');
+			
+			}
 
 	public function input()
 	{
