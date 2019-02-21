@@ -40,7 +40,7 @@
                 <div class="header3-wrap">
                     <div class="header__logo">
                         <a href="#">
-                            <img src="<?php echo base_url(''); ?>asset/images/icon/logologo.png" style="width:14%; height:auto;" alt="CoolAdmin" />
+                            <img src="<?php echo base_url(''); ?>asset/images/icon/logold.png" style="width:14%; height:auto;" alt="CoolAdmin" />
                         </a>
                     </div>
                     <div class="header__navbar">

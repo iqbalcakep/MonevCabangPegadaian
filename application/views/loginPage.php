@@ -37,7 +37,7 @@
 
 <body class="animsition">
     <div  class="page-wrapper">
-        <div class="page-content--bge5"  style="background-image: url('http://localhost/MonevCabangPegadaian/asset/images/bgg.jpg'); background-size: 1400px;" >
+        <div class="page-content--bge5"  style="background-image: url('http://localhost/MonevCabangPegadaian/asset/images/bgg.jpg'); background-size: 1500px; background-attachment: fixed; background-position: center;" >
             <div class="container" style="padding-top: 0;margin-top: 0" >
                 <div class="login-wrap">
                     <div  class="login-content">
