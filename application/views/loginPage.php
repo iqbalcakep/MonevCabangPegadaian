@@ -49,18 +49,18 @@
                             <H6>PEGADAIAN AREA MALANG</H6>
                         </div>
                         <div class="login-form">
-                            <form action="" method="post">
+                        <?php echo form_open('Login/cekLogin'); ?>
                                 <div class="form-group">
-                                    <label>Username</label>
+                                    <!-- <label>Username</label> -->
                                     <input class="au-input au-input--full" type="username" name="username" placeholder="Username">
                                 </div>
                                 <div class="form-group">
-                                    <label>Password</label>
+                                    <!-- <label>Password</label> -->
                                     <input class="au-input au-input--full" type="password" name="password" placeholder="Password">
                                 </div>
                                 
                                 <button class="au-btn au-btn--block au-btn--green m-b-20" type="submit">sign in</button>
-                            </form>
+                       <?= form_close(); ?>
                             <div class="register-link">
                                 <p>
                                     Copyright <i class="fa fa-arrow-circle-o-up"></i> Pegadaian 2019
