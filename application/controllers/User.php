@@ -15,7 +15,7 @@ class User extends CI_Controller {
 		$data = array(
 	        'nama' => $this->input->post('nama'),
 	        'username' => $this->input->post('username'),
-	        'password' => $this->input->post('password')
+	        'password' => md5($this->input->post('password'))
 	     );
 		$this->load->model('userModel');
 		$this->userModel->inputUser($data);
