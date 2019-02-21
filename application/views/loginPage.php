@@ -37,10 +37,10 @@
 
 <body class="animsition">
     <div  class="page-wrapper">
-        <div class="page-content--bge5"  style="background-image: url('http://localhost/MonevCabangPegadaian/asset/images/bgg.jpg'); background-size: 1400px;" >
+        <div class="page-content--bge5"  style="background-image: url('http://localhost/MonevCabangPegadaian/asset/images/bgg.jpg') ; background-size:2000px" >
             <div class="container" style="padding-top: 0;margin-top: 0" >
                 <div class="login-wrap">
-                    <div  class="login-content" style="background-color:rgba(255,255,255,0.5)">
+                    <div  class="login-content" style="background-color:rgba(255,255,255,0.9)">
                         <div class="login-logo">
                             <a href="#">
                                 <img style="max-width: 300px" src="<?php echo base_url(''); ?>asset/images/icon/logologo.png" alt="CoolAdmin">
@@ -62,7 +62,7 @@
                                 <button class="au-btn au-btn--block au-btn--green m-b-20" type="submit">sign in</button>
                        <?= form_close(); ?>
                             <div class="register-link">
-                                <p>
+                                <p style="color:#5f5f5f">
                                     Copyright <i class="fa fa-arrow-circle-o-up"></i> Pegadaian 2019
                                 </p>
                             </div>
