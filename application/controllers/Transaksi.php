@@ -19,6 +19,8 @@ class Transaksi extends CI_Controller {
         $data['nama'] = $session_data['nama'];
 		$this->load->model('Transaksi_model');
 		$data["transaksi_list"] = $this->Transaksi_model->getTransaksi($data['id_user']);
+		$this->load->view('partials/header');
+		$this->load->view('partials/footer');
 		$this->load->view('transaksi/transaksi', $data);
 	}
 
@@ -26,7 +28,9 @@ class Transaksi extends CI_Controller {
 		$this->load->helper('url','form');	
 		$this->load->library('form_validation');
 		$this->form_validation->set_rules('nama_nasabah', 'Nama Nasabah', 'trim|required');
-		if($this->form_validation->run()==FALSE){		
+		if($this->form_validation->run()==FALSE){	
+			$this->load->view('partials/header');
+			$this->load->view('partials/footer');	
 			$this->load->view('transaksi/create');	
 		}else{
 			$this->load->model('Transaksi_model');
@@ -51,6 +55,8 @@ class Transaksi extends CI_Controller {
 		$data['transaksi']=$this->Transaksi_model->getTransaksiById($id_transaksi);
 		
 		if($this->form_validation->run()==FALSE){
+			$this->load->view('partials/header');
+			$this->load->view('partials/footer');
 			$this->load->view('transaksi/update',$data);
 		}else{
 			$this->Transaksi_model->update($id_transaksi);	
