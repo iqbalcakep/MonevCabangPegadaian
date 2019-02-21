@@ -40,18 +40,37 @@ class User extends CI_Controller {
 	{
 		$this->load->model('userModel');
 		$data['user']=$this->userModel->selectUserId($id);
-		$this->load->view('user/updateform', $data);
+	//	var_dump($this->userModel->selectUserId($id));
+		$this->load->view('partials/header');
+		$this->load->view('user/updateCabang', $data);
+		$this->load->view('partials/footer');
 	}
 
 	public function update($id)
 	{
+		$session_data=$this->session->userdata('sesslogin');
+		$idss = $session_data['id_user'];
+		$akses = $session_data['akses'];
 		$data = array(
 	        'nama' => $this->input->post('nama'),
 	        'username' => $this->input->post('username'),
-	        'password' => $this->input->post('password')
+	        'password' => md5($this->input->post('password'))
 	     );
 		$this->load->model('userModel');
 		$this->userModel->updateUser($data,$id);
+		// $this->session->unset_userdata('sesslogin')['username'];
+		// $this->session->unset_userdata('sesslogin')['nama'];
+		// $this->session->set_userdata('sesslogin')['username']="leli";
+		// $this->session->set_userdata('sesslogin')['nama']="oke";
+		$this->session->unset_userdata('sesslogin');
+		$sess_arr = array(
+			'id_user' => $idss,
+			'username' => $this->input->post('username'),
+			'nama' => $this->input->post('nama'),
+			'password' => $this->input->post('password'),
+			'akses' => $akses
+		);
+		$this->session->set_userdata('sesslogin',$sess_arr);
 		redirect('user','refresh');
 	}
 	public function delete($id)

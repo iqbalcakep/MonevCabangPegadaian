@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-
+<?php $session_data = $this->session->userdata('sesslogin'); ?>
 <head>
     <!-- Required meta tags-->
     <meta charset="UTF-8">
@@ -75,7 +75,7 @@
                         <div class="account-wrap">
                             <div class="account-item account-item--style2 clearfix js-item-menu">
                                 <div class="content">
-                                    <a style="color:#cc9933" class="js-acc-btn" href="#">Nama Cabang</a>
+                                    <a style="color:#cc9933" class="js-acc-btn" href="#"><?php echo $session_data['nama'] ?></a>
                                 </div>
                                 <div class="account-dropdown js-dropdown">
                                     <div class="info clearfix">
@@ -86,19 +86,19 @@
                                         </div>
                                         <div class="content">
                                             <h5 class="name">
-                                                <a href="#" style="color:#cc9933">Nama Cabang</a>
+                                                <a href="#" style="color:#cc9933"><?php echo $session_data['nama'] ?></a>
                                             </h5>
-                                            <span class="email">Username</span>
+                                            <span class="email"><?php echo $session_data['username'] ?></span>
                                         </div>
                                     </div>
                                     <div class="account-dropdown__body">
                                         <div class="account-dropdown__item">
-                                            <a href="#">
+                                            <a href="<?php echo site_url('user/updateForm/').$session_data['id_user'] ?>">
                                                 <i class="zmdi zmdi-account"></i>Account</a>
                                         </div>
                                     </div>
                                     <div class="account-dropdown__footer">
-                                        <a href="#">
+                                        <a href="<?php echo site_url('login/logout')?>">
                                             <i class="zmdi zmdi-power"></i>Logout</a>
                                     </div>
                                 </div>
