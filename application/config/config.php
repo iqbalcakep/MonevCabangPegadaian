@@ -30,7 +30,7 @@ if (!isset($_SERVER['ORIG_SCRIPT_NAME'])){
 }else{
   $config['base_url'] .= str_replace(basename($_SERVER['ORIG_SCRIPT_NAME']),"",$_SERVER['ORIG_SCRIPT_NAME']);
 }
-// $config['base_url'] = 'http://localhost/MonevCabangPegadaian/';
+
 
 /*
 |--------------------------------------------------------------------------
@@ -331,7 +331,7 @@ $config['cache_query_string'] = FALSE;
 | https://codeigniter.com/user_guide/libraries/encryption.html
 |
 */
-$config['encryption_key'] = '';
+$config['encryption_key'] = 'lnaslfnlalkshdlhlafmooph-19239ijasdo';
 
 /*
 |--------------------------------------------------------------------------
