@@ -40,7 +40,7 @@
         <div class="page-content--bge5">
             <div class="container" style="padding-top: 0;margin-top: 0 " >
                 <div class="login-wrap">
-                    <div  class="login-content">
+                    <div  class="login-content" style="background-color:rgba(255,255,255,0.5)">
                         <div class="login-logo">
                             <a href="#">
                                 <img style="max-width: 300px" src="<?php echo base_url(''); ?>asset/images/icon/logologo.png" alt="CoolAdmin">
