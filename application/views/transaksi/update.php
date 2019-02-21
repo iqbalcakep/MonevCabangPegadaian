@@ -31,13 +31,23 @@
                </div>
                <div class="form-group">
                   <label for="street" class=" form-control-label">Jumlah Keping</label>
-                  <input type="number" id="jumlah_keping" name="jumlah_keping" placeholder="Jumlah Keping" class="form-control" value="<?php echo $transaksi[0]->jumlah_keping ?>">
+                  <input type="number" id="jumlah_keping" min="1" name="jumlah_keping" placeholder="Jumlah Keping" class="form-control" value="<?php echo $transaksi[0]->jumlah_keping ?>">
                </div>
                <div class="row form-group">
                   <div class="col-8">
                      <div class="form-group">
                         <label for="city" class=" form-control-label">Jumlah Gram</label>
-                        <input type="number" id="jumlah_gram" name="jumlah_gram" placeholder="Jumlah Gram" class="form-control" value="<?php echo $transaksi[0]->jumlah_gram ?>">
+                        <select id="jumlah_gram" name="jumlah_gram" class="form-control">
+                           <option value="1">1</option>
+                           <option value="2">2</option>
+                           <option value="5">5</option>
+                           <option value="10">10</option>
+                           <option value="25">25</option>
+                           <option value="50">50</option>
+                           <option value="100">100</option>
+                           <option value="250">250</option>
+                           <option value="1000">1000</option>
+                        </select>
                      </div>
                   </div>
                </div>
