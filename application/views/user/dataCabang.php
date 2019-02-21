@@ -52,12 +52,13 @@
                         </tr>
                      </thead>
                      <tbody>
+                        <?php foreach ($user as $key): ?>
                          <!-- ini yg dipake -->
                         <tr class="tr-shadow">
                            <td>1</td>
-                           <td>Lori Lynch</td>
-                           <td>lori@example.com</td>
-                           <td>ini pssnya di MD5</td>
+                           <td><?php echo $key->id_user ?></td>
+                           <td><?php echo $key->nama ?></td>
+                           <td><?php echo $key->username ?></td>
                            <td>
                               <div class="table-data-feature">
                                  <!-- <button class="item" data-toggle="tooltip" data-placement="top" title="Send">
@@ -77,6 +78,7 @@
                         </tr>
                         <tr class="spacer"></tr>
                         <!-- ini end yg dipake -->
+                        <?php endforeach ?>
                      </tbody>
                   </table>
                </div>
