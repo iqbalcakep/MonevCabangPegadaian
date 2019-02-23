@@ -54,13 +54,13 @@
                             <li>
                             
                                 <a style="color:#cc9933" href="<?php echo site_url('transaksi') ?>">
-                                    <i class="fas fa-tachometer-alt"></i>Transaksi
+                                    <i class="far fa-money-bill-alt"></i>Transaksi
                                     <span class="bot-line"></span>
                                 </a>
                             </li>
                             <li>
                                 <a style="color:#cc9933" href="<?php echo site_url('user') ?>">
-                                    <i class="fas fa-tachometer-alt"></i>Cabang
+                                    <i class="far fa-building"></i>Cabang
                                     <span class="bot-line"></span>
                                 </a>
                             </li>
@@ -78,7 +78,7 @@
                                     <div class="info clearfix">
                                         <div class="image">
                                             <a href="#">
-                                                <img src=" <?php echo base_url('/asset/')?>images/icon/squ.png" alt="Pegadaian" />
+                                                <img src=" <?php echo base_url('/asset/')?>images/icon/squ.png" alt="Pegadaian" style=""/>
                                             </a>
                                         </div>
                                         <div class="content">
@@ -113,7 +113,7 @@
                 <div class="container-fluid">
                     <div class="header-mobile-inner">
                         <a class="logo" href="index.html">
-                        <img src="<?php echo base_url(''); ?>asset/images/icon/logold.png" style="max-height:52px;" alt="CoolAdmin" />
+                        <img src="<?php echo base_url(''); ?>asset/images/icon/logold.png" style="max-height:50px;" alt="CoolAdmin" />
                         </a>
                         <button class="hamburger hamburger--slider" type="button">
                             <span class="hamburger-box">
@@ -130,20 +130,17 @@
                             <a class="js-arrow" href="#">
                                 <i class="fas fa-tachometer-alt"></i>Home</a>
                         </li>
-                        <li class="has-sub">
-                            <a class="js-arrow" href="#">
-                                <i class="fas fa-copy"></i>Pages</a>
-                            <ul class="navbar-mobile-sub__list list-unstyled js-sub-list">
-                                <li>
-                                    <a href="login.html">Login</a>
-                                </li>
-                                <li>
-                                    <a href="register.html">Register</a>
-                                </li>
-                                <li>
-                                    <a href="forget-pass.html">Forget Password</a>
-                                </li>
-                            </ul>
+                        <li>
+                            <a style="color:#cc9933" href="<?php echo site_url('transaksi') ?>">
+                                <i class="far fa-money-bill-alt"></i>Transaksi
+                                <span class="bot-line"></span>
+                            </a>
+                        </li>
+                        <li>
+                            <a style="color:#cc9933" href="<?php echo site_url('user') ?>">
+                                <i class="far fa-building"></i>Cabang
+                                <span class="bot-line"></span>
+                            </a>
                         </li>
                     </ul>
                 </div>
