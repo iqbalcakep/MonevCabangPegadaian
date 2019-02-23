@@ -9,6 +9,19 @@
     <meta name="author" content="Hau Nguyen">
     <meta name="keywords" content="au theme template">
 
+    <script language="JavaScript" type="text/javascript">
+            function deletechecked()
+            {
+                if(confirm("Are you sure want to delete this item?"))
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;  
+                } 
+            }
+    </script>
     <!-- Title Page-->
     <title>Transaksi</title>
 
@@ -80,7 +93,7 @@
                                                 <td><?php echo " ".$data['nama'] ; ?></td>
                                                 <td>
                                                     <a href="<?php echo site_url('Transaksi/update/').$key->id_transaksi ?>" type="button" class="btn btn-sm btn-success">Update</a>
-                                                    <a href="<?php echo site_url('Transaksi/delete/').$key->id_transaksi ?>" type="button" class="btn btn-sm btn-warning" onclick="return deletechecked();">Delete</a>
+                                                    <a href="<?php echo site_url('Transaksi/delete/').$key->id_transaksi ?>" type="button" class="btn btn-sm btn-warning">Delete</a>
                                                 </td>
                                             </tr>
                                             <?php } ?>

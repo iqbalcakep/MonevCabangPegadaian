@@ -33,7 +33,7 @@
                   <div class="row">
                      <div class="col-3">
                         <label for="city" class=" form-control-label" style="color:black;">Jumlah Gram</label>
-                        <select id="jumlah_gram" name="jumlah_gram" class="form-control">
+                        <select id="jumlah_gram" name="jumlah_gram" class="form-control" onchange="sum()">
                            <option value="1">1 Gram</option>
                            <option value="2">2 Gram</option>
                            <option value="5">5 Gram</option>
@@ -45,28 +45,45 @@
                            <option value="1000">1000 Gram</option>
                         </select>
                      </div>
-                     <div class="col-6">
-                        <label for="x_card_code" class="control-label mb-1">Security code</label>
+                     <div class="col-4">
+                        <label for="x_card_code" class="control-label mb-1">Jumlah Keping</label>
                         <div class="input-group">
-                           <input type="number" id="jumlah_keping" name="jumlah_keping" class="form-control">
+                           <input type="number" id="jumlah_keping" name="jumlah_keping" class="form-control" onkeyup="sum()">
                            <div class="input-group-addon">keping</div>
                         </div>
                      </div>
+                     <div class="col-4">
+                        <label for="x_card_code" class="control-label mb-1">Total</label>
+                        <div class="input-group">
+                           <input type="number" id="total" name="total" class="form-control" readonly>
+                           <div class="input-group-addon">gram</div>
+                        </div>
+                     </div>
+                     <script>
+                     function sum() {
+                           var txtFirstNumberValue = document.getElementById('jumlah_gram').value;
+                           var txtSecondNumberValue = document.getElementById('jumlah_keping').value;
+                           var result = parseInt(txtFirstNumberValue) * parseInt(txtSecondNumberValue);
+                           if (!isNaN(result)) {
+                              document.getElementById('total').value = result;
+                           }
+                     }
+                     </script>
                   </div>
                   <br>
                   <div class="form-group">
-                     <label for="country" class=" form-control-label" style="color:black;">Jangka Waktu</label>
+                     <label for="country" class=" form-control-label" style="color:black;">Nilai Pembiayaan</label>
                      <div class="input-group">
                         <div class="input-group-addon">Rp.
                         </div>
-                        <input type="number" id="jangka_waktu" name="jangka_waktu" class="form-control">
+                        <input type="number" id="nilai_pembiayaan" name="nilai_pembiayaan" class="form-control">
                         <div class="input-group-addon">.00</div>
                      </div>
                   </div>
                   <div class="form-group">
-                     <label for="country" class=" form-control-label" style="color:black;">Nilai Pembiayaan</label>
+                     <label for="country" class=" form-control-label" style="color:black;">Jangka Waktu</label>
                      <div class="input-group">
-                        <input type="number" id="nilai_pembiayaan" name="nilai_pembiayaan" class="form-control">
+                        <input type="number" id="jangka_waktu" name="jangka_waktu" class="form-control">
                         <div class="input-group-addon">Hari</div>
                      </div>
                   </div>
