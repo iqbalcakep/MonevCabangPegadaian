@@ -1,3 +1,4 @@
+
 <?php 
    $session_data = $this->session->userdata('sesslogin');
    $data['id_user'] = $session_data['id_user'];
@@ -40,62 +41,79 @@
                     </div>
                     <hr>
                     <?php echo form_open('Transaksi/create/'); ?> 
-                    <div class="form-group">
-                        <label for="cc-payment" class="control-label mb-1" >Nama Nasabah</label>
-                        <input id="nama_nasabah" name="nama_nasabah" type="text" class="form-control" aria-required="true" aria-invalid="false">
-                    </div>
-                    <div class="form-group has-success">
-                        <label for="cc-name" class="control-label mb-1" >Tanggal Closing</label>
-                        <input type="date" id="tanggal_closing" name="tanggal_closing" class="form-control cc-name valid" autocomplete="cc-name" aria-required="true" aria-invalid="false" aria-describedby="cc-name-error">
-                        <!-- <span class="help-block field-validation-valid" data-valmsg-for="cc-name" data-valmsg-replace="true"></span> -->
-                    </div>
-                    <div class="row">
-                        <div class="col-3">
-                            <label for="city" class=" form-control-label" >Jumlah Gram</label>
-                            <select id="jumlah_gram" name="jumlah_gram" class="form-control">
-                            <option value="1">1 Gram</option>
-                            <option value="2">2 Gram</option>
-                            <option value="5">5 Gram</option>
-                            <option value="10">10 Gram</option>
-                            <option value="25">25 Gram</option>
-                            <option value="50">50 Gram</option>
-                            <option value="100">100 Gram</option>
-                            <option value="250">250 Gram</option>
-                            <option value="1000">1000 Gram</option>
-                            </select>
-                        </div>
-                        <div class="col-6">
-                            <label for="x_card_code" class="control-label mb-1" style="color:white">Security code</label>
-                            <div class="input-group">
-                            <input type="number" id="jumlah_keping" name="jumlah_keping" class="form-control">
-                            <div class="input-group-addon">keping</div>
-                            </div>
-                        </div>
-                    </div>
-                    <br>
-                    <div class="form-group">
-                        <label for="country" class=" form-control-label" >Jangka Waktu</label>
+                  <div class="form-group">
+                     <label for="cc-payment" class="control-label mb-1" style="color:black;">Nama Nasabah</label>
+                     <input required id="nama_nasabah" name="nama_nasabah" type="text" class="form-control" aria-required="true" aria-invalid="false">
+                  </div>
+                  <div class="form-group has-success">
+                     <label for="cc-name" class="control-label mb-1" style="color:black;">Tanggal Closing</label>
+                     <input required type="date" id="tanggal_closing" name="tanggal_closing" class="form-control cc-name valid" autocomplete="cc-name" aria-required="true" aria-invalid="false" aria-describedby="cc-name-error">
+                     <!-- <span class="help-block field-validation-valid" data-valmsg-for="cc-name" data-valmsg-replace="true"></span> -->
+                  </div>
+                  <div class="row">
+                     <div class="col-3">
+                        <label for="city" class=" form-control-label" style="color:black;">Jumlah Gram</label>
+                        <select id="jumlah_gram" name="jumlah_gram" class="form-control" onchange="sum()" required>
+                           <option value="1">1 Gram</option>
+                           <option value="2">2 Gram</option>
+                           <option value="5">5 Gram</option>
+                           <option value="10">10 Gram</option>
+                           <option value="25">25 Gram</option>
+                           <option value="50">50 Gram</option>
+                           <option value="100">100 Gram</option>
+                           <option value="250">250 Gram</option>
+                           <option value="1000">1000 Gram</option>
+                        </select>
+                     </div>
+                     <div class="col-4">
+                        <label for="x_card_code" class="control-label mb-1">Jumlah Keping</label>
                         <div class="input-group">
-                            <div class="input-group-addon">Rp.
-                            </div>
-                            <input type="number" id="jangka_waktu" name="jangka_waktu" class="form-control">
-                            <div class="input-group-addon">.00</div>
+                           <input required type="number" id="jumlah_keping" name="jumlah_keping" class="form-control" onkeyup="sum()">
+                           <div class="input-group-addon">keping</div>
                         </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="country" class=" form-control-label" >Nilai Pembiayaan</label>
+                     </div>
+                     <div class="col-4">
+                        <label for="x_card_code" class="control-label mb-1">Total</label>
                         <div class="input-group">
-                            <input type="number" id="nilai_pembiayaan" name="nilai_pembiayaan" class="form-control">
-                            <div class="input-group-addon">Hari</div>
+                           <input type="number" id="total" name="total" class="form-control" readonly required>
+                           <div class="input-group-addon">gram</div>
                         </div>
-                    </div>
-                    <input type="hidden" id="id_user" name="id_user" value="<?php echo " ".$data['id_user'] ; ?>">
-                    <button id="payment-button" type="submit" class="btn btn-lg btn-success btn-block">
-                    <span id="payment-button-amount">Submit</span>
-                    <span id="payment-button-sending" style="display:none;">Sending…</span>
-                    </button>
-                </div>
-                <?php echo form_close(); ?>
+                     </div>
+                     <script>
+                     function sum() {
+                           var txtFirstNumberValue = document.getElementById('jumlah_gram').value;
+                           var txtSecondNumberValue = document.getElementById('jumlah_keping').value;
+                           var result = parseInt(txtFirstNumberValue) * parseInt(txtSecondNumberValue);
+                           if (!isNaN(result)) {
+                              document.getElementById('total').value = result;
+                           }
+                     }
+                     </script>
+                  </div>
+                  <br>
+                  <div class="form-group">
+                     <label for="country" class=" form-control-label" style="color:black;">Nilai Pembiayaan</label>
+                     <div class="input-group">
+                        <div class="input-group-addon">Rp.
+                        </div>
+                        <input type="number" id="nilai_pembiayaan" name="nilai_pembiayaan" class="form-control" required>
+                        <div class="input-group-addon">.00</div>
+                     </div>
+                  </div>
+                  <div class="form-group">
+                     <label for="country" class=" form-control-label" style="color:black;">Jangka Waktu</label>
+                     <div class="input-group">
+                        <input type="number" id="jangka_waktu" name="jangka_waktu" class="form-control" required>
+                        <div class="input-group-addon">Hari</div>
+                     </div>
+                  </div>
+                  <input type="hidden" id="id_user" name="id_user" value="<?php echo " ".$data['id_user'] ; ?>" required>
+                  <button id="payment-button" type="submit" class="btn btn-lg btn-info btn-block">
+                  <span id="payment-button-amount">Submit</span>
+                  <span id="payment-button-sending" style="display:none;">Sending…</span>
+                  </button>
+               </div>
+               <?php echo form_close(); ?>
                 </div>
             </div>
             <!-- left col -->
