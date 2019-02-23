@@ -51,7 +51,7 @@ class Home extends CI_Controller {
 		$this->load->view('partials/header');
 		$this->load->view('home');
 		// $this->load->view('user/dataCabang');
-		//$this->load->view('partials/footer');
+		$this->load->view('partials/footer');
 		
 	}
 
