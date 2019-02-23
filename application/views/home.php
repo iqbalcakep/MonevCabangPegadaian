@@ -114,7 +114,7 @@
         var dataBiaya = {
             label: 'Harga Pembiayaan (Rupiah)',
             data: dp,
-            backgroundColor: 'rgba(0, 99, 132, 0.6)',
+            backgroundColor: 'rgba(7, 183, 6, 0.8)',
             borderWidth: 0,
             yAxisID: "y-axis-0"
         };
@@ -122,7 +122,7 @@
         var dataEmas = {
             label: 'Total Emas (gram)',
             data: dm,
-            backgroundColor: 'rgb(218,165,32)',
+            backgroundColor: 'rgb(218,165,32,0.8)',
             borderWidth: 0,
             yAxisID: "y-axis-1"
         };
