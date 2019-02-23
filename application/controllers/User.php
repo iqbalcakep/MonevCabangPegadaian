@@ -3,6 +3,16 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class User extends CI_Controller {
 
+	
+	public function __construct()
+	{
+		parent::__construct();
+		if ($this->session->userdata('sesslogin')['username']=="") {
+			redirect('Login','refresh');
+		}
+	}
+	
+
 	public function index()
 	{
 		$this->load->model('userModel');
@@ -42,7 +52,7 @@ class User extends CI_Controller {
 		$data['user']=$this->userModel->selectUserId($id);
 	//	var_dump($this->userModel->selectUserId($id));
 		$this->load->view('partials/header');
-		$this->load->view('user/updateCabang', $data);
+		$this->load->view('User/updateCabang', $data);
 		$this->load->view('partials/footer');
 	}
 
