@@ -34,7 +34,8 @@ class Transaksi extends CI_Controller {
 			$this->load->view('transaksi/create');	
 		}else{
 			$this->load->model('Transaksi_model');
-			$this->Transaksi_model->create();	
+			$this->Transaksi_model->create();
+			$this->session->set_flashdata('sukses','1');	
 			redirect('transaksi','refresh');
 		}
 	}
@@ -60,6 +61,7 @@ class Transaksi extends CI_Controller {
 			$this->load->view('transaksi/update',$data);
 		}else{
 			$this->Transaksi_model->update($id_transaksi);	
+			$this->session->set_flashdata('sukses','1');
 			redirect('Transaksi','refresh');
 			
 		}

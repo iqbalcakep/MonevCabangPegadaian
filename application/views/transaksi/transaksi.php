@@ -9,6 +9,13 @@
     <meta name="author" content="Hau Nguyen">
     <meta name="keywords" content="au theme template">
 
+    <script type="text/javascript">
+        function timedMsg()
+        {
+            var t=setTimeout("document.getElementById('div-alert').style.display='none';",5000);
+        }
+    </script>
+
     <script language="JavaScript" type="text/javascript">
             function deletechecked()
             {
@@ -59,6 +66,24 @@
         echo " ".$data['nama'] ;
     ?>
 
+<?php 
+   if($this->session->flashdata('sukses') != "") {
+
+       echo '<div id="div-alert" class="alert alert-success">
+               <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+               <strong>Sukses</strong> Proses berhasil
+             </div>';
+   }
+   ?>
+<?php 
+   if($this->session->flashdata('failed') != "") {
+       echo '<div id="div-alert" class="alert alert-danger">
+               <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+               <strong>Gagal</strong> Proses gagal
+             </div>';
+   }
+   ?>
+    <script language="JavaScript" type="text/javascript">timedMsg()</script>
     <a href="<?php echo site_url('Transaksi/create/') ?>" type="button" class="btn btn-sm btn-success">Create</a>
     <div class="row m-t-30">
                             <div class="col-md-12">
