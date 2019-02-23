@@ -87,6 +87,9 @@
         </div>
 
     
+        <script src="<?php echo base_url(''); ?>/asset/vendor/chartjs/Chart.bundle.min.js"></script>
+            <script src="<?php echo base_url(''); ?>/asset/vendor/select2/select2.min.js">
+            </script>
 
 <script>
 
