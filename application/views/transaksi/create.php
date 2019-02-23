@@ -1,3 +1,4 @@
+
 <?php 
    $session_data = $this->session->userdata('sesslogin');
    $data['id_user'] = $session_data['id_user'];
@@ -10,17 +11,36 @@
 <div class="main-content" style="padding-top:30px">
 <div class="section__content section__content--p30">
    <div class="container-fluid">
-      <div class="row">
-         <!-- left col -->
-         <div class="col-lg-6">
-            <div class="card">
-               <div class="card-header" style="color:black;">Kredit Emas</div>
-               <div class="card-body">
-                  <div class="card-title">
-                     <h3 class="text-center title-2">Tambah Data Transaksi</h3>
-                  </div>
-                  <hr>
-                  <?php echo form_open('Transaksi/create/'); ?> 
+       
+        <section>
+            <div class="row">
+                <div class="col-lg-5">
+                    <table class="table table-bordered table-hover">
+                        <thead>
+                            <tr>
+                                <th>Username</th>
+                                <td><?php echo " ".$data['username'];?></td>
+                            </tr>
+                            <tr>
+                                <th>Nama</th>
+                                <td><?php echo " ".$data['nama'];?></td>
+                            </tr>
+                        </thead>
+                    </table>
+                </div>
+            </div>
+        </section>
+        <div class="row">
+            <!-- left col -->
+            <div class="col-lg-6">
+                <div class="card">
+                <div class="card-header" style="background-color:#393939; color:#cc9933;">Kredit Emas</div>
+                <div class="card-body">
+                    <div class="card-title">
+                        <h3 class="text-center title-2">Tambah Data Transaksi</h3>
+                    </div>
+                    <hr>
+                    <?php echo form_open('Transaksi/create/'); ?> 
                   <div class="form-group">
                      <label for="cc-payment" class="control-label mb-1" style="color:black;">Nama Nasabah</label>
                      <input required id="nama_nasabah" name="nama_nasabah" type="text" class="form-control" aria-required="true" aria-invalid="false">
@@ -94,6 +114,7 @@
                   </button>
                </div>
                <?php echo form_close(); ?>
+                </div>
             </div>
             <!-- left col -->
             <!-- untuk drop folder -->

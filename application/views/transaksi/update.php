@@ -3,24 +3,43 @@
    $data['id_user'] = $session_data['id_user'];
    $data['username'] = $session_data['username'];
    $data['nama'] = $session_data['nama'];
-   echo " ".$data['username'] ;
-   echo " ".$data['id_user'] ;
-   echo " ".$data['nama'] ;
-   ?>
-<div class="main-content">
+//    echo " ".$data['username'] ;
+//    echo " ".$data['id_user'] ;
+//    echo " ".$data['nama'] ;
+?>
+<div class="main-content" style="padding-top:30px">
 <div class="section__content section__content--p30">
    <div class="container-fluid">
-      <div class="row">
-         <!-- left col -->
-         <div class="col-lg-6">
-            <div class="card">
-               <div class="card-header" style="color:black;">Kredit Emas</div>
-               <div class="card-body">
-                  <div class="card-title">
-                     <h3 class="text-center title-2">Tambah Data Transaksi</h3>
-                  </div>
-                  <hr>
-                  <?php echo form_open('Transaksi/update/'.$this->uri->segment(3)); ?>
+       
+        <section>
+            <div class="row">
+                <div class="col-lg-5">
+                    <table class="table table-bordered table-hover">
+                        <thead>
+                            <tr>
+                                <th>Username</th>
+                                <td><?php echo " ".$data['username'];?></td>
+                            </tr>
+                            <tr>
+                                <th>Nama</th>
+                                <td><?php echo " ".$data['nama'];?></td>
+                            </tr>
+                        </thead>
+                    </table>
+                </div>
+            </div>
+        </section>
+        <div class="row">
+            <!-- left col -->
+            <div class="col-lg-6">
+                <div class="card">
+                <div class="card-header" style="background-color:#393939; color:#cc9933;">Kredit Emas</div>
+                <div class="card-body">
+                    <div class="card-title">
+                        <h3 class="text-center title-2">Tambah Data Transaksi</h3>
+                    </div>
+                    <hr>
+                    <?php echo form_open('Transaksi/update/'.$this->uri->segment(3)); ?>
                   <div class="form-group">
                      <label for="cc-payment" class="control-label mb-1" style="color:black;">Nama Nasabah</label>
                      <input id="nama_nasabah" name="nama_nasabah" type="text" class="form-control" aria-required="true" aria-invalid="false" value="<?php echo $transaksi[0]->nama_nasabah ?>">
@@ -157,24 +176,24 @@
                   </button>
                </div>
                <?php echo form_close(); ?>
+                </div>
             </div>
-         </div>
-         <!-- left col -->
-         <!-- untuk drop folder -->
-         <div class="col-lg-6">
-            <div class="card">
-               <div class="col-md-12">
-                  <form method="post" action="#" id="#">
-                     <div class="form-group files color">
-                        <label>Upload Your File </label>
-                        <input type="file" class="form-control" multiple="">
-                     </div>
-                  </form>
-               </div>
+            <!-- left col -->
+            <!-- untuk drop folder -->
+            <div class="col-lg-6">
+                <div class="card">
+                <div class="col-md-12">
+                    <form method="post" action="#" id="#">
+                        <div class="form-group files color">
+                            <label>Upload Your File </label>
+                            <input type="file" class="form-control" multiple="">
+                        </div>
+                    </form>
+                </div>
+                </div>
             </div>
-         </div>
-         <!-- end drop folder -->
-      </div>
+            <!-- end drop folder -->
+        </div>
    </div>
 </div>
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">

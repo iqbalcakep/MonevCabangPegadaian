@@ -44,6 +44,7 @@ class Transaksi extends CI_Controller {
 	{
 		$this->load->model('Transaksi_model');
 		$this->Transaksi_model->delete($id_transaksi);
+		$this->session->set_flashdata('sukses','1');
 		redirect('Transaksi','refresh');
 	}
 
