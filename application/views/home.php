@@ -147,7 +147,13 @@
             d: "y-axis-0",
 
                 }
-            }]
+            }],
+
+            xAxes: [{
+ticks: {
+autoSkip: false
+}
+}]
             }
         };
 
