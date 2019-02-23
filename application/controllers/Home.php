@@ -6,7 +6,7 @@ class Home extends CI_Controller {
 	public function __construct()
 	{
 		parent::__construct();
-		
+		$this->load->model('transaksi_model');
         $sessData = $this->session->userdata('sesslogin');
 		$id_user = $sessData['id_user'];
 		$data['username'] = $sessData['username'];
@@ -53,6 +53,12 @@ class Home extends CI_Controller {
 		// $this->load->view('user/dataCabang');
 		$this->load->view('partials/footer');
 		
+	}
+
+	public function getdata(){
+		
+		$data = $this->transaksi_model->ambildata();
+		echo json_encode($data);
 	}
 
 	
