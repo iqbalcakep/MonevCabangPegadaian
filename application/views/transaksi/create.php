@@ -3,11 +3,11 @@
    $data['id_user'] = $session_data['id_user'];
    $data['username'] = $session_data['username'];
    $data['nama'] = $session_data['nama'];
-   echo " ".$data['username'] ;
-   echo " ".$data['id_user'] ;
-   echo " ".$data['nama'] ;
-   ?>
-<div class="main-content">
+//    echo " ".$data['username'] ;
+//    echo " ".$data['id_user'] ;
+//    echo " ".$data['nama'] ;
+?>
+<div class="main-content" style="padding-top:30px">
 <div class="section__content section__content--p30">
    <div class="container-fluid">
       <div class="row">
@@ -95,23 +95,22 @@
                </div>
                <?php echo form_close(); ?>
             </div>
-         </div>
-         <!-- left col -->
-         <!-- untuk drop folder -->
-         <div class="col-lg-6">
-            <div class="card">
-               <div class="col-md-12">
-                  <form method="post" action="#" id="#">
-                     <div class="form-group files color">
-                        <label>Upload Your File </label>
-                        <input type="file" class="form-control" multiple="">
-                     </div>
-                  </form>
-               </div>
+            <!-- left col -->
+            <!-- untuk drop folder -->
+            <div class="col-lg-6">
+                <div class="card">
+                <div class="col-md-12">
+                    <form method="post" action="#" id="#">
+                        <div class="form-group files color">
+                            <label>Upload Your File </label>
+                            <input type="file" class="form-control" multiple="">
+                        </div>
+                    </form>
+                </div>
+                </div>
             </div>
-         </div>
-         <!-- end drop folder -->
-      </div>
+            <!-- end drop folder -->
+        </div>
    </div>
 </div>
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
@@ -158,7 +157,7 @@
    content: " or drag it here. ";
    display: block;
    margin: 0 auto;
-   color: #2ea591;
+   color: #cc9933;
    font-weight: 600;
    text-transform: capitalize;
    text-align: center;

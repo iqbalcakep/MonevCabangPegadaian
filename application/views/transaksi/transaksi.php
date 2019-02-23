@@ -1,5 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
+   <body class="animsition">
+      <?php 
+         $session_data = $this->session->userdata('sesslogin');
+         $data['id_user'] = $session_data['id_user'];
+         $data['username'] = $session_data['username'];
+         $data['nama'] = $session_data['nama'];
+        //  echo " ".$data['username'] ;
+        //  echo " ".$data['id_user'] ;
+        //  echo " ".$data['nama'] ;
+         ?>
+      <!-- <a href="<?php echo site_url('Transaksi/create/') ?>" type="button" class="btn btn-sm btn-success">Create</a> -->
+      <div class="main-content" style="padding-top:30px">
+         <div class="section__content section__content--p30">
+            <div class="container-fluid">
+                <h2 style="text-align:center">Data Transaksi</h2>
+                <hr class="line-seprate">
+                <br>
+               <div class="row">
+                  <div class="col-lg-12">
+                      <!-- button atas -->
+                     <div class="table-data__tool">
+                        <div class="table-data__tool-left">
+                            <h4>Cabang : <?php echo " ".$data['nama']; ?></h4>
+                        </div>
+                        <div class="table-data__tool-right">
+                           <a href="<?php echo site_url('Transaksi/create/') ?>" class="au-btn au-btn-icon au-btn--green au-btn--small">
+                           <i class="zmdi zmdi-plus"></i>add item</a>
+                        </div>
+                     </div>
+                     <!-- button atas end -->
 
 <head>
     <!-- Required meta tags-->
@@ -154,5 +184,19 @@
 
 </body>
 
+                     <!-- button detail -->
+                     <!-- <div class="table-data__tool"> -->
+                        <center>
+                           <a href="<?php echo site_url('Transaksi/create/') ?>" class="btn btn-default btn-lg" style="background-color:#393939; color:#cc9933">
+                           <i class="zmdi zmdi-download"></i> More</a>
+                           </center>
+                     <!-- </div> -->
+                     <!-- button detail end -->
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </body>
 </html>
 <!-- end document-->

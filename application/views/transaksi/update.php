@@ -221,7 +221,11 @@
    content: " or drag it here. ";
    display: block;
    margin: 0 auto;
+<<<<<<< HEAD
    color: #2ea591;
+=======
+   color: #cc9933;
+>>>>>>> 0476fc39ddc2aade3ce2973486c4ebc1a40b6ad3
    font-weight: 600;
    text-transform: capitalize;
    text-align: center;

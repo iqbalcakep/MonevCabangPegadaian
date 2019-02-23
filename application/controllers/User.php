@@ -15,8 +15,8 @@ class User extends CI_Controller {
 
 	public function index()
 	{
-		$this->load->model('userModel');
-		$data['user']=$this->userModel->selectUser();
+		$this->load->model('UserModel');
+		$data['user']=$this->UserModel->selectUser();
 		//$this->load->view('user/tryuser', $data);
 		$this->load->view('partials/header');
 		$this->load->view('user/dataCabang',$data);
@@ -25,8 +25,8 @@ class User extends CI_Controller {
 		}
 		public function createUser()
 		{
-			$this->load->model('userModel');
-			//$data['user']=$this->userModel->selectUser();
+			$this->load->model('UserModel');
+			//$data['user']=$this->UserModel->selectUser();
 			//$this->load->view('user/tryuser', $data);
 			$this->load->view('partials/header');
 			$this->load->view('user/insertCabang');
@@ -41,16 +41,16 @@ class User extends CI_Controller {
 	        'username' => $this->input->post('username'),
 	        'password' => md5($this->input->post('password'))
 	     );
-		$this->load->model('userModel');
-		$this->userModel->inputUser($data);
+		$this->load->model('UserModel');
+		$this->UserModel->inputUser($data);
 		redirect('user','refresh');
 	}
 
 	public function updateform($id)
 	{
-		$this->load->model('userModel');
-		$data['user']=$this->userModel->selectUserId($id);
-	//	var_dump($this->userModel->selectUserId($id));
+		$this->load->model('UserModel');
+		$data['user']=$this->UserModel->selectUserId($id);
+	//	var_dump($this->UserModel->selectUserId($id));
 		$this->load->view('partials/header');
 		$this->load->view('User/updateCabang', $data);
 		$this->load->view('partials/footer');
@@ -66,8 +66,8 @@ class User extends CI_Controller {
 	        'username' => $this->input->post('username'),
 	        'password' => md5($this->input->post('password'))
 	     );
-		$this->load->model('userModel');
-		$this->userModel->updateUser($data,$id);
+		$this->load->model('UserModel');
+		$this->UserModel->updateUser($data,$id);
 		// $this->session->unset_userdata('sesslogin')['username'];
 		// $this->session->unset_userdata('sesslogin')['nama'];
 		// $this->session->set_userdata('sesslogin')['username']="leli";
@@ -85,8 +85,8 @@ class User extends CI_Controller {
 	}
 	public function delete($id)
 	{
-		$this->load->model('userModel');
-		$this->userModel->deleteUser($id);
+		$this->load->model('UserModel');
+		$this->UserModel->deleteUser($id);
 		redirect('user','refresh');
 	}
 }
