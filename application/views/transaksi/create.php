@@ -102,14 +102,15 @@
             <!-- untuk drop folder -->
             <div class="col-lg-6">
                 <div class="card">
-                <div class="col-md-12">
-                    <form method="post" action="#" id="#">
-                        <div class="form-group files color">
-                            <label>Upload Your File </label>
-                            <input type="file" class="form-control" multiple="">
-                        </div>
-                    </form>
-                </div>
+                    <div class="col-md-12">
+                        <form method="post" action="#" id="#">
+                            <div class="form-group files color">
+                                <label>Upload Your File </label>
+                                <input type="file" class="form-control" multiple="">
+                            </div>
+                        </form>
+                        <button type="button" class="btn btn-large btn-block btn-primary">Upload</button>
+                    </div>
                 </div>
             </div>
             <!-- end drop folder -->
