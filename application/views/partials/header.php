@@ -39,35 +39,32 @@
             <div class="section__content section__content--p35">
                 <div class="header3-wrap">
                     <div class="header__logo">
-                        <a href="#">
+                        <a href="<?php echo site_url('') ?>">
                             <img src="<?php echo base_url(''); ?>asset/images/icon/logold.png" style="max-height:52px;" alt="CoolAdmin" />
                         </a>
                     </div>
                     <div class="header__navbar">
-                        <ul class="list-unstyled" style="float:left;padding-left:20%;">
+                        <ul class="list-unstyled" style="float:left;padding-left:25%;">
                             <li>
-                                <a style="color:#cc9933" href="#">
+                                <a style="color:#cc9933" href="<?php echo site_url('') ?>">
                                     <i class="fas fa-tachometer-alt"></i>Home
                                     <span class="bot-line"></span>
                                 </a>
                             </li>
+                            <li>
                             
-                            <li class="has-sub">
-                                <a href="#" style="color:#cc9933">
-                                    <i class="fas fa-copy"></i>
-                                    <span class="bot-line"></span>Pages</a>
-                                <ul class="header3-sub-list list-unstyled">
-                                    <li>
-                                        <a href="login.html">Login</a>
-                                    </li>
-                                    <li>
-                                        <a href="register.html">Register</a>
-                                    </li>
-                                    <li>
-                                        <a href="forget-pass.html">Forget Password</a>
-                                    </li>
-                                </ul>
+                                <a style="color:#cc9933" href="<?php echo site_url('transaksi') ?>">
+                                    <i class="fas fa-tachometer-alt"></i>Transaksi
+                                    <span class="bot-line"></span>
+                                </a>
                             </li>
+                            <li>
+                                <a style="color:#cc9933" href="<?php echo site_url('user') ?>">
+                                    <i class="fas fa-tachometer-alt"></i>Cabang
+                                    <span class="bot-line"></span>
+                                </a>
+                            </li>
+                            
                         </ul>
                     </div>
                     <div class="header__tool">
