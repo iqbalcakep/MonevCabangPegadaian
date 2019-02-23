@@ -37,11 +37,7 @@
 
 <body class="animsition">
     <div  class="page-wrapper">
-<<<<<<< HEAD
         <div class="page-content--bge5"  style="background-image: url('http://localhost/MonevCabangPegadaian/asset/images/bgg.jpg'); background-size: 1500px; background-attachment: fixed; background-position: center;" >
-=======
-        <div class="page-content--bge5"  style="background-image: url('http://localhost/MonevCabangPegadaian/asset/images/bgg.jpg') ; background-size:2000px" >
->>>>>>> 397a075aaa8b50c4db347d45dcd97c9b822ce8cd
             <div class="container" style="padding-top: 0;margin-top: 0" >
                 <div class="login-wrap">
                     <div  class="login-content" style="background-color:rgba(255,255,255,0.9)">
