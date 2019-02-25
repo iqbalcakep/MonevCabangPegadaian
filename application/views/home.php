@@ -4,19 +4,35 @@
 <head>
     <!-- Required meta tags-->
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="au theme template">
-    <meta name="author" content="Hau Nguyen">
-    <meta name="keywords" content="au theme template">
-
     <!-- Title Page-->
-    <title>Dashboard</title>
+    <title>Home</title>
 </head>
-<body>
-            <section class="statistic-chart">
+<script src="<?php echo base_url(''); ?>/asset/vendor/jquery-3.2.1.min.js"></script>
+            <!-- Bootstrap JS-->
+        <script src="<?php echo base_url(''); ?>/asset/vendor/bootstrap-4.1/popper.min.js"></script>
+        <script src="<?php echo base_url(''); ?>/asset/vendor/bootstrap-4.1/bootstrap.min.js"></script>
+            <!-- Vendor JS       -->
+        <script src="<?php echo base_url(''); ?>/asset/vendor/slick/slick.min.js">
+        </script>
+            <script src="<?php echo base_url(''); ?>/asset/vendor/wow/wow.min.js"></script>
+            <script src="<?php echo base_url(''); ?>/asset/vendor/animsition/animsition.min.js"></script>
+            <script src="<?php echo base_url(''); ?>/asset/vendor/bootstrap-progressbar/bootstrap-progressbar.min.js">
+            </script>
+            <script src="<?php echo base_url(''); ?>/asset/vendor/counter-up/jquery.waypoints.min.js"></script>
+            <script src="<?php echo base_url(''); ?>/asset/vendor/counter-up/jquery.counterup.min.js">
+            </script>
+            <script src="<?php echo base_url(''); ?>/asset/vendor/circle-progress/circle-progress.min.js"></script>
+            <script src="<?php echo base_url(''); ?>/asset/vendor/perfect-scrollbar/perfect-scrollbar.js"></script>
+            <script src="<?php echo base_url(''); ?>/asset/vendor/chartjs/Chart.bundle.min.js"></script>
+            <script src="<?php echo base_url(''); ?>/asset/vendor/select2/select2.min.js">
+            </script>
+
+            <!-- Main JS-->
+            <script src="<?php echo base_url(''); ?>/asset/js/main.js"></script>
+ 
+<section class="statistic-chart" style="margin:0;">
                 <div style="padding:1%">
-                    <div class="row" style="padding:1%;">
-                        
+                    <div class="row" style="padding:1%;">                
                     </div>
                     <div class="row">
                         <div class="col-md-12 col-lg-12">
@@ -73,15 +89,8 @@
             <!-- END COPYRIGHT-->
 
         </div>
-        </body>
-        
-
-    
-        <script src="<?php echo base_url(''); ?>/asset/vendor/chartjs/Chart.bundle.min.js"></script>
-            <script src="<?php echo base_url(''); ?>/asset/vendor/select2/select2.min.js">
-            </script>
-
-<script>
+        <!-- Jquery JS-->
+        <script>
 
         function drawLineChart() {
             var url = $('#url').val();
