@@ -1557,7 +1557,7 @@ section {
 
 .account-dropdown__footer a:hover {
     background: #4272d7;
-    color: #fff;
+    color: #DCDCDC;
 }
 
 .account-dropdown__footer a i {
@@ -4732,8 +4732,9 @@ section {
 /* ----- Footer ----- */
 .copyright {
     text-align: center;
-    padding: 60px 0;
-    padding-top: 20px;
+    padding: 25px 0;
+    padding-top:3px;
+    height: 8px;
 }
 
 .copyright p {
