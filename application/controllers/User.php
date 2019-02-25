@@ -52,7 +52,7 @@ class User extends CI_Controller {
 		$data['user']=$this->UserModel->selectUserId($id);
 	//	var_dump($this->UserModel->selectUserId($id));
 		$this->load->view('partials/header');
-		$this->load->view('user/updateCabang', $data);
+		$this->load->view('User/updateCabang', $data);
 		$this->load->view('partials/footer');
 	}
 
