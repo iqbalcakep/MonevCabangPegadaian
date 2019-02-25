@@ -56,6 +56,16 @@ class User extends CI_Controller {
 		$this->load->view('partials/footer');
 	}
 
+	public function updateform1($id)
+	{
+		$this->load->model('UserModel');
+		$data['user']=$this->UserModel->selectUserId($id);
+	//	var_dump($this->UserModel->selectUserId($id));
+		$this->load->view('partials/header');
+		$this->load->view('User/updateCabang1', $data);
+		$this->load->view('partials/footer');
+	}
+
 	public function update($id)
 	{
 		$session_data=$this->session->userdata('sesslogin');
@@ -83,6 +93,20 @@ class User extends CI_Controller {
 		$this->session->set_userdata('sesslogin',$sess_arr);
 		redirect('user','refresh');
 	}
+
+	public function update1($id)
+	{
+		$data = array(
+	        'nama' => $this->input->post('nama'),
+	        'username' => $this->input->post('username'),
+	        'password' => md5($this->input->post('password'))
+	     );
+		$this->load->model('UserModel');
+		$this->UserModel->updateUser($data,$id);
+		
+		redirect('user','refresh');
+	}
+
 	public function delete($id)
 	{
 		$this->load->model('UserModel');
