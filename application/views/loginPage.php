@@ -61,6 +61,7 @@
                                 
                                 <button class="au-btn au-btn--block au-btn--green m-b-20" type="submit">sign in</button>
                        <?= form_close(); ?>
+
                             <div class="register-link">
                                 <p style="color:#5f5f5f">
                                     Copyright <i class="fa fa-arrow-circle-o-up"></i> Pegadaian 2019
@@ -71,6 +72,36 @@
                 </div>
             </div>
         </div>
+
+        <!-- COPYRIGHT-->
+            <section class="p-t-70 p-b-10">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-2" align="center">
+                            <img style="max-width: 200px" src="<?php echo base_url(''); ?>asset/images/icon/bumn.png" alt="CoolAdmin">
+                        </div>
+                        <div class="col-md-2" align="center">
+                            <img style="max-width: 150px" src="<?php echo base_url(''); ?>asset/images/icon/ojk.png" alt="CoolAdmin">
+                        </div>
+                        <div class="col-md-2" align="center">
+                            <img style="max-width: 200px" src="<?php echo base_url(''); ?>asset/images/icon/logologo.png" alt="CoolAdmin">
+                        </div>
+                        <div class="col-md-2" align="center">
+                            <img style="max-width: 200px" src="<?php echo base_url(''); ?>asset/images/icon/pegadaiansyariah.png" alt="CoolAdmin">
+                        </div>
+                        <div class="col-md-2" align="center">
+                            <img style="max-width: 150px" src="<?php echo base_url(''); ?>asset/images/icon/galeri24.png" alt="CoolAdmin">
+                        </div>
+                        <div class="col-md-2" align="center">
+                            <img style="max-width: 150px" src="<?php echo base_url(''); ?>asset/images/icon/thegade.png" alt="CoolAdmin">
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="copyright">
+                        <p>Copyright © 2019 PT. Pegadaian - Persero. All Rights Reserved.</p>
+                    </div>
+            </section>
+            <!-- END COPYRIGHT-->
 
     </div>
 
