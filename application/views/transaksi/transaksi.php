@@ -1,6 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
    <body class="animsition">
+   <script type="text/javascript">
+        function timedMsg()
+        {
+            var t=setTimeout("document.getElementById('div-alert').style.display='none';",5000);
+        }
+    </script>
+
+    <script language="JavaScript" type="text/javascript">
+            function deletechecked()
+            {
+                if(confirm("Are you sure want to delete this item?"))
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;  
+                } 
+            }
+    </script>
       <?php 
          $session_data = $this->session->userdata('sesslogin');
          $data['id_user'] = $session_data['id_user'];
@@ -11,6 +31,24 @@
         //  echo " ".$data['nama'] ;
          ?>
       <!-- <a href="<?php echo site_url('Transaksi/create/') ?>" type="button" class="btn btn-sm btn-success">Create</a> -->
+      <?php 
+   if($this->session->flashdata('sukses') != "") {
+
+       echo '<div id="div-alert" class="alert alert-success">
+               <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+               <strong>Sukses</strong> Proses berhasil
+             </div>';
+   }
+   ?>
+<?php 
+   if($this->session->flashdata('failed') != "") {
+       echo '<div id="div-alert" class="alert alert-danger">
+               <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+               <strong>Gagal</strong> Proses gagal
+             </div>';
+   }
+   ?>
+    <script language="JavaScript" type="text/javascript">timedMsg()</script>
       <div class="main-content" style="padding-top:30px">
          <div class="section__content section__content--p30">
             <div class="container-fluid">
@@ -82,7 +120,7 @@
                         <center>
                            <a href="<?php echo site_url('Transaksi/create/') ?>" class="btn btn-default btn-lg" style="background-color:#393939; color:#cc9933">
                            <i class="zmdi zmdi-download"></i> More</a>
-                           </center>
+                        </center>
                      <!-- </div> -->
                      <!-- button detail end -->
                   </div>

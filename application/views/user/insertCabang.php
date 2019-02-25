@@ -1,6 +1,6 @@
 <title>Tambah Cabang</title>
 <!-- MAIN CONTENT-->
-<div class="main-content">
+<div class="main-content" style="padding-top:30px">
    <div class="section__content section__content--p30">
       <div class="container-fluid">
          <div class="row">
