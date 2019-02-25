@@ -11,7 +11,7 @@ class Transaksi_model extends CI_Model {
             'tanggal_closing' => $this->input->post('tanggal_closing'),
             'jumlah_keping' => $this->input->post('jumlah_keping'),
             'jumlah_gram' => $this->input->post('jumlah_gram'),
-            'total' => $total,
+            'total' => $this->input->post('total'),
             'nilai_pembiayaan' => $this->input->post('nilai_pembiayaan'),
             'jangka_waktu' => $this->input->post('jangka_waktu'),
             'id_user' => $this->input->post('id_user')
@@ -49,7 +49,7 @@ class Transaksi_model extends CI_Model {
             'tanggal_closing' => $this->input->post('tanggal_closing'),
             'jumlah_keping' => $this->input->post('jumlah_keping'),
             'jumlah_gram' => $this->input->post('jumlah_gram'),
-            'total' => $total,
+            'total' => $this->input->post('total'),
             'nilai_pembiayaan' => $this->input->post('nilai_pembiayaan'),
             'jangka_waktu' => $this->input->post('jangka_waktu'),
             'id_user' => $this->input->post('id_user')
@@ -61,6 +61,16 @@ class Transaksi_model extends CI_Model {
 	public function ambildata(){
 		$skrng = date("Y-m-d");
 		$q = $this->db->query("select c.nama, SUM(t.total) as gram, SUM(t.nilai_pembiayaan) as biaya from transaksi as t inner join user as c on t.id_user = c.id_user where tanggal_closing = '$skrng' group by c.id_user")->result_array();
+		return $q;
+	}
+
+	public function ambildataminggu(){
+		$q = $this->db->query("select c.nama, SUM(t.total) as gram, SUM(t.nilai_pembiayaan) as biaya from transaksi as t inner join user as c on t.id_user = c.id_user where yearweek(`tanggal_closing`) = yearweek(curdate()) group by c.id_user")->result_array();
+		return $q;
+	}
+
+	public function ambildatabulan(){
+		$q = $this->db->query("select c.nama, SUM(t.total) as gram, SUM(t.nilai_pembiayaan) as biaya from transaksi as t inner join user as c on t.id_user = c.id_user where MONTH(tanggal_closing) = MONTH(CURRENT_DATE()) group by c.id_user")->result_array();
 		return $q;
 	}
 }
