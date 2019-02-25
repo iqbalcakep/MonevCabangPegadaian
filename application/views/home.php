@@ -37,12 +37,11 @@
                     <div class="row">
                         <div class="col-md-12 col-lg-12">
                             <!-- CHART-->
+                            <h3 style="color:#cc9933">Daftar Penjualan Emas Tanggal : <?php echo date('d-M-Y')?></h3>
+                            <br>
                             <div class="statistic-chart-1">
-                                <center><h2 class="title-3 m-b-30">Grafik Penjualan Mulia pada Tgl <?= date("d M Y"); ?></h2></center>
-                                <div class="chart-wrap">
-                                
-                                 <canvas id="myChart" width="800" height="300"></canvas>
-        
+                                <div class="chart">
+                                 <canvas id="myChart" style="min-width:500px;max-height:420px;" class="table"></canvas>
                                 </div>
                                 <div class="statistic-chart-1-note">
                                 <input type="hidden" id="url" value="<?= site_url('Home/getdata');?>">
@@ -114,7 +113,7 @@
         Chart.defaults.global.defaultFontSize = 18;
 
         var dataBiaya = {
-            label: 'Harga Pembiayaan (Rupiah)',
+            label: 'Rupiah',
             data: dp,
             backgroundColor: 'rgba(7, 183, 6, 0.8)',
             borderWidth: 0,
@@ -122,7 +121,7 @@
         };
 
         var dataEmas = {
-            label: 'Total Emas (gram)',
+            label: 'Gram',
             data: dm,
             backgroundColor: 'rgb(218,165,32,0.8)',
             borderWidth: 0,
@@ -135,6 +134,7 @@
         };
 
         var chartOptions = {
+            //mainAspectRatio:false;
             responsive:true,
             scales: {
             yAxes: [{
