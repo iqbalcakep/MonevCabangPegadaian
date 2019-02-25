@@ -59,6 +59,7 @@
 
     <!-- Main JS-->
     <script src="<?php echo base_url(''); ?>/asset/js/main.js"></script>
+    <script src="<?php echo base_url(''); ?>/asset/data.js"></script>
 
     
 </body>
