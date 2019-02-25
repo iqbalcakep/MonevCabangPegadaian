@@ -7,7 +7,7 @@
     <!-- Title Page-->
     <title>Home</title>
 </head>
-<script src="<?php echo base_url(''); ?>/asset/vendor/jquery-3.2.1.min.js"></script>
+        <script src="<?php echo base_url(''); ?>/asset/vendor/jquery-3.2.1.min.js"></script>
             <!-- Bootstrap JS-->
         <script src="<?php echo base_url(''); ?>/asset/vendor/bootstrap-4.1/popper.min.js"></script>
         <script src="<?php echo base_url(''); ?>/asset/vendor/bootstrap-4.1/bootstrap.min.js"></script>
@@ -29,64 +29,67 @@
 
             <!-- Main JS-->
             <script src="<?php echo base_url(''); ?>/asset/js/main.js"></script>
- 
-<section class="statistic-chart" style="margin:0;">
-                <div style="padding:1%">
-                    <div class="row" style="padding:1%;">                
-                    </div>
-                    <div class="row">
-                        <div class="col-md-12 col-lg-12">
-                            <!-- CHART-->
-                            <div class="statistic-chart-1">
-                                <center><h2 class="title-3 m-b-30">Grafik Penjualan Mulia pada Tgl <?= date("d M Y"); ?></h2></center>
-                                <div class="chart-wrap">
-                                
-                                 <canvas id="myChart" width="800" height="300"></canvas>
-        
-                                </div>
-                                <div class="statistic-chart-1-note">
-                                <input type="hidden" id="url" value="<?= site_url('Home/getdata');?>">
-                                </div>
+            
+        <!-- STATIC CHART -->
+        <section class="statistic-chart" style="margin:0;">
+            <div style="padding:1%">
+                <div class="row" style="padding:1%;">                
+                </div>
+                <div class="row">
+                    <div class="col-md-12 col-lg-12">
+                        <!-- CHART-->
+                        <div class="statistic-chart-1">
+                            <center><h2 class="title-3 m-b-30">Grafik Penjualan Mulia pada Tgl <?= date("d M Y"); ?></h2></center>
+                            <div class="chart-wrap">
+                            
+                                <canvas id="myChart" width="800" height="300"></canvas>
+
                             </div>
-                            <!-- END CHART-->
+                            <div class="statistic-chart-1-note">
+                                <input type="hidden" id="url" value="<?= site_url('Home/getdata');?>">
+                            </div>
                         </div>
-                            <!-- END CHART PERCENT-->
-                        </div>
+                        <!-- END CHART-->
+                    </div>
+                        <!-- END CHART PERCENT-->
                     </div>
                 </div>
-            </section>
-            <!-- END STATISTIC CHART-->
+            </div>
+        </section>
+        <!-- END STATISTIC CHART-->
 
+        <!-- COPYRIGHT-->
+        <section class="p-t-70 p-b-10">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-2 col-sm-12" align="center">
+                        <img style="max-width: 150px;"src="<?php echo base_url(''); ?>asset/images/icon/bumn.png" alt="CoolAdmin">
+                    </div>
+                    <div class="col-md-2 col-sm-12" align="center">
+                        <img style="max-width: 150px" src="<?php echo base_url(''); ?>asset/images/icon/ojk.png" alt="CoolAdmin">
+                    </div>
+                    <div class="col-md-2 col-sm-12" align="center">
+                        <img style="max-width: 150px" src="<?php echo base_url(''); ?>asset/images/icon/logologo.png" alt="CoolAdmin">
+                    </div>
+                    <div class="col-md-2 col-sm-12" align="center">
+                        <img style="max-width: 150px" src="<?php echo base_url(''); ?>asset/images/icon/pegadaiansyariah.png" alt="CoolAdmin">
+                    </div>
+                    <div class="col-md-2 col-sm-12" align="center">
+                        <img style="max-width: 150px" src="<?php echo base_url(''); ?>asset/images/icon/galeri24.png" alt="CoolAdmin">
+                    </div>
+                    <div class="col-md-2 col-sm-12" align="center">
+                        <img style="max-width: 150px" src="<?php echo base_url(''); ?>asset/images/icon/thegade.png" alt="CoolAdmin">
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <div class="copyright">
+                <p>Copyright © 2019 PT. Pegadaian - Persero. All Rights Reserved.</p>
+            </div>
+        </section>
+        <!-- END COPYRIGHT-->
       
-            <!-- COPYRIGHT-->
-            <section class="p-t-70 p-b-10">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-md-2" align="center">
-                            <img style="max-width: 200px" src="<?php echo base_url(''); ?>asset/images/icon/bumn.png" alt="CoolAdmin">
-                        </div>
-                        <div class="col-md-2" align="center">
-                            <img style="max-width: 150px" src="<?php echo base_url(''); ?>asset/images/icon/ojk.png" alt="CoolAdmin">
-                        </div>
-                        <div class="col-md-2" align="center">
-                            <img style="max-width: 200px" src="<?php echo base_url(''); ?>asset/images/icon/logologo.png" alt="CoolAdmin">
-                        </div>
-                        <div class="col-md-2" align="center">
-                            <img style="max-width: 200px" src="<?php echo base_url(''); ?>asset/images/icon/pegadaiansyariah.png" alt="CoolAdmin">
-                        </div>
-                        <div class="col-md-2" align="center">
-                            <img style="max-width: 150px" src="<?php echo base_url(''); ?>asset/images/icon/galeri24.png" alt="CoolAdmin">
-                        </div>
-                        <div class="col-md-2" align="center">
-                            <img style="max-width: 150px" src="<?php echo base_url(''); ?>asset/images/icon/thegade.png" alt="CoolAdmin">
-                        </div>
-                    </div>
-                    <hr>
-                    <div class="copyright">
-                        <p>Copyright © 2019 PT. Pegadaian - Persero. All Rights Reserved.</p>
-                    </div>
-            </section>
-            <!-- END COPYRIGHT-->
+            
 
         </div>
         <!-- Jquery JS-->

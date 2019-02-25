@@ -10,7 +10,7 @@
                     <h1 class="title-5 m-b-35">Data User</h1>
                   </div>
                   <div class="table-data__tool-right">
-                     <a  href="<?php echo site_url('UserModel/createUser/') ?>" class="au-btn au-btn-icon au-btn--green au-btn--small">
+                     <a  href="<?php echo site_url('User/createUser/') ?>" class="au-btn au-btn-icon au-btn--green au-btn--small">
                      <i class="zmdi zmdi-plus"></i>add user</a>
                   </div>
                </div>
@@ -37,10 +37,10 @@
                                  <td><?php echo $key->password ?></td>
                                  <td>
                                     <div class="table-data-feature">
-                                        <a href="<?php echo site_url('UserModel/update/').$key->id_user ?>" class="item" data-toggle="tooltip" data-placement="top" title="Edit">
+                                        <a href="<?php echo site_url('User/updateform/').$key->id_user ?>" class="item" data-toggle="tooltip" data-placement="top" title="Edit">
                                              <i class="zmdi zmdi-edit"></i>
                                         </a>
-                                        <a href="<?php echo site_url('UserModel/delete/').$key->id_user ?>" class="item" data-toggle="tooltip" data-placement="top" title="Delete">
+                                        <a href="<?php echo site_url('User/delete/').$key->id_user ?>" class="item" data-toggle="tooltip" data-placement="top" title="Delete">
                                             <i class="zmdi zmdi-delete"></i>
                                         </a>
                                     </div>

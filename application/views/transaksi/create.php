@@ -128,6 +128,7 @@
                             </div>
                         </form>
                         <button type="button" class="btn btn-large btn-block btn-primary">Upload</button>
+                        <br>
                     </div>
                 </div>
             </div>
