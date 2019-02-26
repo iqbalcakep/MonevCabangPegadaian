@@ -4,6 +4,7 @@
    $data['id_user'] = $session_data['id_user'];
    $data['username'] = $session_data['username'];
    $data['nama'] = $session_data['nama'];
+
 //    echo " ".$data['username'] ;
 //    echo " ".$data['id_user'] ;
 //    echo " ".$data['nama'] ;
@@ -14,25 +15,31 @@
        
         <section>
             <div class="row">
-                <div class="col-lg-5">
+                <div class="col-lg-5" style="margin:0 auto;">
                     <table class="table table-bordered table-hover">
                         <thead>
+                            <tr>
+                                <th>Nama Cabang</th>
+                                <td><?php echo " ".$data['nama'];?></td>
+                            </tr>
                             <tr>
                                 <th>Username</th>
                                 <td><?php echo " ".$data['username'];?></td>
                             </tr>
                             <tr>
-                                <th>Nama</th>
+                                <th>Nama UPC</th>
                                 <td><?php echo " ".$data['nama'];?></td>
                             </tr>
+                            
                         </thead>
                     </table>
                 </div>
             </div>
         </section>
         <div class="row">
+            
             <!-- left col -->
-            <div class="col-lg-6">
+            <div class="col-lg-6" style="margin:0 auto;">
                 <div class="card">
                 <div class="card-header" style="background-color:#393939; color:#cc9933;">Kredit Emas</div>
                 <div class="card-body">
@@ -117,8 +124,10 @@
                 </div>
             </div>
             <!-- left col -->
+            
+            
             <!-- untuk drop folder -->
-            <div class="col-lg-6">
+            <!-- <div class="col-lg-6">
                 <div class="card">
                     <div class="col-md-12">
                         <form method="post" action="#" id="#">
@@ -131,7 +140,7 @@
                         <br>
                     </div>
                 </div>
-            </div>
+            </div> -->
             <!-- end drop folder -->
         </div>
    </div>
