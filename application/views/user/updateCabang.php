@@ -37,10 +37,10 @@
                            <span id="payment-button-amount">Simpan</span>
                            <span id="payment-button-sending" style="display:none;">Sending…</span>
                            </button>
-                           <button id="payment-button" type="submit" class="btn btn-lg btn-danger ">
+                           <a href="<?php echo site_url('')?>" id="payment-button" type="submit" class="btn btn-lg btn-danger ">
                            <span id="payment-button-amount">Batal</span>
                            <span id="payment-button-sending" style="display:none;">Sending…</span>
-                           </button>
+                           </a>
                         </div>
                         <?php echo form_close(); ?>
                      </div>

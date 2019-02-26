@@ -34,15 +34,15 @@
                     </ul>
 
                   
-                        <div class="col-md-12 col-lg-12">
+                        <div class="col-md-12 col-lg-12" >
                             <!-- CHART-->
-                            <div class="tab-content">
+                            <div class="tab-content" >
                                 <div role="tabpanel" class="tab-pane in active" id="harian">
                                  <div class="statistic-chart-1">
                                         <center><h2 class="title-3 m-b-30">Grafik Penjualan Mulia pada Tgl <?= date("d M Y"); ?></h2></center>
                                         <div class="chart-wrap">
                                         
-                                        <canvas id="myChart"></canvas>
+                                        <canvas id="myChart" ></canvas>
                 
                                         </div>
                                         <div class="statistic-chart-1-note">
