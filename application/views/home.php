@@ -46,8 +46,9 @@
                 
                                         </div>
                                         <div class="statistic-chart-1-note">
+                                        <input type="button" value="Export Data" onclick="window.location.href='<?= site_url('Home/exportmuliaharian');?>'" />
                                         <input type="hidden" id="url" value="<?= site_url('Home/getdata');?>">
-                                        <input type="hidden" id="url2" value="<?= site_url('Home/getdatamingguan');?>">
+                                        
                                        
                                         </div>
                                     </div>
@@ -59,7 +60,8 @@
                                         <div class="chart-wrap">
                                         
                                         <canvas id="myChart2"></canvas>
-                
+                                        <input type="button" value="Export Data" onclick="window.location.href='<?= site_url('Home/exportmuliamingguan');?>'" />
+                                        <input type="hidden" id="url2" value="<?= site_url('Home/getdatamingguan');?>">
                                         </div>
                                         <div class="statistic-chart-1-note">
                                         
@@ -76,6 +78,7 @@
                 
                                         </div>
                                         <div class="statistic-chart-1-note">
+                                        <input type="button" value="Export Data" onclick="window.location.href='<?= site_url('Home/exportmuliabulanan');?>'" />
                                         <input type="hidden" id="url3" value="<?= site_url('Home/getdatabulanan');?>">
                                         </div>
                                     </div>

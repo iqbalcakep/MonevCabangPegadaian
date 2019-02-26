@@ -4,7 +4,7 @@
    <script type="text/javascript">
         function timedMsg()
         {
-            var t=setTimeout("document.getElementById('div-alert').style.display='none';",5000);
+            var t=setTimeout("document.getElementById('div-alert').style.display='none';",30000);
         }
     </script>
 
@@ -31,23 +31,7 @@
         //  echo " ".$data['nama'] ;
          ?>
       <!-- <a href="<?php echo site_url('Transaksi/create/') ?>" type="button" class="btn btn-sm btn-success">Create</a> -->
-      <?php 
-   if($this->session->flashdata('sukses') != "") {
-
-       echo '<div id="div-alert" class="alert alert-success">
-               <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-               <strong>Sukses</strong> Proses berhasil
-             </div>';
-   }
-   ?>
-<?php 
-   if($this->session->flashdata('failed') != "") {
-       echo '<div id="div-alert" class="alert alert-danger">
-               <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-               <strong>Gagal</strong> Proses gagal
-             </div>';
-   }
-   ?>
+      
     <script language="JavaScript" type="text/javascript">timedMsg()</script>
       <div class="main-content" style="padding-top:30px">
          <div class="section__content section__content--p30">
@@ -68,7 +52,27 @@
                         </div>
                      </div>
                      <!-- button atas end -->
+                     <div class="row">
+                     <div class="col-lg-12">
+                     <?php 
+                        if($this->session->flashdata('sukses') != "") {
 
+                           echo '<div id="div-alert" class="alert alert-success">
+                                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                                    <strong>Sukses</strong> Proses berhasil
+                                 </div>';
+                        }
+                        ?>
+                     <?php 
+                        if($this->session->flashdata('failed') != "") {
+                           echo '<div id="div-alert" class="alert alert-danger">
+                                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                                    <strong>Gagal</strong> Proses gagal
+                                 </div>';
+                        }
+                        ?>
+                        </div>
+                        </div>
                      <!-- tabel -->
                      <div class="table-responsive table--no-card m-t-10">
                         <table class="table table-borderless table-striped table-earning">
