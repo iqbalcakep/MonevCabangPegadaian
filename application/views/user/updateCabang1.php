@@ -1,6 +1,6 @@
 <title>Update Cabang</title>
 <!-- MAIN CONTENT-->
-<div class="main-content" style="padding-top:30px">
+<div class="main-content">
    <div class="section__content section__content--p30">
       <div class="container-fluid">
          <div class="row">
@@ -14,7 +14,7 @@
                            <h3 class="text-center title-2">Update Data Cabang</h3>
                         </div>
                         <hr>
-                        <?php echo form_open('user/update/'.$this->uri->segment(3)); ?>
+                        <?php echo form_open('user/update1/'.$this->uri->segment(3)); ?>
                         <div class="form-group">
                            <label for="cc-cabang" class="control-label mb-1"><font color="black">Nama Cabang</font></label>
                            <input id="cc-pament" name="nama" type="text" class="form-control" aria-required="true" aria-invalid="false" required value="<?php echo $user[0]->nama ?>">
@@ -37,10 +37,10 @@
                            <span id="payment-button-amount">Simpan</span>
                            <span id="payment-button-sending" style="display:none;">Sending…</span>
                            </button>
-                           <a href="<?php echo site_url('')?>" id="payment-button" type="submit" class="btn btn-lg btn-danger ">
+                           <button id="payment-button" type="submit" class="btn btn-lg btn-danger ">
                            <span id="payment-button-amount">Batal</span>
                            <span id="payment-button-sending" style="display:none;">Sending…</span>
-                           </a>
+                           </button>
                         </div>
                         <?php echo form_close(); ?>
                      </div>

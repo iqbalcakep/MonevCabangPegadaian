@@ -56,8 +56,17 @@ class Home extends CI_Controller {
 	}
 
 	public function getdata(){
-		
 		$data = $this->transaksi_model->ambildata();
+		echo json_encode($data);
+	}
+
+	public function getdatamingguan(){
+		$data = $this->transaksi_model->ambildataminggu();
+		echo json_encode($data);
+	}
+
+	public function getdatabulanan(){
+		$data = $this->transaksi_model->ambildatabulan();
 		echo json_encode($data);
 	}
 
