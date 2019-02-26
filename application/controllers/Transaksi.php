@@ -24,10 +24,12 @@ class Transaksi extends CI_Controller {
 		$this->load->view('transaksi/transaksi', $data);
 	}
 
+	
 	public function create(){
 		$this->load->helper('url','form');	
 		$this->load->library('form_validation');
 		$this->form_validation->set_rules('nama_nasabah', 'Nama Nasabah', 'trim|required');
+		$this->form_validation->set_rules('jangka_waktu', 'Jangka Waktu', 'trim|greater_than[2]|less_than[61]');
 		if($this->form_validation->run()==FALSE){	
 			$this->load->view('partials/header');
 			$this->load->view('partials/footer');	
