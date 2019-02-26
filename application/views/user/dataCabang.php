@@ -37,10 +37,10 @@
                                  <td><?php echo $key->password ?></td>
                                  <td>
                                     <div class="table-data-feature">
-                                        <a href="<?php echo site_url('User/updateform/').$key->id_user ?>" class="item" data-toggle="tooltip" data-placement="top" title="Edit">
+                                        <a href="<?php echo site_url('user/updateform1/').$key->id_user ?>" class="item" data-toggle="tooltip" data-placement="top" title="Edit">
                                              <i class="zmdi zmdi-edit"></i>
                                         </a>
-                                        <a href="<?php echo site_url('User/delete/').$key->id_user ?>" class="item" data-toggle="tooltip" data-placement="top" title="Delete">
+                                        <a href="<?php echo site_url('user/delete/').$key->id_user ?>" class="item" data-toggle="tooltip" data-placement="top" title="Delete">
                                             <i class="zmdi zmdi-delete"></i>
                                         </a>
                                     </div>
