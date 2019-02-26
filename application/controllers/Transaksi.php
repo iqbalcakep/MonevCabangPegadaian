@@ -20,18 +20,20 @@ class Transaksi extends CI_Controller {
 		$this->load->model('Transaksi_model');
 		$data["transaksi_list"] = $this->Transaksi_model->getTransaksi($data['id_user']);
 		$this->load->view('partials/header');
-		$this->load->view('partials/footer');
 		$this->load->view('transaksi/transaksi', $data);
+		$this->load->view('partials/footer');
 	}
 
+	
 	public function create(){
 		$this->load->helper('url','form');	
 		$this->load->library('form_validation');
 		$this->form_validation->set_rules('nama_nasabah', 'Nama Nasabah', 'trim|required');
+		$this->form_validation->set_rules('jangka_waktu', 'Jangka Waktu', 'trim|greater_than[2]|less_than[61]');
 		if($this->form_validation->run()==FALSE){	
 			$this->load->view('partials/header');
-			$this->load->view('partials/footer');	
-			$this->load->view('transaksi/create');	
+			$this->load->view('transaksi/create');
+			$this->load->view('partials/footer');		
 		}else{
 			$this->load->model('Transaksi_model');
 			$this->Transaksi_model->create();
@@ -58,8 +60,8 @@ class Transaksi extends CI_Controller {
 		
 		if($this->form_validation->run()==FALSE){
 			$this->load->view('partials/header');
-			$this->load->view('partials/footer');
 			$this->load->view('transaksi/update',$data);
+			$this->load->view('partials/footer');
 		}else{
 			$this->Transaksi_model->update($id_transaksi);	
 			$this->session->set_flashdata('sukses','1');

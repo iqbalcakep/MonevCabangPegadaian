@@ -13,17 +13,22 @@
        
         <section>
             <div class="row">
-                <div class="col-lg-5">
+                <div class="col-lg-5" style="margin:0 auto;">
                     <table class="table table-bordered table-hover">
                         <thead>
+                            <tr>
+                                <th>Nama Cabang</th>
+                                <td><?php echo " ".$data['nama'];?></td>
+                            </tr>
                             <tr>
                                 <th>Username</th>
                                 <td><?php echo " ".$data['username'];?></td>
                             </tr>
                             <tr>
-                                <th>Nama</th>
+                                <th>Nama UPC</th>
                                 <td><?php echo " ".$data['nama'];?></td>
                             </tr>
+                            
                         </thead>
                     </table>
                 </div>
@@ -31,7 +36,7 @@
         </section>
         <div class="row">
             <!-- left col -->
-            <div class="col-lg-6">
+            <div class="col-lg-6" style="margin:0 auto;">
                 <div class="card">
                 <div class="card-header" style="background-color:#393939; color:#cc9933;">Kredit Emas</div>
                 <div class="card-body">
@@ -179,8 +184,10 @@
                 </div>
             </div>
             <!-- left col -->
+
+
             <!-- untuk drop folder -->
-            <div class="col-lg-6">
+            <!-- <div class="col-lg-6">
                 <div class="card">
                 <div class="col-md-12">
                     <form method="post" action="#" id="#">
@@ -189,9 +196,11 @@
                             <input type="file" class="form-control" multiple="">
                         </div>
                     </form>
+                    <button type="button" class="btn btn-large btn-block btn-primary">Upload</button>
+                    <br>
                 </div>
                 </div>
-            </div>
+            </div> -->
             <!-- end drop folder -->
         </div>
    </div>
@@ -240,11 +249,7 @@
    content: " or drag it here. ";
    display: block;
    margin: 0 auto;
-<<<<<<< HEAD
-   color: #2ea591;
-=======
    color: #cc9933;
->>>>>>> 0476fc39ddc2aade3ce2973486c4ebc1a40b6ad3
    font-weight: 600;
    text-transform: capitalize;
    text-align: center;

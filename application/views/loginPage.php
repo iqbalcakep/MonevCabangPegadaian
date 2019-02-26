@@ -40,13 +40,13 @@
         <div class="page-content--bge5"  style="background-image: url('http://localhost/MonevCabangPegadaian/asset/images/bgg.jpg'); background-size: 1500px; background-attachment: fixed; background-position: center;" >
             <div class="container" style="padding-top: 0;margin-top: 0" >
                 <div class="login-wrap">
-                    <div  class="login-content" style="background-color:rgba(255,255,255,0.9)">
+                    <div  class="login-content" style="background-color:rgba(255,255,255,0.95)">
                         <div class="login-logo">
                             <a href="#">
-                                <img style="max-width: 300px" src="<?php echo base_url(''); ?>asset/images/icon/logologo.png" alt="CoolAdmin">
+                                <img style="max-width: 300px" src="<?php echo base_url(''); ?>asset/images/logold.png" alt="CoolAdmin">
                             </a>
-                            <H3 style="padding-top: 10px">MONITORING EVALUASI</H3>
-                            <H6>PEGADAIAN AREA MALANG</H6>
+                            <H3 style="padding-top: 10px;color:#cc9933" >MONITORING EVALUASI</H3>
+                            <H6 style="color:#cc9933">PEGADAIAN AREA MALANG</H6>
                         </div>
                         <div class="login-form">
                         <?php echo form_open('Login/cekLogin'); ?>
@@ -59,7 +59,7 @@
                                     <input class="au-input au-input--full" type="password" name="password" placeholder="Password">
                                 </div>
                                 
-                                <button class="au-btn au-btn--block au-btn--green m-b-20" type="submit">sign in</button>
+                                <button class="au-btn au-btn--block au-btn--green m-b-20" style="background-color:#cc9933" type="submit">sign in</button>
                        <?= form_close(); ?>
 
                             <div class="register-link">
