@@ -3,6 +3,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Transaksi_model extends CI_Model {
 
+	public function jumTransaksi()
+	{
+		# code...
+	}
 	public function create()
 	{
 		$total = $this->input->post('jumlah_gram') * $this->input->post('jumlah_keping');
