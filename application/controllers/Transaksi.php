@@ -55,6 +55,7 @@ class Transaksi extends CI_Controller {
 		$this->load->helper('url','form');	
 		$this->load->library('form_validation');
 		$this->form_validation->set_rules('nama_nasabah', 'Nama Nasabah', 'trim|required');
+		$this->form_validation->set_rules('jangka_waktu', 'Jangka Waktu', 'trim|greater_than[2]|less_than[61]');
 		$this->load->model('Transaksi_model');
 		$data['transaksi']=$this->Transaksi_model->getTransaksiById($id_transaksi);
 		
