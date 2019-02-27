@@ -1,5 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
+<style>
+
+.cimg{
+    max-width:150px!important;
+    padding:5px;
+}
+
+@media (min-width: 320px) and (max-width: 767px) {
+    .cimg{
+        max-width:100px!important;
+        padding:5px;
+    }
+
+  
+}
+</style>
 <body>
 </div><!-- INI JANGAN DIHAPUS! -->
 
@@ -7,23 +23,23 @@
 <section class="p-t-70 p-b-10">
     <div class="container">
         <div class="row">
-            <div class="col-md-2 col-sm-12" align="center">
-                <img style="max-width: 150px;"src="<?php echo base_url(''); ?>asset/images/icon/bumn.png" alt="CoolAdmin">
+            <div class="col-lg-2 col-md-6 col-sm-2 col-xs-2" align="center">
+                <img class="cimg" src="<?php echo base_url(''); ?>asset/images/icon/bumn.png" alt="CoolAdmin">
             </div>
-            <div class="col-md-2 col-sm-12" align="center">
-                <img style="max-width: 150px" src="<?php echo base_url(''); ?>asset/images/icon/ojk.png" alt="CoolAdmin">
+            <div class="col-lg-2 col-md-6 col-sm-2 col-xs-2" align="center">
+                <img class="cimg" src="<?php echo base_url(''); ?>asset/images/icon/ojk.png" alt="CoolAdmin">
             </div>
-            <div class="col-md-2 col-sm-12" align="center">
-                <img style="max-width: 150px" src="<?php echo base_url(''); ?>asset/images/icon/logologo.png" alt="CoolAdmin">
+            <div class="col-lg-2 col-md-6 col-sm-2 col-xs-2" align="center">
+                <img class="cimg" src="<?php echo base_url(''); ?>asset/images/icon/logologo.png" alt="CoolAdmin">
             </div>
-            <div class="col-md-2 col-sm-12" align="center">
-                <img style="max-width: 150px" src="<?php echo base_url(''); ?>asset/images/icon/pegadaiansyariah.png" alt="CoolAdmin">
+            <div class="col-lg-2 col-md-6 col-sm-2 col-xs-2" align="center">
+                <img class="cimg" src="<?php echo base_url(''); ?>asset/images/icon/pegadaiansyariah.png" alt="CoolAdmin">
             </div>
-            <div class="col-md-2 col-sm-12" align="center">
-                <img style="max-width: 150px" src="<?php echo base_url(''); ?>asset/images/icon/galeri24.png" alt="CoolAdmin">
+            <div class="col-lg-2 col-md-6 col-sm-2 col-xs-2" align="center">
+                <img class="cimg" src="<?php echo base_url(''); ?>asset/images/icon/galeri24.png" alt="CoolAdmin">
             </div>
-            <div class="col-md-2 col-sm-12" align="center">
-                <img style="max-width: 150px" src="<?php echo base_url(''); ?>asset/images/icon/thegade.png" alt="CoolAdmin">
+            <div class="col-lg-2 col-md-6 col-sm-2 col-xs-2" align="center">
+                <img class="cimg" src="<?php echo base_url(''); ?>asset/images/icon/thegade.png" alt="CoolAdmin">
             </div>
         </div>
     </div>

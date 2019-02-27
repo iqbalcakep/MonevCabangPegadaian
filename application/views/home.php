@@ -96,7 +96,7 @@
                                         <i class="fa fa-th-large"></i>
                                     </div>
                                     <div style="padding-bottom: 2%" class="text">
-                                        <h2><?php echo $emas[0]->total; ?></h2>
+                                        <h2><?php echo $emas[0]->total; ?>&nbsp;gram</h2>
                                         <span>Pembiayaan Emas Area Malang</span>
                                     </div>
                                 </div>

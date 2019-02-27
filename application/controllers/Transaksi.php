@@ -23,11 +23,7 @@ class Transaksi extends CI_Controller {
 		$this->load->view('transaksi/transaksi', $data);
 		$this->load->view('partials/footer');
 	}
-<<<<<<< HEAD
-
-=======
 	
->>>>>>> 4fe603a7f59c76603ceaa71ee1d53ce7ee5a6530
 	public function create(){
 		$session_data = $this->session->userdata('sesslogin');
         $data['id_user'] = $session_data['id_user'];
