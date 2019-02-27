@@ -46,7 +46,7 @@ class Mikro extends CI_Controller {
 		$this->load->helper('url','form');	
 		$this->load->library('form_validation');
         $this->form_validation->set_rules('nama_nasabah', 'Nama Nasabah', 'trim|required');
-        $this->form_validation->set_rules('rekening', 'Rekening', 'trim|exact_length[16]|callback_cekDBgi');
+        $this->form_validation->set_rules('rekening', 'Rekening', 'trim|exact_length[16]|callback_cekDB');
         $this->form_validation->set_rules('jangka_waktu', 'Jangka Waktu', 'trim|greater_than[2]|less_than[61]');
 		if($this->form_validation->run()==FALSE){	
 			$this->load->view('partials/header');
