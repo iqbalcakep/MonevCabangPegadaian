@@ -54,7 +54,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a style="color:#cc9933" href="<?php echo site_url('') ?>">
+                                <a style="color:#cc9933" href="<?php echo site_url('Homemikro') ?>">
                                     <i class="fas fa-tachometer-alt"></i>Penjualan Mikro
                                     <span class="bot-line"></span>
                                 </a>

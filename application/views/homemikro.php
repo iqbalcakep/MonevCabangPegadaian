@@ -49,7 +49,7 @@
         <br>
         <div class="row">
                 <div class="col-md-12 col-lg-12 judul" align="center">
-                    Data Transaksi Mulia
+                    Data Transaksi Mikro
                 </div>    
                 <br>
                 <div class="col-md-12 col-lg-12">
@@ -84,21 +84,6 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-4">
-                            <div class="overview-item overview-item--c5" style="margin:0;margin-bottom:10px">
-                                <div class="overview__inner">
-                                    <div class="overview-box clearfix">
-                                        <div class="icon">
-                                            <i class="fa fa-th-large"></i>
-                                        </div>
-                                        <div style="padding-bottom: 2%" class="text">
-                                            <h2><?php echo $emas[0]->total; ?> Gram</h2>
-                                            <span>Pembiayaan Emas Area Malang</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -121,15 +106,15 @@
                             <div role="tabpanel" class="tab-pane in active" id="harian">
                                 <p style="color:#cc9933;text-align: center;">Data Transaksi Hari <?php echo date('d M Y') ?></p>
                                 <canvas id="myChart" ></canvas>
-                                <input type="hidden" id="url" value="<?= site_url('Home/getdata');?>">           
+                                <input type="hidden" id="url" value="<?= site_url('Homemikro/getdata');?>">           
                             </div>
                             <div role="tabpanel" class="tab-pane" id="mingguan">
                                 <canvas id="myChart2"></canvas>
-                                <input type="hidden" id="url2" value="<?= site_url('Home/getdatamingguan');?>">
+                                <input type="hidden" id="url2" value="<?= site_url('Homemikro/getdatamingguan');?>">
                             </div>
                             <div role="tabpanel" class="tab-pane " id="bulanan">
                                 <canvas id="myChart3"></canvas>
-                                <input type="hidden" id="url3" value="<?= site_url('Home/getdatabulanan');?>">
+                                <input type="hidden" id="url3" value="<?= site_url('Homemikro/getdatabulanan');?>">
                             </div>
                         </div>
                     </div>
@@ -249,7 +234,7 @@
 </script>
     <!-- Main JS-->
 <script src="<?php echo base_url(''); ?>/asset/js/main.js"></script>
-<script src="<?php echo base_url(''); ?>/asset/data.js"></script>
+<script src="<?php echo base_url(''); ?>/asset/datamikro.js"></script>
 
 </body>
 </html>
