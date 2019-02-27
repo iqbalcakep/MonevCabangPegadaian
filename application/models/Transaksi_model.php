@@ -127,11 +127,11 @@ class Transaksi_model extends CI_Model {
 	}
 	
 	public function rankCabang(){
-		$q = $this->db->query("SELECT cabang.nama AS nama_cabang, COUNT(user.nama) AS transaksi, SUM(transaksi.nilai_pembiayaan) AS biaya FROM transaksi JOIN `user` ON user.`id_user`=transaksi.`id_user` JOIN cabang ON cabang.`id_cabang`=user.`id_cabang` GROUP BY user.id_cabang ORDER BY biaya DESC")->result();
+		$q = $this->db->query("SELECT cabang.`nama` AS nama_cabang,SUM(transaksi.`nilai_pembiayaan`) AS biaya ,COUNT(transaksi.`id_user`) AS transaksi FROM cabang LEFT JOIN `user` ON cabang.`id_cabang`=user.`id_cabang` LEFT JOIN transaksi ON user.`id_user` = `transaksi`.`id_user` GROUP BY cabang.`id_cabang` ORDER BY biaya DESC")->result();
 		return $q;
 	}
 	public function rankUnit($id){
-		$q = $this->db->query("SELECT user.`id_cabang`,user.nama, SUM(transaksi.nilai_pembiayaan) AS biaya, COUNT(user.id_cabang) AS transaksi FROM transaksi JOIN `user` ON user.`id_user`=transaksi.`id_user` WHERE user.`id_cabang`='$id' GROUP BY transaksi.id_user ORDER BY biaya DESC")->result();
+		$q = $this->db->query("SELECT user.nama as nama ,SUM(transaksi.`nilai_pembiayaan`) as biaya ,COUNT(transaksi.`id_user`) as transaksi FROM `user` LEFT JOIN transaksi ON user.`id_user` = `transaksi`.`id_user` WHERE user.`id_cabang` = '$id' GROUP BY user.`id_user` ORDER BY biaya DESC")->result();
 		return $q;
 	}
 	public function cekRekening($rekening){
