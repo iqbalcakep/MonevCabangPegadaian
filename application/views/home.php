@@ -15,15 +15,44 @@
     <!-- Title Page-->
     <title>Dashboard</title>
      <!-- Jquery JS-->
+     <style>
+
+        .judul{
+            vertical-align: center;
+            font-size:3vw;
+            color: #cc9933;
+            padding-bottom:10px;
+            }
+        .cimg{
+            max-width:150px!important;
+            padding:5px;
+        }
+
+        @media (min-width: 320px) and (max-width: 767px) {
+            .cimg{
+                max-width:100px!important;
+                padding:5px;
+            }
+            .judul{
+                vertical-align: center;
+                font-size:10vw;
+                color: #cc9933;
+                padding-bottom:10px;
+            }
+
+        
+        }
+     </style>
 </head>
 <body>
     <section class="statistic-chart" style="padding-left:1%;padding-right:1%;">
         <br>
         <div class="row">
-                <div class="col-md-12 col-lg-4" align="center" style="vertical-align: center;font-size: 40pt;color: #cc9933">
+                <div class="col-md-12 col-lg-12 judul" align="center">
                     Data Penjualan Mulia
                 </div>    
-                <div class="col-md-12 col-lg-8">
+                <br>
+                <div class="col-md-12 col-lg-12">
                     <div class="row">
                         <div class="col-md-4 ">
                             <div class="overview-item overview-item--c4" style="margin:0;margin-bottom:10px">
@@ -45,7 +74,7 @@
                                 <div class="overview__inner">
                                     <div class="overview-box clearfix">
                                         <div class="icon">
-                                            <i class="zmdi zmdi-money"></i>
+                                            <i class="zmdi zmdi-money-box"></i>
                                         </div>
                                         <div class="text" style="padding-bottom: 2%">
                                             <h2><?php echo "Rp ". rupiah($biaya[0]->total);?></h2>
@@ -170,23 +199,24 @@
     <section class="p-t-70 p-b-10">
         <div class="container">
             <div class="row">
-                <div class="col-md-2" align="center">
-                <img style="max-width: 200px" src="<?php echo base_url(''); ?>asset/images/icon/bumn.png" alt="CoolAdmin">
-            </div>
-            <div class="col-md-2" align="center">
-                <img style="max-width: 150px" src="<?php echo base_url(''); ?>asset/images/icon/ojk.png" alt="CoolAdmin">
-            </div>
-            <div class="col-md-2" align="center">
-                <img style="max-width: 200px" src="<?php echo base_url(''); ?>asset/images/icon/logologo.png" alt="CoolAdmin">
-            </div>
-            <div class="col-md-2" align="center">
-                <img style="max-width: 200px" src="<?php echo base_url(''); ?>asset/images/icon/pegadaiansyariah.png" alt="CoolAdmin">
-            </div>
-            <div class="col-md-2" align="center">
-                <img style="max-width: 150px" src="<?php echo base_url(''); ?>asset/images/icon/galeri24.png" alt="CoolAdmin">
-            </div>
-            <div class="col-md-2" align="center">
-                <img style="max-width: 150px" src="<?php echo base_url(''); ?>asset/images/icon/thegade.png" alt="CoolAdmin">
+                <div class="col-lg-2 col-md-6 col-sm-2 col-xs-2" align="center">
+                    <img class="cimg" src="<?php echo base_url(''); ?>asset/images/icon/logologo.png" alt="CoolAdmin">
+                </div>
+                <div class="col-lg-2 col-md-6 col-sm-2 col-xs-2" align="center">
+                    <img class="cimg" src="<?php echo base_url(''); ?>asset/images/icon/pegadaiansyariah.png" alt="CoolAdmin">
+                </div>
+                <div class="col-lg-2 col-md-6 col-sm-2 col-xs-2" align="center">
+                    <img class="cimg" src="<?php echo base_url(''); ?>asset/images/icon/bumn.png" alt="CoolAdmin">
+                </div>
+                <div class="col-lg-2 col-md-6 col-sm-2 col-xs-2" align="center">
+                    <img class="cimg" src="<?php echo base_url(''); ?>asset/images/icon/ojk.png" alt="CoolAdmin">
+                </div>
+                <div class="col-lg-2 col-md-6 col-sm-2 col-xs-2" align="center">
+                    <img class="cimg" src="<?php echo base_url(''); ?>asset/images/icon/thegade.png" alt="CoolAdmin">
+                </div>
+                <div class="col-lg-2 col-md-6 col-sm-2 col-xs-2" align="center">
+                    <img class="cimg" src="<?php echo base_url(''); ?>asset/images/icon/galeri24.png" alt="CoolAdmin">
+                </div>
             </div>
         </div>
         <hr>
@@ -195,6 +225,9 @@
         </div>
     </section>
     <!-- END COPYRIGHT-->
+
+
+
 <script src="<?php echo base_url(''); ?>/asset/vendor/jquery-3.2.1.min.js"></script>
 <!-- Bootstrap JS-->
 <script src="<?php echo base_url(''); ?>/asset/vendor/bootstrap-4.1/popper.min.js"></script>
