@@ -64,6 +64,10 @@ $acl = array(
 		'admin' => true,
 		'user' => true,
 	),
+	'Homemikro' => array(
+		'admin' => true,
+		'user' => true,
+	),
 	
 
 
