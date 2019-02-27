@@ -83,7 +83,7 @@
         // Split timestamp and data into separate arrays
         var labels = [], dm=[], dp=[];
             results.forEach(function(packet) {
-            labels.push(packet.nama);
+            labels.push(packet.inisial);
             dm.push(packet.gram);
             dp.push(packet.biaya);
         });
@@ -158,7 +158,7 @@
         // Split timestamp and data into separate arrays
         var labels = [], dm=[], dp=[];
             results.forEach(function(packet) {
-            labels.push(packet.nama);
+            labels.push(packet.inisial);
             dm.push(packet.gram);
             dp.push(packet.biaya);
         });
