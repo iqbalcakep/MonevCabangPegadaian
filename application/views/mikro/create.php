@@ -114,6 +114,7 @@
                         </select>
                      </div>
                   </div>
+                  <br>
                   <button id="payment-button" type="submit" class="btn btn-lg btn-info btn-block">
                   <span id="payment-button-amount">Submit</span>
                   <span id="payment-button-sending" style="display:none;">Sending…</span>
