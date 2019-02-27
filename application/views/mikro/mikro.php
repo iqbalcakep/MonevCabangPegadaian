@@ -1,5 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
+<?php function rupiah($angka)
+    {
+        $hasil_rupiah = number_format($angka,2,',','.');
+        return $hasil_rupiah;
+    } ?>
    <body class="animsition">
    <script type="text/javascript">
         function timedMsg()
@@ -42,15 +47,16 @@
                <div class="row">
                   <div class="col-lg-12">
                       <!-- button atas -->
-                     <div class="table-data__tool">
-                        <div class="table-data__tool-left">
-                            <h4>Cabang : <?php echo " ".$data['nama']; ?></h4>
-                        </div>
-                        <div class="table-data__tool-right">
-                           <a href="<?php echo site_url('Mikro/create/') ?>" class="au-btn au-btn-icon au-btn--green au-btn--small">
-                           <i class="zmdi zmdi-plus"></i>Tambah Transaksi</a>
-                        </div>
-                     </div>
+                     <div class="row">
+                      <div class="col-xs-12 col-lg-10">
+                          <h4>Cabang : <?php echo " ".$data['nama']; ?></h4>
+                      </div>
+                      <div style="padding-top: 1%" class="col-xs-12 col-lg-2">
+                        <a href="<?php echo site_url('Mikro/create/') ?>" class="btn btn-success btn-lg btn-block">
+                          <i class="fa  fa-plus-circle"></i> Tambah Transaksi
+                        </a>
+                      </div>
+                    </div>
                      <!-- button atas end -->
                      <div class="row">
                      <div class="col-lg-12">
@@ -74,7 +80,7 @@
                         </div>
                         </div>
                      <!-- tabel -->
-                     <div class="table-responsive table--no-card m-t-10">
+                     <div class="table-responsive table--no-card m-t-10" style="box-shadow: none">
                         <table class="table table-borderless table-striped table-earning" id="example">
                            <thead>
                               <tr class="text-center">
@@ -97,7 +103,7 @@
                                  <td><?php echo $key->rekening ?></td>
                                  <td><?php echo $key->nama_nasabah ?></td>
                                  <td><?php echo $key->tanggal_transaksi ?></td>
-                                 <td><?php echo $key->uang_pinjaman ?></td>
+                                 <td><?php echo rupiah($key->uang_pinjaman) ?></td>
                                  <td><?php echo $key->nama_produk ?></td>
                                  <td><?php echo $key->jangka_waktu ?></td>
                                  <td><?php echo " ".$data['nama'] ;  ?></td>

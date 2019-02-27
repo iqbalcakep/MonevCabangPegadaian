@@ -40,7 +40,6 @@ class Home extends CI_Controller {
 		$data['rankUnit']=$this->Transaksi_model->rankUnit($sessData['id_cabang']);
 		$this->load->view('partials/header');
 		$this->load->view('home',$data);
-		// $this->load->view('user/dataCabang');
 		//$this->load->view('partials/footer');	
 	}
 

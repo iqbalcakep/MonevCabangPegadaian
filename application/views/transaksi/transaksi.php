@@ -46,33 +46,25 @@
                 <br>
                <div class="row">
                   <div class="col-lg-12">
-                      <!-- button atas -->
-                     <div class="table-data__tool">
-                        <div class="table-data__tool-left">
-                            <h4>Cabang : <?php echo " ".$data['nama']; ?></h4>
-                        </div>
-                        <div class="table-data__tool-right">
-                           <!-- btn add item -->
-                            <a href="<?php echo site_url('Transaksi/create/') ?>" class="au-btn au-btn-icon au-btn--green au-btn--small">
-                                <i class="zmdi zmdi-plus"></i>Tambah Transaksi
-                            </a>
-                            <!-- end btn add item -->
-
-                            <!-- export -->
-                            <div class="rs-select2--dark rs-select2--sm rs-select2--dark2">
-                                <select class="js-select2" name="type">
-                                    <option selected="selected" disabled>Export</option>
-                                    <option value="">Harian</option>
-                                    <option value="">Mingguan &nbsp;</option>
-                                    <option value="">Bulanan</option>
-                                </select>
-                                <div class="dropDownSelect2"></div>
-                            </div>
-                            <!-- export end -->
-                           
-                        </div>
-                     </div>
-                     <!-- button atas end -->
+                    <div class="row">
+                      <div class="col-xs-12 col-lg-8">
+                          <h4>Cabang : <?php echo " ".$data['nama']; ?></h4>
+                      </div>
+                      <div style="padding-top: 1%" class="col-xs-12 col-lg-2">
+                        <a href="<?php echo site_url('Transaksi/create/') ?>" class="btn btn-success btn-lg btn-block">
+                          <i class="fa  fa-plus-circle"></i> Tambah Transaksi
+                        </a>
+                      </div>
+                      <div style="padding-top: 1%" class="col-xs-12 col-lg-2 rs-select2--dark rs-select2--dark2">
+                        <select class="js-select2" name="type">
+                          <option selected="selected" disabled>Export</option>
+                          <option value="">Harian</option>
+                          <option value="">Mingguan &nbsp;</option>
+                          <option value="">Bulanan</option>
+                        </select>
+                        <div class="dropDownSelect2"></div>
+                      </div>
+                    </div>
                      <div class="row">
                      <div class="col-lg-12">
                      <?php 
@@ -95,7 +87,7 @@
                         </div>
                         </div>
                      <!-- tabel -->
-                     <div class="table-responsive table--no-card m-t-10">
+                     <div class="table-responsive table--no-card m-t-10" style="box-shadow: none" >
                         <table class="table table-borderless table-striped table-earning" id="example">
                            <thead>
                               <tr class="text-center">

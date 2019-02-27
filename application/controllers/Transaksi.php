@@ -53,7 +53,7 @@ class Transaksi extends CI_Controller {
 		}else{
 			$this->load->model('Transaksi_model');
 			$this->Transaksi_model->create();
-			//$this->session->set_flashdata('sukses','1');	
+			$this->session->set_flashdata('sukses','1');	
 			redirect('transaksi','refresh');
 		}
 	}
