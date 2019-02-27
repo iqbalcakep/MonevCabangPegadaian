@@ -1,5 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
+<?php function rupiah($angka)
+    {
+        $hasil_rupiah = number_format($angka,2,',','.');
+        return $hasil_rupiah;
+    } ?>
 <head>
     <!-- Required meta tags-->
     <meta charset="UTF-8">
@@ -15,6 +20,60 @@
     <section class="statistic-chart" style="padding-left:1%;padding-right:1%;">
         <br>
         <div class="row">
+                <div class="col-md-12 col-lg-4" align="center" style="vertical-align: center;font-size: 40pt;color: #cc9933">
+                    Data Penjualan Mulia
+                </div>    
+                <div class="col-md-12 col-lg-8">
+                    <div class="row">
+                        <div class="col-md-4 ">
+                            <div class="overview-item overview-item--c4" style="margin:0;margin-bottom:10px">
+                                <div class="overview__inner">
+                                    <div class="overview-box clearfix">
+                                        <div class="icon">
+                                            <i class="fa fa-arrow-circle-right"></i>
+                                        </div>
+                                        <div class="text" style="padding-bottom: 2%">
+                                            <h2><?php echo $transaksi[0]->total;?> Transaksi</h2>
+                                            <span>Jumlah Transaksi Area Malang</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 ">
+                            <div class="overview-item overview-item--c2" style="margin:0;margin-bottom:10px">
+                                <div class="overview__inner">
+                                    <div class="overview-box clearfix">
+                                        <div class="icon">
+                                            <i class="zmdi zmdi-money"></i>
+                                        </div>
+                                        <div class="text" style="padding-bottom: 2%">
+                                            <h2><?php echo "Rp ". rupiah($biaya[0]->total);?></h2>
+                                            <span>Pembiayaan Area Malang</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="overview-item overview-item--c5" style="margin:0;margin-bottom:10px">
+                                <div class="overview__inner">
+                                    <div class="overview-box clearfix">
+                                        <div class="icon">
+                                            <i class="fa fa-th-large"></i>
+                                        </div>
+                                        <div style="padding-bottom: 2%" class="text">
+                                            <h2><?php echo $emas[0]->total; ?> Gram</h2>
+                                            <span>Pembiayaan Emas Area Malang</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <div style="padding-top: 1%" class="row">
             <div class="col-md-12 col-lg-8">
                 <div class="card" style="border-radius: 10px;border-width: 0; box-shadow: 0px 10px 20px 0px rgba(204, 153, 51, 0.5); color: ">
                     <div class="card-body">
@@ -67,71 +126,15 @@
                                         <td><?php echo $i; ?></td>
                                         <td><?php echo $key->nama_cabang ?></td>
                                         <td><?php echo $key->transaksi?></td>
-                                        <td><?php echo $key->biaya ?></td>
+                                        <td><?php echo "Rp ". rupiah($key->biaya) ?></td>
                                     </tr>
                                     <?php $i++;} ?>
                                 </tbody>
                             </table>
                         </div>
                     </div>
-                </div>                  
-            </div>
-            </div>
-            <div class="row">    
-                <div class="col-md-12 col-lg-8">
-                    <div class="row">
-                        <div class="col-md-4 ">
-                            <div class="overview-item overview-item--c4" style="margin:0;margin-bottom:10px">
-                                <div class="overview__inner">
-                                    <div class="overview-box clearfix">
-                                        <div class="icon">
-                                            <i class="fa fa-arrow-circle-right"></i>
-                                        </div>
-                                        <div class="text" style="padding-bottom: 2%">
-                                            <h2><?php echo $transaksi[0]->total;?> Transaksi</h2>
-                                            <span>Jumlah Transaksi Area Malang</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4 ">
-                            <div class="overview-item overview-item--c2" style="margin:0;margin-bottom:10px">
-                                <div class="overview__inner">
-                                    <div class="overview-box clearfix">
-                                        <div class="icon">
-                                            <i class="zmdi zmdi-money"></i>
-                                        </div>
-                                        <div class="text" style="padding-bottom: 2%">
-                                            <?php function rupiah($angka)
-                                            {
-                                            $hasil_rupiah = "Rp " . number_format($angka,2,',','.');
-                                            return $hasil_rupiah;} ?>
-                                            <h2><?php echo rupiah($biaya[0]->total);?></h2>
-                                            <span>Pembiayaan Area Malang</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="overview-item overview-item--c5" style="margin:0;margin-bottom:10px">
-                                <div class="overview__inner">
-                                    <div class="overview-box clearfix">
-                                        <div class="icon">
-                                            <i class="fa fa-th-large"></i>
-                                        </div>
-                                        <div style="padding-bottom: 2%" class="text">
-                                            <h2><?php echo $emas[0]->total; ?> Gram</h2>
-                                            <span>Pembiayaan Emas Area Malang</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
                 </div>
-                <div class="col-md-12 col-lg-4">
+                <div class="col-md-12 col-lg-12">
                     <div class="top-campaign" style="border-radius: 10px;border-width: 0; box-shadow: 0px 10px 20px 0px rgba(204, 153, 51, 0.5);padding: 5%">
                     <h3 class="title-3 m-b-30">Peringkat Unit Tgl <?php echo Date('d M Y'); ?></h3>
                     <div class="table-responsive">
@@ -150,15 +153,17 @@
                                     <td><?php echo $i; ?></td>
                                     <td><?php echo $key->nama ?></td>
                                     <td><?php echo $key->transaksi?></td>
-                                    <td><?php echo $key->biaya ?></td>
+                                    <td><?php echo "Rp ". rupiah($key->biaya) ?></td>
                                 </tr>
                                 <?php $i++;} ?>
                             </tbody>
                         </table>
                     </div>
                     </div>
-                </div>
+                </div>                  
             </div>
+            </div>
+            
     </section>
     <!-- END STATISTIC CHART-->
     <!-- COPYRIGHT-->

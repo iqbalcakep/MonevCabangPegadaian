@@ -8,7 +8,7 @@
                <!-- <center> -->
                <div class="col-lg-6" style="margin:0 auto;">
                   <div class="card" style="color:black">
-                     <div class="card-header">User Pegadaian</div>
+                     <div class="card-header" style="background-color:#393939; color:#cc9933;">User Pegadaian</div>
                      <div class="card-body">
                         <div class="card-title">
                            <h3 class="text-center title-2">Update Data Cabang</h3>
@@ -33,14 +33,13 @@
                            <!-- <span class="help-block" data-valmsg-for="cc-number" data-valmsg-replace="true"></span> -->
                         </div>
                         <div align="center">
-                           <button id="payment-button" type="submit" class="btn btn-lg btn-info ">
-                           <span id="payment-button-amount">Simpan</span>
-                           <span id="payment-button-sending" style="display:none;">Sending…</span>
-                           </button>
-                           <a href="<?php echo site_url('')?>" id="payment-button" type="submit" class="btn btn-lg btn-danger ">
-                           <span id="payment-button-amount">Batal</span>
-                           <span id="payment-button-sending" style="display:none;">Sending…</span>
-                           </a>
+                            <button id="payment-button" type="submit" class="btn btn-lg btn-info ">
+                                <span id="payment-button-amount">Simpan</span>
+                                <span id="payment-button-sending" style="display:none;">Sending…</span>
+                            </button>
+
+                           <a href="<?php echo site_url('') ?>" class="btn btn-default btn-lg btn-danger">
+                           Batal</a>
                         </div>
                         <?php echo form_close(); ?>
                      </div>

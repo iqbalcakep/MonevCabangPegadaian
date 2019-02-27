@@ -55,7 +55,7 @@
                             </li>
                             <li>
                                 <a style="color:#cc9933" href="<?php echo site_url('') ?>">
-                                    <i class="fas fa-tachometer-alt"></i>Penjualan Micro
+                                    <i class="fas fa-tachometer-alt"></i>Penjualan Mikro
                                     <span class="bot-line"></span>
                                 </a>
                             </li>
@@ -69,7 +69,7 @@
                                         <a href="<?php echo site_url('transaksi') ?>">Mulia</a>
                                     </li>
                                     <li>
-                                        <a href="<?php site_url('mikro') ?>">Mikro</a>
+                                        <a href="<?php echo site_url('mikro') ?>">Mikro</a>
                                     </li>
                                 </ul>
                             </li>
@@ -150,7 +150,7 @@
                         </li>
                         <li>
                             <a style="color:#cc9933" href="<?php echo site_url('')?>">
-                                    <i class="fas fa-tachometer-alt"></i>Penjualan Micro
+                                    <i class="fas fa-tachometer-alt"></i>Penjualan Mikro
                                 </a>
                             </li>
                         </li>
