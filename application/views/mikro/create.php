@@ -1,4 +1,9 @@
-
+<script type="text/javascript">
+        function timedMsg()
+        {
+            var t=setTimeout("document.getElementById('div-alert').style.display='none';",30000);
+        }
+    </script>
 <?php 
    $session_data = $this->session->userdata('sesslogin');
    $data['id_user'] = $session_data['id_user'];
@@ -42,72 +47,56 @@
             <!-- left col -->
             <div class="col-lg-6" style="margin:0 auto;">
                 <div class="card">
-                <div class="card-header" style="background-color:#393939; color:#cc9933;">Kredit Emas</div>
+                <div class="card-header" style="background-color:#393939; color:#cc9933;">Mikro</div>
                 <div class="card-body">
                     <div class="card-title">
                         <h3 class="text-center title-2">Tambah Data Transaksi</h3>
                     </div>
                     <hr>
-                    <?php echo form_open('Transaksi/create/'); ?> 
+                    <?php echo form_open('Mikro/create/'); ?> 
+                    <?php 
+                        if(validation_errors()!=""){
+                    ?>
+                    <div id="div-alert" class="alert alert-danger">
+                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                        <?php echo validation_errors(); ?>
+                     </div>
+                        <?php } ?>
+                  <div class="form-group">
+                     <label for="cc-payment" class="control-label mb-1" style="color:black;">No. Kredit</label>
+                     <input id="rekening" maxlength="16" minlength="16" name="rekening" type="text" class="form-control" required>
+                  </div>
                   <div class="form-group">
                      <label for="cc-payment" class="control-label mb-1" style="color:black;">Nama Nasabah</label>
                      <input required id="nama_nasabah" name="nama_nasabah" type="text" class="form-control" aria-required="true" aria-invalid="false">
                   </div>
                   <div class="form-group has-success">
-                     <label for="cc-name" class="control-label mb-1" style="color:black;">Tanggal Closing</label>
-                     <input required type="date" id="tanggal_closing" name="tanggal_closing" class="form-control cc-name valid" autocomplete="cc-name" aria-required="true" aria-invalid="false" aria-describedby="cc-name-error">
+                     <label for="cc-name" class="control-label mb-1" style="color:black;">Tanggal Transaksi</label>
+                     <input required type="date" id="tanggal_transaksi" name="tanggal_transaksi" class="form-control cc-name valid" autocomplete="cc-name" aria-required="true" aria-invalid="false" aria-describedby="cc-name-error">
                      <!-- <span class="help-block field-validation-valid" data-valmsg-for="cc-name" data-valmsg-replace="true"></span> -->
                   </div>
-                  <div class="row">
-                     <div class="col-3">
-                        <label for="city" class=" form-control-label" style="color:black;">Jumlah Gram</label>
-                        <select id="jumlah_gram" name="jumlah_gram" class="form-control" onchange="sum()" required>
-                           <option value="1">1 Gram</option>
-                           <option value="2">2 Gram</option>
-                           <option value="5">5 Gram</option>
-                           <option value="10">10 Gram</option>
-                           <option value="25">25 Gram</option>
-                           <option value="50">50 Gram</option>
-                           <option value="100">100 Gram</option>
-                           <option value="250">250 Gram</option>
-                           <option value="1000">1000 Gram</option>
-                        </select>
-                     </div>
-                     <div class="col-4">
-                        <label for="x_card_code" class="control-label mb-1">Jumlah Keping</label>
-                        <div class="input-group">
-                           <input required type="number" id="jumlah_keping" name="jumlah_keping" class="form-control" onkeyup="sum()">
-                           <div class="input-group-addon">keping</div>
-                        </div>
-                     </div>
-                     <div class="col-4">
-                        <label for="x_card_code" class="control-label mb-1">Total</label>
-                        <div class="input-group">
-                           <input type="number" id="total" name="total" class="form-control" readonly required>
-                           <div class="input-group-addon">gram</div>
-                        </div>
-                     </div>
-                     <script>
-                     function sum() {
-                           var txtFirstNumberValue = document.getElementById('jumlah_gram').value;
-                           var txtSecondNumberValue = document.getElementById('jumlah_keping').value;
-                           var result = parseInt(txtFirstNumberValue) * parseInt(txtSecondNumberValue);
-                           if (!isNaN(result)) {
-                              document.getElementById('total').value = result;
-                           }
-                     }
-                     </script>
-                  </div>
-                  <br>
                   <div class="form-group">
-                     <label for="country" class=" form-control-label" style="color:black;">Nilai Pembiayaan</label>
+                     <label for="country" class=" form-control-label" style="color:black;">Uang Pinjaman</label>
                      <div class="input-group">
                         <div class="input-group-addon">Rp.
                         </div>
-                        <input type="number" id="nilai_pembiayaan" name="nilai_pembiayaan" class="form-control" required>
+                        <input type="number" id="uang_pinjaman" name="uang_pinjaman" class="form-control" required>
                         <div class="input-group-addon">.00</div>
                      </div>
                   </div>
+                  <div class="row">
+                     <div class="col-12">
+                        <label for="city" class=" form-control-label" style="color:black;">Nama Produk</label>
+                        <select id="nama_produk" name="nama_produk" class="form-control" required>
+                           <option value="Kreasi">Kreasi</option>
+                           <option value="Kreasi Fleksi">Kreasi Fleksi</option>
+                           <option value="Kreasi Multiguna">Kreasi Multiguna</option>
+                           <option value="Arrum BPKB">Arrum BPKB</option>
+                        </select>
+                     </div>
+                  </div>
+                  <br>
+                  
                   <div class="form-group">
                      <label for="country" class=" form-control-label" style="color:black;">Jangka Waktu</label>
                      <div class="input-group">
@@ -116,6 +105,15 @@
                      </div>
                   </div>
                   <input type="hidden" id="id_user" name="id_user" value="<?php echo " ".$data['id_user'] ; ?>" required>
+                  <div class="row">
+                     <div class="col-12">
+                        <label for="city" class=" form-control-label" style="color:black;">Jenis Pinjaman</label>
+                        <select id="jenis_pinjaman" name="jenis_pinjaman" class="form-control" required>
+                           <option value="Baru">Baru</option>
+                           <option value="Rollover">Rollover</option>
+                        </select>
+                     </div>
+                  </div>
                   <button id="payment-button" type="submit" class="btn btn-lg btn-info btn-block">
                   <span id="payment-button-amount">Submit</span>
                   <span id="payment-button-sending" style="display:none;">Sending…</span>

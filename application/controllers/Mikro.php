@@ -11,6 +11,7 @@ class Mikro extends CI_Controller {
         $data['nama'] = $session_data['nama'];
 	}
 
+
 	public function index()
 	{
 		$session_data = $this->session->userdata('sesslogin');
@@ -23,6 +24,16 @@ class Mikro extends CI_Controller {
 		$this->load->view('mikro/mikro', $data);
 		$this->load->view('partials/footer');
 	}
+
+	public function cekDB($rekening){
+		$hasil = $this->Mikro_model->cekRekening($rekening);
+		if($hasil){
+			return true;
+	   }else{
+		   $this->form_validation->set_message('cekDB','Nomor kredit sudah digunakan.');
+		   return false;
+	   }
+   }
 	
 	public function create(){
 		$session_data = $this->session->userdata('sesslogin');
@@ -31,11 +42,12 @@ class Mikro extends CI_Controller {
 		$data['nama'] = $session_data['nama'];
 		$cabang = $session_data['id_cabang'];
 		$this->load->model('Mikro_model');
-		$data["cabang"] = $this->Transaksi_model->selectCabang($cabang);
+		$data["cabang"] = $this->Mikro_model->selectCabang($cabang);
 		$this->load->helper('url','form');	
 		$this->load->library('form_validation');
-		$this->form_validation->set_rules('nama_nasabah', 'Nama Nasabah', 'trim|required');
-		$this->form_validation->set_rules('jangka_waktu', 'Jangka Waktu', 'trim|greater_than[2]|less_than[61]');
+        $this->form_validation->set_rules('nama_nasabah', 'Nama Nasabah', 'trim|required');
+        $this->form_validation->set_rules('rekening', 'Rekening', 'trim|exact_length[16]|callback_cekDBgi');
+        $this->form_validation->set_rules('jangka_waktu', 'Jangka Waktu', 'trim|greater_than[2]|less_than[61]');
 		if($this->form_validation->run()==FALSE){	
 			$this->load->view('partials/header');
 			$this->load->view('mikro/create', $data);
@@ -67,7 +79,9 @@ class Mikro extends CI_Controller {
 		$data["cabang"] = $this->Mikro_model->selectCabang($cabang);
 		$this->load->helper('url','form');	
 		$this->load->library('form_validation');
-		$this->form_validation->set_rules('nama_nasabah', 'Nama Nasabah', 'trim|required');
+        $this->form_validation->set_rules('nama_nasabah', 'Nama Nasabah', 'trim|required');
+        $this->form_validation->set_rules('rekening', 'Rekening');
+        $this->form_validation->set_rules('jangka_waktu', 'Jangka Waktu', 'trim|greater_than[2]|less_than[61]');
 		$this->load->model('Mikro_model');
 		$data['mikro']=$this->Mikro_model->getMikroById($id_mikro);
 		
@@ -76,7 +90,7 @@ class Mikro extends CI_Controller {
 			$this->load->view('mikro/update',$data);
 			$this->load->view('partials/footer');
 		}else{
-			$this->Mikro_model->update($id_transaksi);	
+			$this->Mikro_model->update($id_mikro);	
 			$this->session->set_flashdata('sukses','1');
 			redirect('Mikro','refresh');
 			

@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Transaksi_model extends CI_Model {
+class Mikro_model extends CI_Model {
 
 	public function jumTransaksi()
 	{
@@ -11,6 +11,7 @@ class Transaksi_model extends CI_Model {
 	{
 		//$total = $this->input->post('jumlah_gram') * $this->input->post('jumlah_keping');
 		$object = array(
+            'rekening' => $this->input->post('rekening'),
 			'nama_nasabah' => $this->input->post('nama_nasabah'),
             'tanggal_transaksi' => $this->input->post('tanggal_transaksi'),
             'uang_pinjaman' => $this->input->post('uang_pinjaman'),
@@ -57,6 +58,7 @@ class Transaksi_model extends CI_Model {
 	public function update($id_mikro)
 	{
 		$object = array(
+            'rekening' => $this->input->post('rekening'),
 			'nama_nasabah' => $this->input->post('nama_nasabah'),
             'tanggal_transaksi' => $this->input->post('tanggal_transaksi'),
             'uang_pinjaman' => $this->input->post('uang_pinjaman'),
@@ -67,6 +69,16 @@ class Transaksi_model extends CI_Model {
 		);
 		$this->db->where('id_mikro', $id_mikro);
 		$this->db->update('mikro', $object);
+	}
+
+	public function cekRekening($rekening){
+		$this->db->where('rekening', $rekening);	
+		$query = $this->db->get('mikro');
+		if($query->num_rows() >=1){
+			return false;
+		}else{
+			return true;
+		}
 	}
 
 	// public function ambildata(){
