@@ -52,9 +52,14 @@
                     Data Transaksi Mikro
                 </div>    
                 <br>
+                
+            </div>
+        <div style="padding-top: 1%" class="row">
+            <div class="col-md-12 col-lg-8">
+                <!-- 2 card -->
                 <div class="col-md-12 col-lg-12">
                     <div class="row">
-                        <div class="col-md-4 ">
+                        <div class="col-md-6 ">
                             <div class="overview-item overview-item--c4" style="margin:0;margin-bottom:10px">
                                 <div class="overview__inner">
                                     <div class="overview-box clearfix">
@@ -69,7 +74,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-4 ">
+                        <div class="col-md-6 ">
                             <div class="overview-item overview-item--c2" style="margin:0;margin-bottom:10px">
                                 <div class="overview__inner">
                                     <div class="overview-box clearfix">
@@ -86,9 +91,10 @@
                         </div>
                     </div>
                 </div>
-            </div>
-        <div style="padding-top: 1%" class="row">
-            <div class="col-md-12 col-lg-8">
+                <!-- 2 card end -->
+                <br>
+
+                <!-- chart -->
                 <div class="card" style="border-radius: 10px;border-width: 0; box-shadow: 0px 10px 20px 0px rgba(204, 153, 51, 0.5); color: ">
                     <div class="card-body">
                         <ul class="nav nav-tabs" id="myTab" role="tablist">
@@ -119,6 +125,7 @@
                         </div>
                     </div>
                 </div>
+                <!-- chart end -->
             </div>
             <div class="col-md-12 col-lg-4">
                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">    
