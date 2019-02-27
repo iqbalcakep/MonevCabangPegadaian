@@ -107,7 +107,7 @@ class Transaksi_model extends CI_Model {
 	}
 
 	public function ambildataminggu(){
-		$q = $this->db->query("select c.nama, SUM(t.total) as gram, SUM(t.nilai_pembiayaan) as biaya from transaksi as t inner join user as c on t.id_user = c.id_user where yearweek(`tanggal_closing`) = yearweek(curdate()) group by c.id_user")->result_array();
+		$q = $this->db->query("select d.inisial, SUM(t.total) as gram, SUM(t.nilai_pembiayaan) as biaya from transaksi as t inner join user as c on t.id_user = c.id_user join cabang as d on c.id_cabang = d.id_cabang where yearweek(`tanggal_closing`) = yearweek(curdate()) group by c.id_cabang")->result_array();
 		return $q;
 	}
 
@@ -117,7 +117,7 @@ class Transaksi_model extends CI_Model {
 	}
 
 	public function ambildatabulan(){
-		$q = $this->db->query("select c.nama, SUM(t.total) as gram, SUM(t.nilai_pembiayaan) as biaya from transaksi as t inner join user as c on t.id_user = c.id_user where MONTH(tanggal_closing) = MONTH(CURRENT_DATE()) group by c.id_user")->result_array();
+		$q = $this->db->query("select d.inisial, SUM(t.total) as gram, SUM(t.nilai_pembiayaan) as biaya from transaksi as t inner join user as c on t.id_user = c.id_user join cabang as d on c.id_cabang = d.id_cabang where MONTH(tanggal_closing) = MONTH(CURRENT_DATE()) group by c.id_cabang")->result_array();
 		return $q;
 	}
 
@@ -125,16 +125,13 @@ class Transaksi_model extends CI_Model {
 		$q = $this->db->query("select c.nama,t.nama_nasabah, t.jangka_waktu, t.tanggal_closing, t.total as gram, t.nilai_pembiayaan as biaya from transaksi as t inner join user as c on t.id_user = c.id_user where MONTH(tanggal_closing) = MONTH(CURRENT_DATE())")->result_array();
 		return $q;
 	}
-
+	
 	public function rankCabang(){
 		$q = $this->db->query("SELECT cabang.nama AS nama_cabang, COUNT(user.nama) AS transaksi, SUM(transaksi.nilai_pembiayaan) AS biaya FROM transaksi JOIN `user` ON user.`id_user`=transaksi.`id_user` JOIN cabang ON cabang.`id_cabang`=user.`id_cabang` GROUP BY user.id_cabang ORDER BY biaya DESC")->result();
 		return $q;
 	}
-	
-	
-
 	public function rankUnit($id){
-		$q = $this->db->query("SELECT user.`id_cabang`,user.nama, SUM(transaksi.nilai_pembiayaan) AS biaya, COUNT(user.id_cabang) AS transaksi FROM transaksi JOIN `user` ON user.`id_user`=transaksi.`id_user` WHERE user.`id_cabang`='6' GROUP BY transaksi.id_user ORDER BY biaya DESC")->result();
+		$q = $this->db->query("SELECT user.`id_cabang`,user.nama, SUM(transaksi.nilai_pembiayaan) AS biaya, COUNT(user.id_cabang) AS transaksi FROM transaksi JOIN `user` ON user.`id_user`=transaksi.`id_user` WHERE user.`id_cabang`='$id' GROUP BY transaksi.id_user ORDER BY biaya DESC")->result();
 		return $q;
 	}
 	public function cekRekening($rekening){
