@@ -32,6 +32,7 @@
 
     <!-- Main CSS-->
     <link href="<?php echo base_url(''); ?>/asset/css/theme.css" rel="stylesheet" media="all">
+    <link href="<?php echo base_url(''); ?>/asset/css/img.css" rel="stylesheet" media="all">
 
 </head>
 <body class="animsition">
@@ -41,7 +42,7 @@
             <div class="section__content section__content--p35">
                 <div class="header3-wrap">
                     <div class="header__logo">
-                        <a href="<?php echo site_url('') ?>">
+                        <a href="">
                             <img src="<?php echo base_url(''); ?>asset/images/icon/logold.png" style="max-height:52px;" alt="CoolAdmin" />
                         </a>
                     </div>
@@ -149,7 +150,7 @@
                             </li>
                         </li>
                         <li>
-                            <a style="color:#cc9933" href="<?php echo site_url('')?>">
+                            <a style="color:#cc9933" href="<?php echo site_url('Homemikro')?>">
                                     <i class="fas fa-tachometer-alt"></i>Penjualan Mikro
                                 </a>
                             </li>

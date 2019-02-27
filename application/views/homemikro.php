@@ -5,45 +5,6 @@
         $hasil_rupiah = number_format($angka,2,',','.');
         return $hasil_rupiah;
     } ?>
-<head>
-    <!-- Required meta tags-->
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="au theme template">
-    <meta name="author" content="Hau Nguyen">
-    <meta name="keywords" content="au theme template">
-    <!-- Title Page-->
-    <title>Dashboard</title>
-     <!-- Jquery JS-->
-     <style>
-
-        .judul{
-            vertical-align: center;
-            font-size:3vw;
-            color: #cc9933;
-            padding-bottom:10px;
-            }
-        .cimg{
-            max-width:150px!important;
-            padding:5px;
-        }
-
-        @media (min-width: 320px) and (max-width: 767px) {
-            .cimg{
-                max-width:100px!important;
-                padding:5px;
-            }
-            .judul{
-                vertical-align: center;
-                font-size:10vw;
-                color: #cc9933;
-                padding-bottom:10px;
-            }
-
-        
-        }
-     </style>
-</head>
 <body>
     <section class="statistic-chart" style="padding-left:1%;padding-right:1%;">
         <br>
@@ -188,37 +149,23 @@
     </section>
     <!-- END STATISTIC CHART-->
     <!-- COPYRIGHT-->
-    <section class="p-t-70 p-b-10">
+    <section >
         <div class="container">
-            <div class="row">
-                <div class="col-lg-2 col-md-6 col-sm-2 col-xs-2" align="center">
-                    <img class="cimg" src="<?php echo base_url(''); ?>asset/images/icon/logologo.png" alt="CoolAdmin">
+             <div class="row">
+                <div class="col-xs-12 col-lg-6" align="right">
+                      <img class="img-responsive" src="<?php echo base_url(''); ?>asset/images/icon/1.png" >  
                 </div>
-                <div class="col-lg-2 col-md-6 col-sm-2 col-xs-2" align="center">
-                    <img class="cimg" src="<?php echo base_url(''); ?>asset/images/icon/pegadaiansyariah.png" alt="CoolAdmin">
+                <div class="col-xs-12 col-lg-6">    
+                    <img class="img-responsive" src="<?php echo base_url(''); ?>asset/images/icon/2.png">
                 </div>
-                <div class="col-lg-2 col-md-6 col-sm-2 col-xs-2" align="center">
-                    <img class="cimg" src="<?php echo base_url(''); ?>asset/images/icon/bumn.png" alt="CoolAdmin">
-                </div>
-                <div class="col-lg-2 col-md-6 col-sm-2 col-xs-2" align="center">
-                    <img class="cimg" src="<?php echo base_url(''); ?>asset/images/icon/ojk.png" alt="CoolAdmin">
-                </div>
-                <div class="col-lg-2 col-md-6 col-sm-2 col-xs-2" align="center">
-                    <img class="cimg" src="<?php echo base_url(''); ?>asset/images/icon/thegade.png" alt="CoolAdmin">
-                </div>
-                <div class="col-lg-2 col-md-6 col-sm-2 col-xs-2" align="center">
-                    <img class="cimg" src="<?php echo base_url(''); ?>asset/images/icon/galeri24.png" alt="CoolAdmin">
-                </div>
-            </div>
-        </div>
-        <hr>
-        <div class="copyright">
-            <p>Copyright © 2019 PT. Pegadaian - Persero. All Rights Reserved.</p>
-        </div>
-    </section>
+            </div>     
+        </div> 
+         <hr>
+         <div align="center">
+            <p class="copyr" style="color: black">Copyright © 2019 PT. Pegadaian - Persero. All Rights Reserved.</p>
+         </div>
+      </section>
     <!-- END COPYRIGHT-->
-
-
 
 <script src="<?php echo base_url(''); ?>/asset/vendor/jquery-3.2.1.min.js"></script>
 <!-- Bootstrap JS-->

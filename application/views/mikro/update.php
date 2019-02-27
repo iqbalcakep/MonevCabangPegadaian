@@ -68,7 +68,7 @@
                      <div class="input-group">
                         <div class="input-group-addon">Rp.
                         </div>
-                        <input type="number" value="<?php echo $mikro[0]->uang_pinjaman ?>" id="uang_pinjaman" name="uang_pinjaman" class="form-control" required>
+                        <input type="text" class="form-control" name="uang_pinjaman" id="currency-field" pattern="^\Rp\d{1,3}(,\d{3})*(\.\d+)?$" data-type="currency"  value="<?php echo $mikro[0]->uang_pinjaman ?>" required>
                         <div class="input-group-addon">.00</div>
                      </div>
                   </div>
@@ -176,6 +176,8 @@
         </div>
    </div>
 </div>
+<script src="<?php echo base_url(''); ?>/asset/vendor/jquery-3.2.1.min.js"></script>
+<script src="<?php echo base_url(''); ?>/asset/money.js"></script>
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>

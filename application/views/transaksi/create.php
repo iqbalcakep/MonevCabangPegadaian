@@ -94,7 +94,7 @@
                      <div class="col-4">
                         <label for="x_card_code" class="control-label mb-1">Jumlah Keping</label>
                         <div class="input-group">
-                           <input required type="number" id="jumlah_keping" name="jumlah_keping" class="form-control" onkeyup="sum()">
+                           <input required type="number" id="jumlah_keping" name="jumlah_keping" class="form-control" onkeypress ="sum()" onkeyup="sum()" onkeydown="sum()">
                            <div class="input-group-addon">keping</div>
                         </div>
                      </div>

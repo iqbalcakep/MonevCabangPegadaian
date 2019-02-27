@@ -1,0 +1,34 @@
+
+.judul{
+vertical-align: center;
+font-size:3vw;
+color: #cc9933;
+padding-bottom:10px;
+}
+.cimg{
+max-width:150px!important;
+padding:5px;
+
+}
+.copyr
+{
+   font-size:12pt;
+}
+@media (min-width: 320px) and (max-width: 767px) {
+.cimg{
+max-width:100px!important;
+padding:5px;
+}
+.judul{
+vertical-align: center;
+font-size:7vw;
+color: #cc9933;
+padding-top: 0px;
+padding-bottom:10px;
+}
+.copyr
+{
+   font-size:8pt;
+   padding-bottom:5%;
+}
+}
