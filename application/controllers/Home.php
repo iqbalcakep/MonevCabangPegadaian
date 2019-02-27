@@ -29,31 +29,16 @@ class Home extends CI_Controller {
 	}
     
 	}
-
-	
-
-	/**
-	 * Index Page for this controller.
-	 *
-	 * Maps to the following URL
-	 * 		http://example.com/index.php/welcome
-	 *	- or -
-	 * 		http://example.com/index.php/welcome/index
-	 *	- or -
-	 * Since this controller is set as the default controller in
-	 * config/routes.php, it's displayed at http://example.com/
-	 *
-	 * So any other public methods not prefixed with an underscore will
-	 * map to /index.php/welcome/<method_name>
-	 * @see https://codeigniter.com/user_guide/general/urls.html
-	 */
 	public function index()
 	{
+		$this->load->model('Transaksi_model');
+		$data['emas']=$this->Transaksi_model->getJumEmas();
+		$data['transaksi']=$this->Transaksi_model->getJumTransaksi();
+		$data['biaya']=$this->Transaksi_model->getJumPembiayaan();
 		$this->load->view('partials/header');
-		$this->load->view('home');
+		$this->load->view('home',$data);
 		// $this->load->view('user/dataCabang');
-		//$this->load->view('partials/footer');
-		
+		//$this->load->view('partials/footer');	
 	}
 
 	public function getdata(){

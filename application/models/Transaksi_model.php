@@ -74,6 +74,24 @@ class Transaksi_model extends CI_Model {
 		$this->db->update('transaksi', $object);
 	}
 
+	public function getJumTransaksi()
+	{
+		$query = $this->db->query("SELECT COUNT(id_transaksi) as total FROM transaksi;");
+		return $query->result();
+	}
+	public function getJumPembiayaan($value='')
+	{
+		$query = $this->db->query("SELECT SUM(nilai_pembiayaan) as total FROM transaksi;");
+		return $query->result();
+	}
+	
+	public function getJumEmas($value='')
+	{
+		$query = $this->db->query("SELECT SUM(jumlah_gram) AS total FROM transaksi;");
+		return $query->result();
+	}
+
+
 	public function ambildata(){
 		$skrng = date("Y-m-d");
 		$q = $this->db->query("select d.inisial, SUM(t.total) as gram, SUM(t.nilai_pembiayaan) as biaya from transaksi as t inner join user as c on t.id_user = c.id_user join cabang as d on c.id_cabang = d.id_cabang  where tanggal_closing = '$skrng' group by c.id_cabang")->result_array();

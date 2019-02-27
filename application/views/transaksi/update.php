@@ -176,8 +176,8 @@
                   <div class="form-group">
                      <label for="country" class=" form-control-label" style="color:black;">Jangka Waktu</label>
                      <div class="input-group">
-                        <input type="number" id="jangka_waktu" name="jangka_waktu" class="form-control" value="<?php echo $transaksi[0]->jangka_waktu ?>">
-                        <div class="input-group-addon">Hari</div>
+                        <input type="number"  min="3" max="60" id="jangka_waktu" name="jangka_waktu" class="form-control" value="<?php echo $transaksi[0]->jangka_waktu ?>">
+                        <div class="input-group-addon">Bulan</div>
                      </div>
                   </div>
                   <input type="hidden" id="id_user" name="id_user" value="<?php echo " ".$data['id_user'] ; ?>">
