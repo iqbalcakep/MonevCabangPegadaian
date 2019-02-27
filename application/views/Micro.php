@@ -14,7 +14,7 @@
 <body>
     <section class="statistic-chart" style="padding-left:1%;padding-right:1%;">
         <div class="col-md-12">
-            <h1 class="title-4" style=" text-align:center;color: #cc9933">Data Penjualan Mulia
+            <h1 class="title-4" style=" text-align:center;color: #cc9933">Data Penjualan Mikro
             </h1>
             <hr class="line-seprate">
         </div>
@@ -62,8 +62,8 @@
                                         <i class="fa fa-arrow-circle-right"></i>
                                     </div>
                                     <div class="text" style="padding-bottom: 2%">
-                                        <h2><?php echo $transaksi[0]->total;?></h2>
-                                        <span>Jumlah Transaksi Area Malang</span>
+                                        <h2>388,688</h2>
+                                        <span>Jumlah Transaksi Mikro Area Malang</span>
                                     </div>
                                 </div>
                             </div>
@@ -77,27 +77,8 @@
                                         <i class="zmdi zmdi-money"></i>
                                     </div>
                                     <div class="text" style="padding-bottom: 2%">
-                                        <?php function rupiah($angka)
-                                        {
-                                        $hasil_rupiah = "Rp " . number_format($angka,2,',','.');
-                                        return $hasil_rupiah;} ?>
-                                        <h2><?php echo rupiah($biaya[0]->total);?></h2>
-                                        <span>Pembiayaan Area Malang</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-12">
-                        <div class="overview-item overview-item--c5" style="margin:0;margin-bottom:10px">
-                            <div class="overview__inner">
-                                <div class="overview-box clearfix">
-                                    <div class="icon">
-                                        <i class="fa fa-th-large"></i>
-                                    </div>
-                                    <div style="padding-bottom: 2%" class="text">
-                                        <h2><?php echo $emas[0]->total; ?></h2>
-                                        <span>Pembiayaan Emas Area Malang</span>
+                                        <h2>388,688</h2>
+                                        <span>Pembiayaan Mikro Area Malang</span>
                                     </div>
                                 </div>
                             </div>

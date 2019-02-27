@@ -24,7 +24,6 @@ class Transaksi extends CI_Controller {
 		$this->load->view('partials/footer');
 	}
 
-	
 	public function create(){
 		$this->load->helper('url','form');	
 		$this->load->library('form_validation');
