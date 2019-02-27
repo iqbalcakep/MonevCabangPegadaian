@@ -74,6 +74,33 @@
                             </table>
                         </div>
                     </div>
+                </div>
+                <div class="col-md-12 col-lg-12">
+                    <div class="top-campaign" style="border-radius: 10px;border-width: 0; box-shadow: 0px 10px 20px 0px rgba(204, 153, 51, 0.5);padding: 5%">
+                    <h3 class="title-3 m-b-30">Peringkat Unit Tgl <?php echo Date('d M Y'); ?></h3>
+                    <div class="table-responsive">
+                        <table class="table" style="color: #333333">
+                            <thead>
+                                <tr>
+                                    <td>No</td>
+                                    <td>Nama Cabang</td>
+                                    <td>Transaksi</td>
+                                    <td>Pembiayaan</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <?php $i=1; foreach ($rankUnit as $key){ ?>
+                                <tr>
+                                    <td><?php echo $i; ?></td>
+                                    <td><?php echo $key->nama ?></td>
+                                    <td><?php echo $key->transaksi?></td>
+                                    <td><?php echo $key->biaya ?></td>
+                                </tr>
+                                <?php $i++;} ?>
+                            </tbody>
+                        </table>
+                    </div>
+                    </div>
                 </div>                  
             </div>
             </div>
@@ -131,33 +158,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-12 col-lg-4">
-                    <div class="top-campaign" style="border-radius: 10px;border-width: 0; box-shadow: 0px 10px 20px 0px rgba(204, 153, 51, 0.5);padding: 5%">
-                    <h3 class="title-3 m-b-30">Peringkat Unit Tgl <?php echo Date('d M Y'); ?></h3>
-                    <div class="table-responsive">
-                        <table class="table" style="color: #333333">
-                            <thead>
-                                <tr>
-                                    <td>No</td>
-                                    <td>Nama Cabang</td>
-                                    <td>Transaksi</td>
-                                    <td>Pembiayaan</td>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <?php $i=1; foreach ($rankUnit as $key){ ?>
-                                <tr>
-                                    <td><?php echo $i; ?></td>
-                                    <td><?php echo $key->nama ?></td>
-                                    <td><?php echo $key->transaksi?></td>
-                                    <td><?php echo $key->biaya ?></td>
-                                </tr>
-                                <?php $i++;} ?>
-                            </tbody>
-                        </table>
-                    </div>
-                    </div>
-                </div>
+                
             </div>
     </section>
     <!-- END STATISTIC CHART-->

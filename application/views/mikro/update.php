@@ -1,8 +1,10 @@
+
 <?php 
    $session_data = $this->session->userdata('sesslogin');
    $data['id_user'] = $session_data['id_user'];
    $data['username'] = $session_data['username'];
    $data['nama'] = $session_data['nama'];
+
 //    echo " ".$data['username'] ;
 //    echo " ".$data['id_user'] ;
 //    echo " ".$data['nama'] ;
@@ -36,146 +38,114 @@
             </div>
         </section>
         <div class="row">
+            
             <!-- left col -->
             <div class="col-lg-6" style="margin:0 auto;">
                 <div class="card">
-                <div class="card-header" style="background-color:#393939; color:#cc9933;">Kredit Emas</div>
+                <div class="card-header" style="background-color:#393939; color:#cc9933;">Mikro</div>
                 <div class="card-body">
                     <div class="card-title">
-                        <h3 class="text-center title-2">Tambah Data Transaksi</h3>
+                        <h3 class="text-center title-2">Edit Data Mikro</h3>
                     </div>
                     <hr>
-                    <?php echo form_open('Transaksi/update/'.$this->uri->segment(3)); ?>
+                    <?php echo form_open('Mikro/update/'.$this->uri->segment(3)); ?>
+                    <?php echo validation_errors(); ?>
+                  <div class="form-group">
+                     <label for="cc-payment" maxlength="16" minlength="16" class="control-label mb-1" style="color:black;">No. Kredit</label>
+                     <input required value="<?php echo $mikro[0]->rekening ?>" id="rekening" name="rekening" type="text" class="form-control" aria-required="true" aria-invalid="false" readonly>
+                  </div>
                   <div class="form-group">
                      <label for="cc-payment" class="control-label mb-1" style="color:black;">Nama Nasabah</label>
-                     <input id="nama_nasabah" name="nama_nasabah" type="text" class="form-control" aria-required="true" aria-invalid="false" value="<?php echo $transaksi[0]->nama_nasabah ?>">
+                     <input required value="<?php echo $mikro[0]->nama_nasabah ?>" id="nama_nasabah" name="nama_nasabah" type="text" class="form-control" aria-required="true" aria-invalid="false">
                   </div>
                   <div class="form-group has-success">
-                     <label for="cc-name" class="control-label mb-1" style="color:black;">Tanggal Closing</label>
-                     <input type="date" id="tanggal_closing" name="tanggal_closing" class="form-control cc-name valid" autocomplete="cc-name" aria-required="true" aria-invalid="false" aria-describedby="cc-name-error" value="<?php echo $transaksi[0]->tanggal_closing ?>">
+                     <label for="cc-name" class="control-label mb-1" style="color:black;">Tanggal Transaksi</label>
+                     <input required type="date" value="<?php echo $mikro[0]->tanggal_transaksi ?>" id="tanggal_transaksi" name="tanggal_transaksi" class="form-control cc-name valid" autocomplete="cc-name" aria-required="true" aria-invalid="false" aria-describedby="cc-name-error">
                      <!-- <span class="help-block field-validation-valid" data-valmsg-for="cc-name" data-valmsg-replace="true"></span> -->
                   </div>
-                  <div class="row">
-                     <div class="col-3">
-                        <label for="city" class=" form-control-label" style="color:black;">Jumlah Gram</label>
-                        <select id="jumlah_gram" name="jumlah_gram" class="form-control" onchange="sum()" value="<?php echo $transaksi[0]->jumlah_gram ?>">
-                           <option value="1" 
-                              <?php 
-                                 if($transaksi[0]->jumlah_gram == "1")
-                                    {echo 'selected';} 
-                              ?>
-                           >
-                              1
-                           </option>
-                           <option value="2" 
-                              <?php 
-                                 if($transaksi[0]->jumlah_gram == "2")
-                                    {echo 'selected';} 
-                              ?>
-                           >
-                              2
-                           </option>
-                           <option value="5" 
-                              <?php 
-                                 if($transaksi[0]->jumlah_gram == "5")
-                                    {echo 'selected';} 
-                              ?>
-                           >
-                              5
-                           </option>
-                           <option value="10" 
-                              <?php 
-                                 if($transaksi[0]->jumlah_gram == "10")
-                                    {echo 'selected';} 
-                              ?>
-                           >
-                              10
-                           </option>
-                           <option value="25" 
-                              <?php 
-                                 if($transaksi[0]->jumlah_gram == "25")
-                                    {echo 'selected';} 
-                              ?>
-                           >
-                              25
-                           </option>
-                           <option value="50" 
-                              <?php 
-                                 if($transaksi[0]->jumlah_gram == "50")
-                                    {echo 'selected';} 
-                              ?>
-                           >
-                              50
-                           </option>
-                           <option value="100" 
-                              <?php 
-                                 if($transaksi[0]->jumlah_gram == "100")
-                                    {echo 'selected';} 
-                              ?>
-                           >
-                              100
-                           </option>
-                           <option value="250" 
-                              <?php 
-                                 if($transaksi[0]->jumlah_gram == "250")
-                                    {echo 'selected';} 
-                              ?>
-                           >
-                              250
-                           </option>
-                           <option value="1000" 
-                              <?php 
-                                 if($transaksi[0]->jumlah_gram == "1000")
-                                    {echo 'selected';} 
-                              ?>
-                           >
-                              1000
-                           </option>
-                        </select>
-                     </div>
-                     <div class="col-4">
-                        <label for="x_card_code" class="control-label mb-1">Jumlah Keping</label>
-                        <div class="input-group">
-                           <input type="number" id="jumlah_keping" name="jumlah_keping" class="form-control" onkeyup="sum()" value="<?php echo $transaksi[0]->jumlah_keping ?>">
-                           <div class="input-group-addon">keping</div>
-                        </div>
-                     </div>
-                     <div class="col-4">
-                        <label for="x_card_code" class="control-label mb-1">Total</label>
-                        <div class="input-group">
-                           <input type="number" id="total" name="total" class="form-control" readonly value="<?php echo $transaksi[0]->total ?>">
-                           <div class="input-group-addon">gram</div>
-                        </div>
-                     </div>
-                     <script>
-                     function sum() {
-                           var txtFirstNumberValue = document.getElementById('jumlah_gram').value;
-                           var txtSecondNumberValue = document.getElementById('jumlah_keping').value;
-                           var result = parseInt(txtFirstNumberValue) * parseInt(txtSecondNumberValue);
-                           if (!isNaN(result)) {
-                              document.getElementById('total').value = result;
-                           }
-                     }
-                     </script>
-                  </div>
-                  <br>
                   <div class="form-group">
-                     <label for="country" class=" form-control-label" style="color:black;">Nilai Pembiayaan</label>
+                     <label for="country" class=" form-control-label" style="color:black;">Uang Pinjaman</label>
                      <div class="input-group">
                         <div class="input-group-addon">Rp.
                         </div>
-                        <input type="number" id="nilai_pembiayaan" name="nilai_pembiayaan" class="form-control" value="<?php echo $transaksi[0]->nilai_pembiayaan ?>">
+                        <input type="number" value="<?php echo $mikro[0]->uang_pinjaman ?>" id="uang_pinjaman" name="uang_pinjaman" class="form-control" required>
                         <div class="input-group-addon">.00</div>
                      </div>
                   </div>
+                  <div class="row">
+                     <div class="col-12">
+                        <label for="city" class=" form-control-label" style="color:black;">Nama Produk</label>
+                        <select id="nama_produk" name="nama_produk" class="form-control" required value="<?php echo $mikro[0]->nama_produk ?>">
+                        <option value="Kreasi" 
+                              <?php 
+                                 if($mikro[0]->nama_produk == "Kreasi")
+                                    {echo 'selected';} 
+                              ?>
+                           >
+                              Kreasi
+                           </option>
+                           <option value="Kreasi Fleksi" 
+                              <?php 
+                                 if($mikro[0]->nama_produk == "Kreasi Fleksi")
+                                    {echo 'selected';} 
+                              ?>
+                           >
+                              Kreasi Fleksi
+                           </option>
+                           <option value="Kreasi Multiguna" 
+                              <?php 
+                                 if($mikro[0]->nama_produk == "Kreasi Multiguna")
+                                    {echo 'selected';} 
+                              ?>
+                           >
+                              Kreasi Multiguna
+                           </option>
+                           <option value="Arrum BPKB" 
+                              <?php 
+                                 if($mikro[0]->nama_produk == "Arrum BPKB")
+                                    {echo 'selected';} 
+                              ?>
+                           >
+                              Arrum BPKB
+                           </option>
+                           
+                        </select>
+                     </div>
+                  </div>
+                  <br>
+                  
                   <div class="form-group">
                      <label for="country" class=" form-control-label" style="color:black;">Jangka Waktu</label>
                      <div class="input-group">
-                        <input type="number" id="jangka_waktu" name="jangka_waktu" class="form-control" value="<?php echo $transaksi[0]->jangka_waktu ?>">
-                        <div class="input-group-addon">Hari</div>
+                        <input type="number" value="<?php echo $mikro[0]->jangka_waktu ?>" min="3" max="60" id="jangka_waktu" name="jangka_waktu" class="form-control" required>
+                        <div class="input-group-addon">Bulan</div>
                      </div>
                   </div>
-                  <input type="hidden" id="id_user" name="id_user" value="<?php echo " ".$data['id_user'] ; ?>">
+                  <input type="hidden" id="id_user" name="id_user" value="<?php echo " ".$data['id_user'] ; ?>" required>
+                  <div class="row">
+                     <div class="col-12">
+                        <label for="city" class=" form-control-label" style="color:black;">Jenis Pinjaman</label>
+                        <select id="jenis_pinjaman" name="jenis_pinjaman" class="form-control" required value="<?php echo $mikro[0]->jenis_pinjaman ?>">
+                        <option value="Baru" 
+                              <?php 
+                                 if($mikro[0]->jenis_pinjaman == "Baru")
+                                    {echo 'selected';} 
+                              ?>
+                           >
+                              Baru
+                           </option>
+                           <option value="Rollover" 
+                              <?php 
+                                 if($mikro[0]->jenis_pinjaman == "Rollover")
+                                    {echo 'selected';} 
+                              ?>
+                           >
+                              Rollover
+                           </option>
+                        </select>
+                     </div>
+                  </div>
+                  <br>
                   <button id="payment-button" type="submit" class="btn btn-lg btn-info btn-block">
                   <span id="payment-button-amount">Submit</span>
                   <span id="payment-button-sending" style="display:none;">Sending…</span>
@@ -185,21 +155,21 @@
                 </div>
             </div>
             <!-- left col -->
-
-
+            
+            
             <!-- untuk drop folder -->
             <!-- <div class="col-lg-6">
                 <div class="card">
-                <div class="col-md-12">
-                    <form method="post" action="#" id="#">
-                        <div class="form-group files color">
-                            <label>Upload Your File </label>
-                            <input type="file" class="form-control" multiple="">
-                        </div>
-                    </form>
-                    <button type="button" class="btn btn-large btn-block btn-primary">Upload</button>
-                    <br>
-                </div>
+                    <div class="col-md-12">
+                        <form method="post" action="#" id="#">
+                            <div class="form-group files color">
+                                <label>Upload Your File </label>
+                                <input type="file" class="form-control" multiple="">
+                            </div>
+                        </form>
+                        <button type="button" class="btn btn-large btn-block btn-primary">Upload</button>
+                        <br>
+                    </div>
                 </div>
             </div> -->
             <!-- end drop folder -->

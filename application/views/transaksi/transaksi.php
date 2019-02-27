@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-   <body class="animsition">
+   <body class="animsition" style="color:#666">
    <script type="text/javascript">
         function timedMsg()
         {
@@ -47,8 +47,24 @@
                             <h4>Cabang : <?php echo " ".$data['nama']; ?></h4>
                         </div>
                         <div class="table-data__tool-right">
-                           <a href="<?php echo site_url('Transaksi/create/') ?>" class="au-btn au-btn-icon au-btn--green au-btn--small">
-                           <i class="zmdi zmdi-plus"></i>add item</a>
+                           <!-- btn add item -->
+                            <a href="<?php echo site_url('Transaksi/create/') ?>" class="au-btn au-btn-icon au-btn--green au-btn--small">
+                                <i class="zmdi zmdi-plus"></i>add item
+                            </a>
+                            <!-- end btn add item -->
+
+                            <!-- export -->
+                            <div class="rs-select2--dark rs-select2--sm rs-select2--dark2">
+                                <select class="js-select2" name="type">
+                                    <option selected="selected" disabled>Export</option>
+                                    <option value="">Harian</option>
+                                    <option value="">Mingguan &nbsp;</option>
+                                    <option value="">Bulanan</option>
+                                </select>
+                                <div class="dropDownSelect2"></div>
+                            </div>
+                            <!-- export end -->
+                           
                         </div>
                      </div>
                      <!-- button atas end -->
@@ -79,6 +95,7 @@
                            <thead>
                               <tr class="text-center">
                                  <th>Id <br>Transaksi</th>
+                                 <th>No <br>Rekening</th>
                                  <th>Nama <br>Nasabah</th>
                                  <th>Tgl <br>Closing</th>
                                  <th>Jumlah <br>Keping</th>
@@ -94,6 +111,7 @@
                               <?php foreach ($transaksi_list as $key) { ?>
                               <tr>
                                  <td><?php echo $key->id_transaksi ?></td>
+                                 <td><?php echo $key->rekening ?></td>
                                  <td><?php echo $key->nama_nasabah ?></td>
                                  <td><?php echo $key->tanggal_closing ?></td>
                                  <td><?php echo $key->jumlah_keping ?></td>

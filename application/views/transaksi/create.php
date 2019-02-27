@@ -1,4 +1,9 @@
-
+<script type="text/javascript">
+        function timedMsg()
+        {
+            var t=setTimeout("document.getElementById('div-alert').style.display='none';",30000);
+        }
+    </script>
 <?php 
    $session_data = $this->session->userdata('sesslogin');
    $data['id_user'] = $session_data['id_user'];
@@ -49,6 +54,19 @@
                     </div>
                     <hr>
                     <?php echo form_open('Transaksi/create/'); ?> 
+                    <?php 
+                        if(validation_errors()!=""){
+                    ?>
+                    <div id="div-alert" class="alert alert-danger">
+                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                        <?php echo validation_errors(); ?>
+                     </div>
+                        <?php } ?>
+                    
+                    <div class="form-group">
+                     <label for="cc-payment" class="control-label mb-1" style="color:black;">No. Kredit</label>
+                     <input id="rekening" maxlength="16" minlength="16" name="rekening" type="number" class="form-control" required>
+                  </div>
                   <div class="form-group">
                      <label for="cc-payment" class="control-label mb-1" style="color:black;">Nama Nasabah</label>
                      <input required id="nama_nasabah" name="nama_nasabah" type="text" class="form-control" aria-required="true" aria-invalid="false">

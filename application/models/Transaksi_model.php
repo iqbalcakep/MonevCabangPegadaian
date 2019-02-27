@@ -11,6 +11,7 @@ class Transaksi_model extends CI_Model {
 	{
 		$total = $this->input->post('jumlah_gram') * $this->input->post('jumlah_keping');
 		$object = array(
+			'rekening' => $this->input->post('rekening'),
 			'nama_nasabah' => $this->input->post('nama_nasabah'),
             'tanggal_closing' => $this->input->post('tanggal_closing'),
             'jumlah_keping' => $this->input->post('jumlah_keping'),
@@ -59,6 +60,7 @@ class Transaksi_model extends CI_Model {
 	{
 		$total = $this->input->post('jumlah_gram') * $this->input->post('jumlah_keping');
 		$object = array(
+			'rekening' => $this->input->post('rekening'),
 			'nama_nasabah' => $this->input->post('nama_nasabah'),
             'tanggal_closing' => $this->input->post('tanggal_closing'),
             'jumlah_keping' => $this->input->post('jumlah_keping'),
@@ -134,6 +136,15 @@ class Transaksi_model extends CI_Model {
 	public function rankUnit($id){
 		$q = $this->db->query("SELECT user.`id_cabang`,user.nama, SUM(transaksi.nilai_pembiayaan) AS biaya, COUNT(user.id_cabang) AS transaksi FROM transaksi JOIN `user` ON user.`id_user`=transaksi.`id_user` WHERE user.`id_cabang`='6' GROUP BY transaksi.id_user ORDER BY biaya DESC")->result();
 		return $q;
+	}
+	public function cekRekening($rekening){
+		$this->db->where('rekening', $rekening);	
+		$query = $this->db->get('transaksi');
+		if($query->num_rows() >=1){
+			return false;
+		}else{
+			return true;
+		}
 	}
 }
 
