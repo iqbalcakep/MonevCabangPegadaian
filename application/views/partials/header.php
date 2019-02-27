@@ -150,13 +150,8 @@
                             </li>
                         </li>
                         <li>
-<<<<<<< HEAD
-                            <a style="color:#cc9933" href="<?php echo site_url('Homemikro')?>">
-                                    <i class="fas fa-tachometer-alt"></i>Penjualan Mikro
-=======
                             <a style="color:#cc9933" href="<?php echo site_url('Homemikro') ?>">
                                     <i class="fas fa-tachometer-alt"></i>Rekap Mikro
->>>>>>> eefa210b45f22ee094cebf5355a05c50f850d6ae
                                 </a>
                             </li>
                         </li>
