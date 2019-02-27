@@ -161,8 +161,8 @@
                             </a>
                         </li>
                         <li>
-                            <a style="color:#cc9933" href="<?php echo site_url('transaksi') ?>">
-                                <i class="far fa-money-bill-alt"></i>Transaksi Micro
+                            <a style="color:#cc9933" href="<?php echo site_url('mikro') ?>">
+                                <i class="far fa-money-bill-alt"></i>Transaksi Mikro
                                 <span class="bot-line"></span>
                             </a>
                         </li>

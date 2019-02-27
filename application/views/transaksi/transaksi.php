@@ -36,7 +36,7 @@
       <div class="main-content" style="padding-top:30px">
          <div class="section__content section__content--p30">
             <div class="container-fluid">
-                <h2 style="text-align:center">Data Transaksi</h2>
+                <h2 style="text-align:center">Data Transaksi Mulia</h2>
                 <hr class="line-seprate">
                 <br>
                <div class="row">
@@ -49,7 +49,7 @@
                         <div class="table-data__tool-right">
                            <!-- btn add item -->
                             <a href="<?php echo site_url('Transaksi/create/') ?>" class="au-btn au-btn-icon au-btn--green au-btn--small">
-                                <i class="zmdi zmdi-plus"></i>add item
+                                <i class="zmdi zmdi-plus"></i>Tambah Transaksi
                             </a>
                             <!-- end btn add item -->
 
