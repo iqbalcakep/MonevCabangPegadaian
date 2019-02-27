@@ -1,68 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
-   <?php function rupiah($angka)
-      {
-          $hasil_rupiah = number_format($angka,2,',','.');
-          return $hasil_rupiah;
-      } ?>
-   <head>
-      <!-- Required meta tags-->
-      <meta charset="UTF-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-      <meta name="description" content="au theme template">
-      <meta name="author" content="Hau Nguyen">
-      <meta name="keywords" content="au theme template">
-      <!-- Title Page-->
-      <title>Dashboard</title>
-      <!-- Jquery JS-->
-      <style>
-         .judul{
-         vertical-align: center;
-         font-size:3vw;
-         color: #cc9933;
-         padding-bottom:10px;
-         }
-         .cimg{
-         max-width:150px!important;
-         padding:5px;
-         }
-         @media (min-width: 320px) and (max-width: 767px) {
-         .cimg{
-         max-width:100px!important;
-         padding:5px;
-         }
-         .judul{
-         vertical-align: center;
-         font-size:10vw;
-         color: #cc9933;
-         padding-bottom:10px;
-         }
-         }
-      </style>
-   </head>
-   <body>
-      <section class="statistic-chart" style="padding-left:1%;padding-right:1%;">
-         <br>
-         <div class="row" ><!-- row start-->
-            <div class="col-md-12 col-lg-12 judul" align="center">
-               Data Penjualan Mulia
-            </div>
-            <br>
-            <!-- 3 card view -->
-            <div class="col-md-12 col-lg-12">
-               <div class="row">
-                  <div class="col-md-4 ">
-                     <div class="overview-item overview-item--c4" style="margin:0;margin-bottom:10px">
-                        <div class="overview__inner">
-                           <div class="overview-box clearfix">
-                              <div class="icon">
-                                 <i class="fa fa-arrow-circle-right"></i>
-                              </div>
-                              <div class="text" style="padding-bottom: 2%">
-                                 <h2><?php echo $transaksi[0]->total;?> Transaksi</h2>
-                                 <span>Jumlah Transaksi Area Malang</span>
-                              </div>
-                           </div>
+<?php function rupiah($angka)
+    {
+        $hasil_rupiah = number_format($angka,2,',','.');
+        return $hasil_rupiah;
+    } ?>
+<head>
+    <!-- Required meta tags-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="au theme template">
+    <meta name="author" content="Hau Nguyen">
+    <meta name="keywords" content="au theme template">
+    <!-- Title Page-->
+    <title>Dashboard</title>
+     <!-- Jquery JS-->
+     <style>
+
+        .judul{
+            vertical-align: center;
+            font-size:3vw;
+            color: #cc9933;
+            padding-bottom:10px;
+            }
+        .cimg{
+            max-width:150px!important;
+            padding:5px;
+        }
+
+        @media (min-width: 320px) and (max-width: 767px) {
+            .cimg{
+                max-width:100px!important;
+                padding:5px;
+            }
+            .judul{
+                vertical-align: center;
+                font-size:10vw;
+                color: #cc9933;
+                padding-bottom:10px;
+            }
+
+        
+        }
+     </style>
+</head>
+<body>
+    <section class="statistic-chart" style="padding-left:1%;padding-right:1%;">
+        <br>
+        <div class="row">
+                <div class="col-md-12 col-lg-12 judul" align="center">
+                    Data Transaksi Mulia
+                </div>    
+                <br>
+                <div class="col-md-12 col-lg-12">
+                    <div class="row">
+                        <div class="col-md-4 ">
+                            <div class="overview-item overview-item--c4" style="margin:0;margin-bottom:10px">
+                                <div class="overview__inner">
+                                    <div class="overview-box clearfix">
+                                        <div class="icon">
+                                            <i class="fa fa-arrow-circle-right"></i>
+                                        </div>
+                                        <div class="text" style="padding-bottom: 2%">
+                                            <h2><?php echo $transaksi[0]->total;?> Transaksi</h2>
+                                            <span>Jumlah Transaksi Area Malang</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                      </div>
                   </div>
@@ -106,32 +111,33 @@
 
             <!-- chart penjualan -->
             <div class="col-md-12 col-lg-8">
-               <div class="card" style="border-radius: 10px;border-width: 0; box-shadow: 0px 10px 20px 0px rgba(204, 153, 51, 0.5); color: ">
-                  <div class="card-body">
-                     <ul class="nav nav-tabs" id="myTab" role="tablist">
-                        <li class="nav-item" >
-                           <a style="color: #cc9933" class="nav-link active" href="#harian" role="tab" data-toggle="tab">Harian</a>
-                        </li>
-                        <li class="nav-item">
-                           <a style="color: #cc9933" class="nav-link" href="#mingguan" role="tab" data-toggle="tab">Mingguan</a>
-                        </li>
-                        <li class="nav-item">
-                           <a style="color: #cc9933" class="nav-link" href="#bulanan" role="tab" data-toggle="tab">Bulanan</a>
-                        </li>
-                     </ul>
-                     <div class="tab-content pl-3 p-1" id="myTabContent">
-                        <div role="tabpanel" class="tab-pane in active" id="harian">
-                           <p style="color:#cc9933;text-align: center;">Data Penjualan Hari <?php echo date('d M Y') ?></p>
-                           <canvas id="myChart" ></canvas>
-                           <input type="hidden" id="url" value="<?= site_url('Home/getdata');?>">           
-                        </div>
-                        <div role="tabpanel" class="tab-pane" id="mingguan">
-                           <canvas id="myChart2"></canvas>
-                           <input type="hidden" id="url2" value="<?= site_url('Home/getdatamingguan');?>">
-                        </div>
-                        <div role="tabpanel" class="tab-pane " id="bulanan">
-                           <canvas id="myChart3"></canvas>
-                           <input type="hidden" id="url3" value="<?= site_url('Home/getdatabulanan');?>">
+                <div class="card" style="border-radius: 10px;border-width: 0; box-shadow: 0px 10px 20px 0px rgba(204, 153, 51, 0.5); color: ">
+                    <div class="card-body">
+                        <ul class="nav nav-tabs" id="myTab" role="tablist">
+                            <li class="nav-item" >
+                                <a style="color: #cc9933" class="nav-link active" href="#harian" role="tab" data-toggle="tab">Harian</a>
+                            </li>
+                            <li class="nav-item">
+                                <a style="color: #cc9933" class="nav-link" href="#mingguan" role="tab" data-toggle="tab">Mingguan</a>
+                            </li>
+                            <li class="nav-item">
+                                <a style="color: #cc9933" class="nav-link" href="#bulanan" role="tab" data-toggle="tab">Bulanan</a>
+                            </li>
+                        </ul>
+                        <div class="tab-content pl-3 p-1" id="myTabContent">
+                            <div role="tabpanel" class="tab-pane in active" id="harian">
+                                <p style="color:#cc9933;text-align: center;">Data Transaksi Hari <?php echo date('d M Y') ?></p>
+                                <canvas id="myChart" ></canvas>
+                                <input type="hidden" id="url" value="<?= site_url('Home/getdata');?>">           
+                            </div>
+                            <div role="tabpanel" class="tab-pane" id="mingguan">
+                                <canvas id="myChart2"></canvas>
+                                <input type="hidden" id="url2" value="<?= site_url('Home/getdatamingguan');?>">
+                            </div>
+                            <div role="tabpanel" class="tab-pane " id="bulanan">
+                                <canvas id="myChart3"></canvas>
+                                <input type="hidden" id="url3" value="<?= site_url('Home/getdatabulanan');?>">
+                            </div>
                         </div>
                      </div>
                   </div>
