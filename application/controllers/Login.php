@@ -40,7 +40,8 @@ class Login extends CI_Controller {
 					'id_user' => $row['id_user'],
 					'username' => $row['username'],
 					'nama' => $row['nama'],
-					'akses' => $row['akses']
+					'akses' => $row['akses'],
+					'id_cabang' => $row['id_cabang']
 				);
 				$this->session->set_userdata('sesslogin',$sess_arr);
 			}
