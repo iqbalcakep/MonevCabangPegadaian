@@ -69,7 +69,7 @@
                                         <a href="<?php echo site_url('transaksi') ?>">Mulia</a>
                                     </li>
                                     <li>
-                                        <a href="<?php site_url('mikro') ?>">Mikro</a>
+                                        <a href="<?php echo site_url('mikro') ?>">Mikro</a>
                                     </li>
                                 </ul>
                             </li>

@@ -46,6 +46,11 @@
                     </div>
                     <hr>
                     <?php echo form_open('Transaksi/update/'.$this->uri->segment(3)); ?>
+                    <?php echo validation_errors(); ?>
+                    <div class="form-group">
+                     <label for="cc-payment" maxlength="16" minlength="16" class="control-label mb-1" style="color:black;">No. Kredit</label>
+                     <input required value="<?php echo $transaksi[0]->rekening ?>" id="rekening" name="rekening" type="text" class="form-control" aria-required="true" aria-invalid="false" readonly>
+                  </div>
                   <div class="form-group">
                      <label for="cc-payment" class="control-label mb-1" style="color:black;">Nama Nasabah</label>
                      <input id="nama_nasabah" name="nama_nasabah" type="text" class="form-control" aria-required="true" aria-invalid="false" value="<?php echo $transaksi[0]->nama_nasabah ?>">

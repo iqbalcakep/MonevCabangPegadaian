@@ -79,14 +79,14 @@
                            <thead>
                               <tr class="text-center">
                                  <th>Id <br>Transaksi</th>
+                                 <th>No <br>Rekening</th>
                                  <th>Nama <br>Nasabah</th>
-                                 <th>Tgl <br>Closing</th>
-                                 <th>Jumlah <br>Keping</th>
-                                 <th>Jumlah <br>Gram</th>
-                                 <th>Total</th>
-                                 <th>Nilai <br> Pembiayaan</th>
+                                 <th>Tgl <br>Transaksi</th>
+                                 <th>Uang <br>Pinjaman</th>
+                                 <th>Nama <br>Produk</th>
                                  <th>Jangka <br>Waktu</th>
                                  <th>Nama <br>Cabang</th>
+                                 <th>Jenis <br> Pinjaman</th>
                                  <th>Action</th>
                               </tr>
                            </thead>
@@ -94,6 +94,7 @@
                               <?php foreach ($mikro_list as $key) { ?>
                               <tr>
                                  <td><?php echo $key->id_mikro ?></td>
+                                 <td><?php echo $key->rekening ?></td>
                                  <td><?php echo $key->nama_nasabah ?></td>
                                  <td><?php echo $key->tanggal_transaksi ?></td>
                                  <td><?php echo $key->uang_pinjaman ?></td>

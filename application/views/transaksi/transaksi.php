@@ -95,6 +95,7 @@
                            <thead>
                               <tr class="text-center">
                                  <th>Id <br>Transaksi</th>
+                                 <th>No <br>Rekening</th>
                                  <th>Nama <br>Nasabah</th>
                                  <th>Tgl <br>Closing</th>
                                  <th>Jumlah <br>Keping</th>
@@ -110,6 +111,7 @@
                               <?php foreach ($transaksi_list as $key) { ?>
                               <tr>
                                  <td><?php echo $key->id_transaksi ?></td>
+                                 <td><?php echo $key->rekening ?></td>
                                  <td><?php echo $key->nama_nasabah ?></td>
                                  <td><?php echo $key->tanggal_closing ?></td>
                                  <td><?php echo $key->jumlah_keping ?></td>
