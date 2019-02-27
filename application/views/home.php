@@ -10,14 +10,26 @@
     <!-- Title Page-->
     <title>Dashboard</title>
      <!-- Jquery JS-->
+     <style>
+
+
+        .cimg{
+            max-width:150px!important;
+            padding:5px;
+        }
+
+        @media (min-width: 320px) and (max-width: 767px) {
+            .cimg{
+                max-width:100px!important;
+                padding:5px;
+            }
+
+        
+        }
+     </style>
 </head>
 <body>
     <section class="statistic-chart" style="padding-left:1%;padding-right:1%;">
-        <div class="col-md-12">
-            <h1 class="title-4" style=" text-align:center;color: #cc9933">Data Penjualan Mulia
-            </h1>
-            <hr class="line-seprate">
-        </div>
         <br>
         <div class="row">
             <div class="col-md-12 col-lg-8">
@@ -53,82 +65,141 @@
                 </div>
             </div>
             <div class="col-md-12 col-lg-4">
-                <div class="row">
-                    <div class="col-md-12 ">
-                        <div class="overview-item overview-item--c4" style="margin:0;margin-bottom:10px">
-                            <div class="overview__inner">
-                                <div class="overview-box clearfix">
-                                    <div class="icon">
-                                        <i class="fa fa-arrow-circle-right"></i>
-                                    </div>
-                                    <div class="text" style="padding-bottom: 2%">
-                                        <h2><?php echo $transaksi[0]->total;?></h2>
-                                        <span>Jumlah Transaksi Area Malang</span>
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">    
+                    <div class="top-campaign" style="border-radius: 10px;border-width: 0; box-shadow: 0px 10px 20px 0px rgba(204, 153, 51, 0.5);padding: 5%">
+                        <h3 class="title-3 m-b-30">Peringkat Cabang Tgl <?php echo Date('d M Y'); ?></h3>
+                        <div class="table-responsive">
+                            <table class="table" style="color: #333333">
+                                <thead>
+                                    <tr>
+                                        <td>No</td>
+                                        <td>Nama Cabang</td>
+                                        <td>Transaksi</td>
+                                        <td>Pembiayaan</td>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <?php $i=1; foreach ($rankCabang as $key){ ?>
+                                    <tr>
+                                        <td><?php echo $i; ?></td>
+                                        <td><?php echo $key->nama_cabang ?></td>
+                                        <td><?php echo $key->transaksi?></td>
+                                        <td><?php echo $key->biaya ?></td>
+                                    </tr>
+                                    <?php $i++;} ?>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12 col-lg-12">
+                    <div class="top-campaign" style="border-radius: 10px;border-width: 0; box-shadow: 0px 10px 20px 0px rgba(204, 153, 51, 0.5);padding: 5%">
+                    <h3 class="title-3 m-b-30">Peringkat Unit Tgl <?php echo Date('d M Y'); ?></h3>
+                    <div class="table-responsive">
+                        <table class="table" style="color: #333333">
+                            <thead>
+                                <tr>
+                                    <td>No</td>
+                                    <td>Nama Cabang</td>
+                                    <td>Transaksi</td>
+                                    <td>Pembiayaan</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <?php $i=1; foreach ($rankUnit as $key){ ?>
+                                <tr>
+                                    <td><?php echo $i; ?></td>
+                                    <td><?php echo $key->nama ?></td>
+                                    <td><?php echo $key->transaksi?></td>
+                                    <td><?php echo $key->biaya ?></td>
+                                </tr>
+                                <?php $i++;} ?>
+                            </tbody>
+                        </table>
+                    </div>
+                    </div>
+                </div>                  
+            </div>
+            </div>
+            <div class="row">    
+                <div class="col-md-12 col-lg-8">
+                    <div class="row">
+                        <div class="col-md-4 ">
+                            <div class="overview-item overview-item--c4" style="margin:0;margin-bottom:10px">
+                                <div class="overview__inner">
+                                    <div class="overview-box clearfix">
+                                        <div class="icon">
+                                            <i class="fa fa-arrow-circle-right"></i>
+                                        </div>
+                                        <div class="text" style="padding-bottom: 2%">
+                                            <h2><?php echo $transaksi[0]->total;?> Transaksi</h2>
+                                            <span>Jumlah Transaksi Area Malang</span>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-md-12 ">
-                        <div class="overview-item overview-item--c2" style="margin:0;margin-bottom:10px">
-                            <div class="overview__inner">
-                                <div class="overview-box clearfix">
-                                    <div class="icon">
-                                        <i class="zmdi zmdi-money"></i>
-                                    </div>
-                                    <div class="text" style="padding-bottom: 2%">
-                                        <?php function rupiah($angka)
-                                        {
-                                        $hasil_rupiah = "Rp " . number_format($angka,2,',','.');
-                                        return $hasil_rupiah;} ?>
-                                        <h2><?php echo rupiah($biaya[0]->total);?></h2>
-                                        <span>Pembiayaan Area Malang</span>
+                        <div class="col-md-4 ">
+                            <div class="overview-item overview-item--c2" style="margin:0;margin-bottom:10px">
+                                <div class="overview__inner">
+                                    <div class="overview-box clearfix">
+                                        <div class="icon">
+                                            <i class="zmdi zmdi-money-box"></i>
+                                        </div>
+                                        <div class="text" style="padding-bottom: 2%">
+                                            <?php function rupiah($angka)
+                                            {
+                                            $hasil_rupiah = "Rp " . number_format($angka,2,',','.');
+                                            return $hasil_rupiah;} ?>
+                                            <h2><?php echo rupiah($biaya[0]->total);?></h2>
+                                            <span>Pembiayaan Area Malang</span>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-md-12">
-                        <div class="overview-item overview-item--c5" style="margin:0;margin-bottom:10px">
-                            <div class="overview__inner">
-                                <div class="overview-box clearfix">
-                                    <div class="icon">
-                                        <i class="fa fa-th-large"></i>
-                                    </div>
-                                    <div style="padding-bottom: 2%" class="text">
-                                        <h2><?php echo $emas[0]->total; ?>&nbsp;gram</h2>
-                                        <span>Pembiayaan Emas Area Malang</span>
+                        <div class="col-md-4">
+                            <div class="overview-item overview-item--c5" style="margin:0;margin-bottom:10px">
+                                <div class="overview__inner">
+                                    <div class="overview-box clearfix">
+                                        <div class="icon">
+                                            <i class="fa fa-th-large"></i>
+                                        </div>
+                                        <div style="padding-bottom: 2%" class="text">
+                                            <h2><?php echo $emas[0]->total; ?> Gram</h2>
+                                            <span>Pembiayaan Emas Area Malang</span>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
+                
             </div>
-        </div>
     </section>
     <!-- END STATISTIC CHART-->
     <!-- COPYRIGHT-->
     <section class="p-t-70 p-b-10">
         <div class="container">
             <div class="row">
-                <div class="col-md-2" align="center" style="padding:5px;">
-                    <img style="max-width: 200px" src="<?php echo base_url(''); ?>asset/images/icon/logologo.png" alt="CoolAdmin">
+                <div class="col-lg-2 col-md-6 col-sm-2 col-xs-2" align="center">
+                    <img class="cimg" src="<?php echo base_url(''); ?>asset/images/icon/logologo.png" alt="CoolAdmin">
                 </div>
-                <div class="col-md-2" align="center">
-                    <img style="max-width: 200px" src="<?php echo base_url(''); ?>asset/images/icon/pegadaiansyariah.png" alt="CoolAdmin">
-                </div>    
-                <div class="col-md-2" align="center">
-                    <img style="max-width: 200px" src="<?php echo base_url(''); ?>asset/images/icon/bumn.png" alt="CoolAdmin">
+                <div class="col-lg-2 col-md-6 col-sm-2 col-xs-2" align="center">
+                    <img class="cimg" src="<?php echo base_url(''); ?>asset/images/icon/pegadaiansyariah.png" alt="CoolAdmin">
                 </div>
-                <div class="col-md-2" align="center">
-                    <img style="max-width: 150px" src="<?php echo base_url(''); ?>asset/images/icon/ojk.png" alt="CoolAdmin">
+                <div class="col-lg-2 col-md-6 col-sm-2 col-xs-2" align="center">
+                    <img class="cimg" src="<?php echo base_url(''); ?>asset/images/icon/bumn.png" alt="CoolAdmin">
                 </div>
-                <div class="col-md-2" align="center">
-                    <img style="max-width: 150px" src="<?php echo base_url(''); ?>asset/images/icon/thegade.png" alt="CoolAdmin">
+                <div class="col-lg-2 col-md-6 col-sm-2 col-xs-2" align="center">
+                    <img class="cimg" src="<?php echo base_url(''); ?>asset/images/icon/ojk.png" alt="CoolAdmin">
                 </div>
-                <div class="col-md-2" align="center">
-                    <img style="max-width: 150px" src="<?php echo base_url(''); ?>asset/images/icon/galeri24.png" alt="CoolAdmin">
+                <div class="col-lg-2 col-md-6 col-sm-2 col-xs-2" align="center">
+                    <img class="cimg" src="<?php echo base_url(''); ?>asset/images/icon/thegade.png" alt="CoolAdmin">
+                </div>
+                <div class="col-lg-2 col-md-6 col-sm-2 col-xs-2" align="center">
+                    <img class="cimg" src="<?php echo base_url(''); ?>asset/images/icon/galeri24.png" alt="CoolAdmin">
                 </div>
             </div>
         </div>
@@ -138,6 +209,9 @@
         </div>
     </section>
     <!-- END COPYRIGHT-->
+
+
+
 <script src="<?php echo base_url(''); ?>/asset/vendor/jquery-3.2.1.min.js"></script>
 <!-- Bootstrap JS-->
 <script src="<?php echo base_url(''); ?>/asset/vendor/bootstrap-4.1/popper.min.js"></script>

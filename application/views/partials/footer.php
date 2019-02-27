@@ -24,22 +24,22 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-2 col-md-6 col-sm-2 col-xs-2" align="center">
-                <img class="cimg" src="<?php echo base_url(''); ?>asset/images/icon/bumn.png" alt="CoolAdmin">
-            </div>
-            <div class="col-lg-2 col-md-6 col-sm-2 col-xs-2" align="center">
-                <img class="cimg" src="<?php echo base_url(''); ?>asset/images/icon/ojk.png" alt="CoolAdmin">
-            </div>
-            <div class="col-lg-2 col-md-6 col-sm-2 col-xs-2" align="center">
                 <img class="cimg" src="<?php echo base_url(''); ?>asset/images/icon/logologo.png" alt="CoolAdmin">
             </div>
             <div class="col-lg-2 col-md-6 col-sm-2 col-xs-2" align="center">
                 <img class="cimg" src="<?php echo base_url(''); ?>asset/images/icon/pegadaiansyariah.png" alt="CoolAdmin">
             </div>
             <div class="col-lg-2 col-md-6 col-sm-2 col-xs-2" align="center">
-                <img class="cimg" src="<?php echo base_url(''); ?>asset/images/icon/galeri24.png" alt="CoolAdmin">
+                <img class="cimg" src="<?php echo base_url(''); ?>asset/images/icon/bumn.png" alt="CoolAdmin">
+            </div>
+            <div class="col-lg-2 col-md-6 col-sm-2 col-xs-2" align="center">
+                <img class="cimg" src="<?php echo base_url(''); ?>asset/images/icon/ojk.png" alt="CoolAdmin">
             </div>
             <div class="col-lg-2 col-md-6 col-sm-2 col-xs-2" align="center">
                 <img class="cimg" src="<?php echo base_url(''); ?>asset/images/icon/thegade.png" alt="CoolAdmin">
+            </div>
+            <div class="col-lg-2 col-md-6 col-sm-2 col-xs-2" align="center">
+                <img class="cimg" src="<?php echo base_url(''); ?>asset/images/icon/galeri24.png" alt="CoolAdmin">
             </div>
         </div>
     </div>
