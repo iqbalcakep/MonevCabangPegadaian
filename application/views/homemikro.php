@@ -83,7 +83,7 @@
                                         </div>
                                         <div class="text" style="padding-bottom: 2%">
                                             <h2><?php echo "Rp ". rupiah($biaya[0]->total);?></h2>
-                                            <span>Pembiayaan Area Malang</span>
+                                            <span>Peminjaman Area Malang</span>
                                         </div>
                                     </div>
                                 </div>
@@ -138,7 +138,7 @@
                                         <td>No</td>
                                         <td>Nama Cabang</td>
                                         <td>Transaksi</td>
-                                        <td>Pembiayaan</td>
+                                        <td>Peminjaman</td>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -165,7 +165,7 @@
                                     <td>No</td>
                                     <td>Nama Cabang</td>
                                     <td>Transaksi</td>
-                                    <td>Pembiayaan</td>
+                                    <td>Peminjaman</td>
                                 </tr>
                             </thead>
                             <tbody>
