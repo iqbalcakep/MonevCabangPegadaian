@@ -75,7 +75,7 @@
                         </div>
                      <!-- tabel -->
                      <div class="table-responsive table--no-card m-t-10">
-                        <table class="table table-borderless table-striped table-earning">
+                        <table class="table table-borderless table-striped table-earning" id="example">
                            <thead>
                               <tr class="text-center">
                                  <th>Id <br>Transaksi</th>
@@ -127,6 +127,7 @@
                         </center>
                      <!-- </div> -->
                      <!-- button detail end -->
+                     
                   </div>
                </div>
             </div>
