@@ -123,6 +123,7 @@
                         <div class="input-group-addon">Rp.
                         </div>
                         <input type="text" class="form-control" name="nilai_pembiayaan" id="currency-field" pattern="^\Rp\d{1,3}(,\d{3})*(\.\d+)?$" value="" data-type="currency" required>
+                        <div class="input-group-addon">.00</div>
                      </div>
                   </div>
                   <div class="form-group">

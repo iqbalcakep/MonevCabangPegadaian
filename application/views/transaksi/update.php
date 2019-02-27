@@ -169,7 +169,8 @@
                      <div class="input-group">
                         <div class="input-group-addon">Rp.
                         </div>
-                        <input type="number" id="nilai_pembiayaan" name="nilai_pembiayaan" class="form-control" value="<?php echo $transaksi[0]->nilai_pembiayaan ?>">
+                        <input type="text" class="form-control" name="nilai_pembiayaan" id="currency-field" pattern="^\Rp\d{1,3}(,\d{3})*(\.\d+)?$" value="<?php echo $transaksi[0]->nilai_pembiayaan ?>" data-type="currency" required>
+                        
                         <div class="input-group-addon">.00</div>
                      </div>
                   </div>
@@ -211,6 +212,7 @@
         </div>
    </div>
 </div>
+<script src="<?php echo base_url(''); ?>/asset/money.js"></script>
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
