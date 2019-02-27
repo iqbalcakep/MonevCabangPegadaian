@@ -3165,6 +3165,11 @@ section {
     background-image: -webkit-linear-gradient(90deg, #45b649 0%, #dce35b 100%);
     background-image: -ms-linear-gradient(90deg, #45b649 0%, #dce35b 100%);
 }
+.overview-item--c5 {
+    background-image: -moz-linear-gradient(90deg, #705400 0%,  #cc9933 100%);
+    background-image: -webkit-linear-gradient(90deg, #705400 0%,  #cc9933 100%);
+    background-image: -ms-linear-gradient(90deg, #705400 0%,  #cc9933 100%);
+}
 
 .overview-box .icon {
     display: inline-block;

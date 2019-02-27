@@ -10,15 +10,14 @@
         // Split timestamp and data into separate arrays
         var labels = [], dm=[], dp=[];
             results.forEach(function(packet) {
-            labels.push(packet.nama);
+            labels.push(packet.inisial);
             dm.push(packet.gram);
             dp.push(packet.biaya);
         });
 
         var densityCanvas = document.getElementById("myChart");
 
-        Chart.defaults.global.defaultFontFamily = "Lato";
-        Chart.defaults.global.defaultFontSize = 18;
+        Chart.defaults.global.defaultFontSize = 10;
 
         var dataBiaya = {
             label: 'Harga Pembiayaan (Rupiah)',
