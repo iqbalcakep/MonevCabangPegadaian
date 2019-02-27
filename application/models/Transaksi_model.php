@@ -74,18 +74,18 @@ class Transaksi_model extends CI_Model {
 
 	public function getJumTransaksi()
 	{
-		$query = $this->db->query("SELECT COUNT(id_transaksi) as total FROM transaksi;");
+		$query = $this->db->query("SELECT COUNT(id_transaksi) as total FROM transaksi WHERE `tanggal_closing` = DATE_FORMAT(NOW(),'%Y-%m-%d');");
 		return $query->result();
 	}
 	public function getJumPembiayaan($value='')
 	{
-		$query = $this->db->query("SELECT SUM(nilai_pembiayaan) as total FROM transaksi;");
+		$query = $this->db->query("SELECT SUM(nilai_pembiayaan) as total FROM transaksi WHERE `tanggal_closing` = DATE_FORMAT(NOW(),'%Y-%m-%d');");
 		return $query->result();
 	}
 	
 	public function getJumEmas($value='')
 	{
-		$query = $this->db->query("SELECT SUM(jumlah_gram) AS total FROM transaksi;");
+		$query = $this->db->query("SELECT SUM(jumlah_gram) AS total FROM transaksi WHERE `tanggal_closing` = DATE_FORMAT(NOW(),'%Y-%m-%d');");
 		return $query->result();
 	}
 
@@ -121,6 +121,18 @@ class Transaksi_model extends CI_Model {
 
 	public function exportmuliabulanan(){
 		$q = $this->db->query("select c.nama,t.nama_nasabah, t.jangka_waktu, t.tanggal_closing, t.total as gram, t.nilai_pembiayaan as biaya from transaksi as t inner join user as c on t.id_user = c.id_user where MONTH(tanggal_closing) = MONTH(CURRENT_DATE())")->result_array();
+		return $q;
+	}
+
+	public function rankCabang(){
+		$q = $this->db->query("SELECT cabang.nama AS nama_cabang, COUNT(user.nama) AS transaksi, SUM(transaksi.nilai_pembiayaan) AS biaya FROM transaksi JOIN `user` ON user.`id_user`=transaksi.`id_user` JOIN cabang ON cabang.`id_cabang`=user.`id_cabang` GROUP BY user.id_cabang ORDER BY biaya DESC")->result();
+		return $q;
+	}
+	
+	
+
+	public function rankUnit($id){
+		$q = $this->db->query("SELECT user.`id_cabang`,user.nama, SUM(transaksi.nilai_pembiayaan) AS biaya, COUNT(user.id_cabang) AS transaksi FROM transaksi JOIN `user` ON user.`id_user`=transaksi.`id_user` WHERE user.`id_cabang`='6' GROUP BY transaksi.id_user ORDER BY biaya DESC")->result();
 		return $q;
 	}
 }

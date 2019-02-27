@@ -31,10 +31,13 @@ class Home extends CI_Controller {
 	}
 	public function index()
 	{
+		$sessData = $this->session->userdata('sesslogin');
 		$this->load->model('Transaksi_model');
 		$data['emas']=$this->Transaksi_model->getJumEmas();
 		$data['transaksi']=$this->Transaksi_model->getJumTransaksi();
 		$data['biaya']=$this->Transaksi_model->getJumPembiayaan();
+		$data['rankCabang']=$this->Transaksi_model->rankCabang();
+		$data['rankUnit']=$this->Transaksi_model->rankUnit($sessData['id_cabang']);
 		$this->load->view('partials/header');
 		$this->load->view('home',$data);
 		// $this->load->view('user/dataCabang');
