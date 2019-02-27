@@ -112,23 +112,25 @@
     <section class="p-t-70 p-b-10">
         <div class="container">
             <div class="row">
+            <div class="col-md-2" align="center" style="padding:5px;">
+                    <img style="max-width: 200px" src="<?php echo base_url(''); ?>asset/images/icon/logologo.png" alt="CoolAdmin">
+                </div>
                 <div class="col-md-2" align="center">
-                <img style="max-width: 200px" src="<?php echo base_url(''); ?>asset/images/icon/bumn.png" alt="CoolAdmin">
-            </div>
+                    <img style="max-width: 200px" src="<?php echo base_url(''); ?>asset/images/icon/pegadaiansyariah.png" alt="CoolAdmin">
+                </div>    
             <div class="col-md-2" align="center">
-                <img style="max-width: 150px" src="<?php echo base_url(''); ?>asset/images/icon/ojk.png" alt="CoolAdmin">
-            </div>
-            <div class="col-md-2" align="center">
-                <img style="max-width: 200px" src="<?php echo base_url(''); ?>asset/images/icon/logologo.png" alt="CoolAdmin">
-            </div>
-            <div class="col-md-2" align="center">
-                <img style="max-width: 200px" src="<?php echo base_url(''); ?>asset/images/icon/pegadaiansyariah.png" alt="CoolAdmin">
-            </div>
-            <div class="col-md-2" align="center">
-                <img style="max-width: 150px" src="<?php echo base_url(''); ?>asset/images/icon/galeri24.png" alt="CoolAdmin">
-            </div>
-            <div class="col-md-2" align="center">
-                <img style="max-width: 150px" src="<?php echo base_url(''); ?>asset/images/icon/thegade.png" alt="CoolAdmin">
+                    <img style="max-width: 200px" src="<?php echo base_url(''); ?>asset/images/icon/bumn.png" alt="CoolAdmin">
+                </div>
+                <div class="col-md-2" align="center">
+                    <img style="max-width: 150px" src="<?php echo base_url(''); ?>asset/images/icon/ojk.png" alt="CoolAdmin">
+                </div>
+                <div class="col-md-2" align="center">
+                    <img style="max-width: 150px" src="<?php echo base_url(''); ?>asset/images/icon/thegade.png" alt="CoolAdmin">
+                </div>
+                <div class="col-md-2" align="center">
+                    <img style="max-width: 150px" src="<?php echo base_url(''); ?>asset/images/icon/galeri24.png" alt="CoolAdmin">
+                </div>
+                
             </div>
         </div>
         <hr>
