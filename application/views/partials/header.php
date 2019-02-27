@@ -49,17 +49,31 @@
                         <ul class="list-unstyled" style="float:left;padding-left:25%;">
                             <li>
                                 <a style="color:#cc9933" href="<?php echo site_url('') ?>">
-                                    <i class="fas fa-tachometer-alt"></i>Home
+                                    <i class="fas fa-tachometer-alt"></i>Penjualan Mulia
                                     <span class="bot-line"></span>
                                 </a>
                             </li>
                             <li>
-                            
-                                <a style="color:#cc9933" href="<?php echo site_url('transaksi') ?>">
-                                    <i class="far fa-money-bill-alt"></i>Transaksi
+                                <a style="color:#cc9933" href="<?php echo site_url('') ?>">
+                                    <i class="fas fa-tachometer-alt"></i>Penjualan Micro
                                     <span class="bot-line"></span>
                                 </a>
                             </li>
+                            <li class="has-sub">
+                                <a href="#" style="color: #cc9933">
+                                    <i class="fas fa-money-bill-alt"></i>Transaksi
+                                    <span class="bot-line"></span>
+                                </a>
+                                <ul class="header3-sub-list list-unstyled">
+                                    <li>
+                                        <a href="<?php echo site_url('transaksi') ?>">Mulia</a>
+                                    </li>
+                                    <li>
+                                        <a href="<?php site_url('mikro') ?>">Mikro</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            
                             <li>
                                 <a style="color:#cc9933" href="<?php echo site_url('user') ?>">
                                     <i class="far fa-building"></i>Cabang
@@ -129,12 +143,26 @@
                 <div class="container-fluid">
                     <ul class="navbar-mobile__list list-unstyled">
                         <li>
-                            <a class="js-arrow" href="#">
-                                <i class="fas fa-tachometer-alt"></i>Home</a>
+                            <a style="color:#cc9933" href="<?php echo site_url('')?>">
+                                    <i class="fas fa-tachometer-alt"></i>Penjualan Mulia
+                                </a>
+                            </li>
+                        </li>
+                        <li>
+                            <a style="color:#cc9933" href="<?php echo site_url('')?>">
+                                    <i class="fas fa-tachometer-alt"></i>Penjualan Micro
+                                </a>
+                            </li>
                         </li>
                         <li>
                             <a style="color:#cc9933" href="<?php echo site_url('transaksi') ?>">
-                                <i class="far fa-money-bill-alt"></i>Transaksi
+                                <i class="far fa-money-bill-alt"></i>Transaksi Mulia
+                                <span class="bot-line"></span>
+                            </a>
+                        </li>
+                        <li>
+                            <a style="color:#cc9933" href="<?php echo site_url('transaksi') ?>">
+                                <i class="far fa-money-bill-alt"></i>Transaksi Micro
                                 <span class="bot-line"></span>
                             </a>
                         </li>

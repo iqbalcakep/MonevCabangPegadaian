@@ -3,6 +3,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Transaksi_model extends CI_Model {
 
+	public function jumTransaksi()
+	{
+		
+	}
 	public function create()
 	{
 		$total = $this->input->post('jumlah_gram') * $this->input->post('jumlah_keping');
@@ -70,7 +74,7 @@ class Transaksi_model extends CI_Model {
 
 	public function ambildata(){
 		$skrng = date("Y-m-d");
-		$q = $this->db->query("select d.nama, SUM(t.total) as gram, SUM(t.nilai_pembiayaan) as biaya from transaksi as t inner join user as c on t.id_user = c.id_user join cabang as d on c.id_cabang = d.id_cabang  where tanggal_closing = '$skrng' group by c.id_cabang")->result_array();
+		$q = $this->db->query("select d.inisial, SUM(t.total) as gram, SUM(t.nilai_pembiayaan) as biaya from transaksi as t inner join user as c on t.id_user = c.id_user join cabang as d on c.id_cabang = d.id_cabang  where tanggal_closing = '$skrng' group by c.id_cabang")->result_array();
 		
 		return $q;
 	}
