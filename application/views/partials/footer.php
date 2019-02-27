@@ -61,6 +61,14 @@
     <script src="<?php echo base_url(''); ?>/asset/js/main.js"></script>
     <script src="<?php echo base_url(''); ?>/asset/data.js"></script>
 
+    <script src="<?php echo base_url('') ?>asset/datatables.min.js"></script>
+                     <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.js"></script>
+                     <script type="text/javascript">
+                           $(document).ready(function(){
+                              $('#example').DataTable();
+                           });
+                     </script>
+
     
 </body>
 </html>

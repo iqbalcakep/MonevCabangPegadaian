@@ -20,7 +20,8 @@
                         <thead>
                             <tr>
                                 <th>Nama Cabang</th>
-                                <td><?php echo " ".$data['nama'];?></td>
+                                <td><?php 
+                                foreach ($cabang as $key) { echo $key->nama; } ?></td>
                             </tr>
                             <tr>
                                 <th>Username</th>

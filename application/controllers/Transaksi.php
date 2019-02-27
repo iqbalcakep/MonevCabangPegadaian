@@ -23,16 +23,22 @@ class Transaksi extends CI_Controller {
 		$this->load->view('transaksi/transaksi', $data);
 		$this->load->view('partials/footer');
 	}
-
 	
 	public function create(){
+		$session_data = $this->session->userdata('sesslogin');
+        $data['id_user'] = $session_data['id_user'];
+        $data['username'] = $session_data['username'];
+		$data['nama'] = $session_data['nama'];
+		$cabang = $session_data['id_cabang'];
+		$this->load->model('Transaksi_model');
+		$data["cabang"] = $this->Transaksi_model->selectCabang($cabang);
 		$this->load->helper('url','form');	
 		$this->load->library('form_validation');
 		$this->form_validation->set_rules('nama_nasabah', 'Nama Nasabah', 'trim|required');
 		$this->form_validation->set_rules('jangka_waktu', 'Jangka Waktu', 'trim|greater_than[2]|less_than[61]');
 		if($this->form_validation->run()==FALSE){	
 			$this->load->view('partials/header');
-			$this->load->view('transaksi/create');
+			$this->load->view('transaksi/create', $data);
 			$this->load->view('partials/footer');		
 		}else{
 			$this->load->model('Transaksi_model');
@@ -52,6 +58,13 @@ class Transaksi extends CI_Controller {
 
 	public function update($id_transaksi)
 	{
+		$session_data = $this->session->userdata('sesslogin');
+        $data['id_user'] = $session_data['id_user'];
+        $data['username'] = $session_data['username'];
+		$data['nama'] = $session_data['nama'];
+		$cabang = $session_data['id_cabang'];
+		$this->load->model('Transaksi_model');
+		$data["cabang"] = $this->Transaksi_model->selectCabang($cabang);
 		$this->load->helper('url','form');	
 		$this->load->library('form_validation');
 		$this->form_validation->set_rules('nama_nasabah', 'Nama Nasabah', 'trim|required');
