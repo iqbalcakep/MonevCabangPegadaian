@@ -50,13 +50,13 @@
                         <ul class="list-unstyled" style="float:left;padding-left:25%;">
                             <li>
                                 <a style="color:#cc9933" href="<?php echo site_url('') ?>">
-                                    <i class="fas fa-tachometer-alt"></i>Penjualan Mulia
+                                    <i class="fas fa-tachometer-alt"></i>Rekap Mulia
                                     <span class="bot-line"></span>
                                 </a>
                             </li>
                             <li>
                                 <a style="color:#cc9933" href="<?php echo site_url('Homemikro') ?>">
-                                    <i class="fas fa-tachometer-alt"></i>Penjualan Mikro
+                                    <i class="fas fa-tachometer-alt"></i>Rekap Mikro
                                     <span class="bot-line"></span>
                                 </a>
                             </li>
@@ -129,7 +129,7 @@
             <div class="header-mobile__bar">
                 <div class="container-fluid">
                     <div class="header-mobile-inner">
-                        <a class="logo" href="index.html">
+                        <a class="logo" href="<?php echo site_url('') ?>">
                         <img src="<?php echo base_url(''); ?>asset/images/icon/logold.png" style="max-height:50px;" alt="CoolAdmin" />
                         </a>
                         <button class="hamburger hamburger--slider" type="button">
@@ -145,13 +145,18 @@
                     <ul class="navbar-mobile__list list-unstyled">
                         <li>
                             <a style="color:#cc9933" href="<?php echo site_url('')?>">
-                                    <i class="fas fa-tachometer-alt"></i>Penjualan Mulia
+                                    <i class="fas fa-tachometer-alt"></i>Rekap Mulia
                                 </a>
                             </li>
                         </li>
                         <li>
+<<<<<<< HEAD
                             <a style="color:#cc9933" href="<?php echo site_url('Homemikro')?>">
                                     <i class="fas fa-tachometer-alt"></i>Penjualan Mikro
+=======
+                            <a style="color:#cc9933" href="<?php echo site_url('Homemikro') ?>">
+                                    <i class="fas fa-tachometer-alt"></i>Rekap Mikro
+>>>>>>> eefa210b45f22ee094cebf5355a05c50f850d6ae
                                 </a>
                             </li>
                         </li>
