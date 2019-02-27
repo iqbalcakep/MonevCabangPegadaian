@@ -65,7 +65,7 @@
                     
                     <div class="form-group">
                      <label for="cc-payment" class="control-label mb-1" style="color:black;">No. Kredit</label>
-                     <input id="rekening" maxlength="16" minlength="16" name="rekening" type="text" class="form-control" required>
+                     <input id="rekening" maxlength="16" minlength="16" name="rekening" type="number" class="form-control" required>
                   </div>
                   <div class="form-group">
                      <label for="cc-payment" class="control-label mb-1" style="color:black;">Nama Nasabah</label>
