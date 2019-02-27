@@ -1,5 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
+  <?php function rupiah($angka)
+    {
+        $hasil_rupiah = number_format($angka,2,',','.');
+        return $hasil_rupiah;
+    } ?>
    <body class="animsition" style="color:#666">
    <script type="text/javascript">
         function timedMsg()
@@ -117,7 +122,7 @@
                                  <td><?php echo $key->jumlah_keping ?></td>
                                  <td><?php echo $key->jumlah_gram ?></td>
                                  <td><?php echo $key->total ?></td>
-                                 <td><?php echo $key->nilai_pembiayaan ?></td>
+                                 <td><?php echo rupiah($key->nilai_pembiayaan) ?></td>
                                  <td><?php echo $key->jangka_waktu ?></td>
                                  <td><?php echo " ".$data['nama'] ; ?></td>
                                  <td>
