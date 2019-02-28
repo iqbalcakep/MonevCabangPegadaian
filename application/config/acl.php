@@ -63,16 +63,11 @@ $acl = array(
 	'Home' => array(
 		'admin' => true,
 		'user' => true,
-<<<<<<< HEAD
 		'cabang' => true
-=======
-		'cabang' => true,
->>>>>>> 25fd0accc32e1026eb191c794c952d7733fc39be
 	),
 	'Homemikro' => array(
 		'admin' => true,
 		'user' => true,
-<<<<<<< HEAD
 		'cabang' => true
 	),
 	'user' => array(
@@ -84,9 +79,6 @@ $acl = array(
 		'admin' => true,
 		'user' => false,
 		'cabang' => true
-=======
-		'cabang' => true,
->>>>>>> 25fd0accc32e1026eb191c794c952d7733fc39be
 	),
 	
 

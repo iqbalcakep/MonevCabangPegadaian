@@ -9,10 +9,16 @@
                   <div class="table-data__tool-left">
                     <h1 class="title-5 m-b-35">Data User</h1>
                   </div>
+                  <?php 
+                     $sessData = $this->session->userdata('sesslogin');
+                      $level = $sessData['akses'];
+                      if($level=="admin"){
+                  ?>
                   <div class="table-data__tool-right">
                      <a  href="<?php echo site_url('User/createUser/') ?>" class="au-btn au-btn-icon au-btn--green au-btn--small">
                      <i class="zmdi zmdi-plus"></i>add user</a>
                   </div>
+                      <?php }?>
                </div>
                <div class="row">
                   <div class="col-lg-12">

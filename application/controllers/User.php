@@ -31,8 +31,19 @@ class User extends CI_Controller {
 
 	public function index()
 	{
+		$sessData = $this->session->userdata('sesslogin');
+		$level = $sessData['akses'];
+		$username = $sessData['username'];
 		$this->load->model('UserModel');
+		if($level=="admin"){
 		$data['user']=$this->UserModel->selectUser();
+		}else{
+		$getid = $this->UserModel->selectid($username);
+		foreach($getid as $h){
+			$id_cb = $h->id_cabang;
+		}
+		$data['user']=$this->UserModel->selectUserS($id_cb);
+		}
 		//$this->load->view('user/tryuser', $data);
 		$this->load->view('partials/header');
 		$this->load->view('user/dataCabang',$data);
