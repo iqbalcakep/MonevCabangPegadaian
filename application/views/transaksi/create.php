@@ -77,7 +77,7 @@
                      <!-- <span class="help-block field-validation-valid" data-valmsg-for="cc-name" data-valmsg-replace="true"></span> -->
                   </div>
                   <div class="row">
-                     <div class="col-xs-12 col-lg-4">
+                     <div class="col-3">
                         <label for="city" class=" form-control-label" style="color:black;">Jumlah Gram</label>
                         <select id="jumlah_gram" name="jumlah_gram" class="form-control" onchange="sum()" required>
                            <option value="1">1 Gram</option>
@@ -91,14 +91,14 @@
                            <option value="1000">1000 Gram</option>
                         </select>
                      </div>
-                     <div class="col-xs-12 col-lg-4">
+                     <div class="col-4">
                         <label for="x_card_code" class="control-label mb-1">Jumlah Keping</label>
                         <div class="input-group">
-                           <input required type="number" id="jumlah_keping" name="jumlah_keping" class="form-control" onkeypress ="sum()" onkeyup="sum()" onkeydown="sum()">
+                           <input required type="number" id="jumlah_keping" name="jumlah_keping" class="form-control" onkeyup="sum()">
                            <div class="input-group-addon">keping</div>
                         </div>
                      </div>
-                     <div class="col-xs-12 col-lg-4">
+                     <div class="col-4">
                         <label for="x_card_code" class="control-label mb-1">Total</label>
                         <div class="input-group">
                            <input type="number" id="total" name="total" class="form-control" readonly required>
@@ -123,6 +123,7 @@
                         <div class="input-group-addon">Rp.
                         </div>
                         <input type="text" class="form-control" name="nilai_pembiayaan" id="currency-field" pattern="^\Rp\d{1,3}(,\d{3})*(\.\d+)?$" value="" data-type="currency" required>
+                        <div class="input-group-addon">.00</div>
                      </div>
                   </div>
                   <div class="form-group">

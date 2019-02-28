@@ -136,10 +136,10 @@
 
                      <!-- button detail -->
                      <!-- <div class="table-data__tool"> -->
-                        <center>
+                        <!-- <center>
                            <a href="<?php echo site_url('Transaksi/create/') ?>" class="btn btn-default btn-lg" style="background-color:#393939; color:#cc9933">
                            <i class="zmdi zmdi-download"></i> More</a>
-                        </center>
+                        </center> -->
                      <!-- </div> -->
                      <!-- button detail end -->
                      
