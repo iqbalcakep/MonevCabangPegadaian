@@ -76,18 +76,18 @@ class Transaksi_model extends CI_Model {
 
 	public function getJumTransaksi()
 	{
-		$query = $this->db->query("SELECT COUNT(id_transaksi) as total FROM transaksi WHERE `tanggal_closing` = DATE_FORMAT(NOW(),'%Y-%m-%d');");
+		$query = $this->db->query("SELECT COUNT(id_transaksi) as total FROM transaksi WHERE DATE_FORMAT(`tanggal_closing`,'%m') = DATE_FORMAT(NOW(),'%m');");
 		return $query->result();
 	}
 	public function getJumPembiayaan($value='')
 	{
-		$query = $this->db->query("SELECT SUM(nilai_pembiayaan) as total FROM transaksi WHERE `tanggal_closing` = DATE_FORMAT(NOW(),'%Y-%m-%d');");
+		$query = $this->db->query("SELECT SUM(nilai_pembiayaan) as total FROM transaksi WHERE DATE_FORMAT(`tanggal_closing`,'%m') = DATE_FORMAT(NOW(),'%m');");
 		return $query->result();
 	}
 	
 	public function getJumEmas($value='')
 	{
-		$query = $this->db->query("SELECT SUM(jumlah_gram) AS total FROM transaksi WHERE `tanggal_closing` = DATE_FORMAT(NOW(),'%Y-%m-%d');");
+		$query = $this->db->query("SELECT SUM(jumlah_gram) AS total FROM transaksi WHERE DATE_FORMAT(`tanggal_closing`,'%m') = DATE_FORMAT(NOW(),'%m');");
 		return $query->result();
 	}
 

@@ -63,12 +63,22 @@ $acl = array(
 	'Home' => array(
 		'admin' => true,
 		'user' => true,
-		'cabang' => true,
+		'cabang' => true
 	),
 	'Homemikro' => array(
 		'admin' => true,
 		'user' => true,
-		'cabang' => true,
+		'cabang' => true
+	),
+	'user' => array(
+		'admin' => true,
+		'user' => false,
+		'cabang' => true
+	),
+	'User' => array(
+		'admin' => true,
+		'user' => false,
+		'cabang' => true
 	),
 	
 

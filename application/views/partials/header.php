@@ -9,8 +9,9 @@
     <meta name="author" content="Hau Nguyen">
     <meta name="keywords" content="au theme template">
 
-
+    <title>Pegadaian Area Malang</title>
     <!-- Fontfaces CSS-->
+    <link rel="shortcut icon" type="image/x-icon" href="<?php echo base_url(''); ?>asset/images/icon/icon.ico" />
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.css">
     
     <link href="<?php echo base_url(''); ?>/asset/css/font-face.css" rel="stylesheet" media="all">
@@ -36,6 +37,10 @@
 
 </head>
 <body class="animsition">
+    <?php 
+    $sessData = $this->session->userdata('sesslogin');
+    $level = $sessData['akses'];
+    ?>
     <div class="page-wrapper">
         <!-- HEADER DESKTOP-->
         <header class="header-desktop3 d-none d-lg-block">

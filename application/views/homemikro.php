@@ -108,7 +108,7 @@
                                         <td><?php echo $i; ?></td>
                                         <td><?php echo $key->nama_cabang ?></td>
                                         <td><?php echo $key->transaksi?></td>
-                                        <td><?php echo "Rp ". rupiah($key->biaya) ?></td>
+                                        <td><?php echo rupiah($key->biaya) ?></td>
                                     </tr>
                                     <?php $i++;} ?>
                                 </tbody>
@@ -135,7 +135,7 @@
                                     <td><?php echo $i; ?></td>
                                     <td><?php echo $key->nama ?></td>
                                     <td><?php echo $key->transaksi?></td>
-                                    <td><?php echo "Rp ". rupiah($key->biaya) ?></td>
+                                    <td><?php echo rupiah($key->biaya) ?></td>
                                 </tr>
                                 <?php $i++;} ?>
                             </tbody>

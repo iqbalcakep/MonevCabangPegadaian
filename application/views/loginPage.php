@@ -10,7 +10,8 @@
     <meta name="keywords" content="au theme template">
 
     <!-- Title Page-->
-    <title>Login</title>
+    <title>Pegadaian Area Malang</title>
+    <link rel="shortcut icon" type="image/x-icon" href="<?php echo base_url(''); ?>asset/images/icon/icon.ico" />
 
     <!-- Fontfaces CSS-->
     <link href="<?php echo base_url(''); ?>/asset/main.css"css/font-face.css" rel="stylesheet" media="all">
@@ -37,7 +38,7 @@
 
 <body class="animsition">
     <div  class="page-wrapper">
-        <div class="page-content--bge5"  style="background-image: url('http://localhost/MonevCabangPegadaian/asset/images/bgg.jpg'); background-size: 1500px; background-attachment: fixed; background-position: center;" >
+        <div class="page-content--bge5"  style="background-image: url('<?php echo base_url("");?>/asset/images/bgg.jpg'); background-size: 100%; background-attachment: fixed; background-position: center;" >
             <div class="container" style="padding-top: 0;margin-top: 0" >
                 <div class="login-wrap">
                     <div  class="login-content" style="background-color:rgba(255,255,255,0.95)">
@@ -74,34 +75,7 @@
         </div>
 
         <!-- COPYRIGHT-->
-            <section class="p-t-70 p-b-10">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-md-2" align="center">
-                            <img style="max-width: 200px" src="<?php echo base_url(''); ?>asset/images/icon/bumn.png" alt="CoolAdmin">
-                        </div>
-                        <div class="col-md-2" align="center">
-                            <img style="max-width: 150px" src="<?php echo base_url(''); ?>asset/images/icon/ojk.png" alt="CoolAdmin">
-                        </div>
-                        <div class="col-md-2" align="center">
-                            <img style="max-width: 200px" src="<?php echo base_url(''); ?>asset/images/icon/logologo.png" alt="CoolAdmin">
-                        </div>
-                        <div class="col-md-2" align="center">
-                            <img style="max-width: 200px" src="<?php echo base_url(''); ?>asset/images/icon/pegadaiansyariah.png" alt="CoolAdmin">
-                        </div>
-                        <div class="col-md-2" align="center">
-                            <img style="max-width: 150px" src="<?php echo base_url(''); ?>asset/images/icon/galeri24.png" alt="CoolAdmin">
-                        </div>
-                        <div class="col-md-2" align="center">
-                            <img style="max-width: 150px" src="<?php echo base_url(''); ?>asset/images/icon/thegade.png" alt="CoolAdmin">
-                        </div>
-                    </div>
-                    <hr>
-                    <div class="copyright">
-                        <p>Copyright © 2019 PT. Pegadaian - Persero. All Rights Reserved.</p>
-                    </div>
-            </section>
-            <!-- END COPYRIGHT-->
+        <!-- END COPYRIGHT-->
 
     </div>
 

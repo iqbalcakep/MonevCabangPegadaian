@@ -126,12 +126,12 @@ class Mikro_model extends CI_Model {
 
 	public function getJumTransaksi()
 	{
-		$query = $this->db->query("SELECT COUNT(id_mikro) as total FROM mikro WHERE `tanggal_transaksi` = DATE_FORMAT(NOW(),'%Y-%m-%d');");
+		$query = $this->db->query("SELECT COUNT(id_mikro) as total FROM mikro WHERE DATE_FORMAT(`tanggal_transaksi`,'%m') = DATE_FORMAT(NOW(),'%m');");
 		return $query->result();
 	}
-	public function getJumPembiayaan($value='')
+	public function getJumPembiayaan()
 	{
-		$query = $this->db->query("SELECT SUM(uang_pinjaman) as total FROM mikro WHERE `tanggal_transaksi` = DATE_FORMAT(NOW(),'%Y-%m-%d');");
+		$query = $this->db->query("SELECT SUM(uang_pinjaman) as total FROM mikro WHERE DATE_FORMAT(`tanggal_transaksi`,'%m') = DATE_FORMAT(NOW(),'%m');");
 		return $query->result();
 	}
 }
