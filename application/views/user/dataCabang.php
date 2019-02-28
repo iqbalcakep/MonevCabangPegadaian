@@ -23,7 +23,6 @@
                                  <th>No</th>
                                  <th>Nama Cabang</th>
                                  <th>Username</th>
-                                 <th>Password</th>
                                  <th></th>
                               </tr>
                            </thead>
@@ -34,7 +33,6 @@
                                  <td><?php echo $i ?></td>
                                  <td><?php echo $key->nama ?></td>
                                  <td><?php echo $key->username ?></td>
-                                 <td><?php echo $key->password ?></td>
                                  <td>
                                     <div class="table-data-feature">
                                         <a href="<?php echo site_url('user/updateform1/').$key->id_user ?>" class="item" data-toggle="tooltip" data-placement="top" title="Edit">
