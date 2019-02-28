@@ -71,11 +71,35 @@
                      <label for="cc-payment" class="control-label mb-1" style="color:black;">Nama Nasabah</label>
                      <input required id="nama_nasabah" name="nama_nasabah" type="text" class="form-control" aria-required="true" aria-invalid="false">
                   </div>
-                  <div class="form-group has-success">
-                     <label for="cc-name" class="control-label mb-1" style="color:black;">Tanggal Closing</label>
-                     <input required type="date" id="tanggal_closing" name="tanggal_closing" class="form-control cc-name valid" autocomplete="cc-name" aria-required="true" aria-invalid="false" aria-describedby="cc-name-error">
-                     <!-- <span class="help-block field-validation-valid" data-valmsg-for="cc-name" data-valmsg-replace="true"></span> -->
+                  <script>
+                        function mydate()
+                        {
+                        //alert("");
+                        document.getElementById("dt").hidden=false;
+                        document.getElementById("ndt").hidden=true;
+                        }
+                        function mydate1()
+                        {
+                        d=new Date(document.getElementById("dt").value);
+                        dt=d.getDate();
+                        mn=d.getMonth();
+                        mn++;
+                        yy=d.getFullYear();
+                        document.getElementById("ndt").value=dt+"/"+mn+"/"+yy
+                        document.getElementById("ndt").hidden=false;
+                        document.getElementById("dt").hidden=true;
+                        }
+                  </script>
+                  <!-- <div class="form-group">
+                     <label for="cc-payment" class="control-label mb-1" style="color:black;">Tanggal Closing</label>
+                     <input type="date" id="dt" onchange="mydate1();" name="tanggal_closing" class="form-control" aria-required="true" aria-invalid="false"/>
+                    <input type="text" id="ndt"  onclick="mydate();" hidden class="form-control"/>
+                  </div> -->
+                  <div class="form-group">
+                     <label for="cc-payment" class="control-label mb-1" style="color:black;">Tanggal Closing</label>
+                     <input required id="tanggal_closing" name="tanggal_closing" type="date" class="form-control" aria-required="true" aria-invalid="false">
                   </div>
+
                   <div class="row">
                      <div class="col-3">
                         <label for="city" class=" form-control-label" style="color:black;">Jumlah Gram</label>
@@ -94,7 +118,7 @@
                      <div class="col-4">
                         <label for="x_card_code" class="control-label mb-1">Jumlah Keping</label>
                         <div class="input-group">
-                           <input required type="number" id="jumlah_keping" name="jumlah_keping" class="form-control" onkeyup="sum()">
+                           <input required type="number" id="jumlah_keping" name="jumlah_keping" class="form-control" onchange="sum()">
                            <div class="input-group-addon">keping</div>
                         </div>
                      </div>
@@ -216,4 +240,5 @@
    text-transform: capitalize;
    text-align: center;
    }
+   #dt{text-indent: -500px;height:25px; width:200px;}
 </style>

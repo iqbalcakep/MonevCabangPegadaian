@@ -9,10 +9,16 @@
                   <div class="table-data__tool-left">
                     <h1 class="title-5 m-b-35">Data User</h1>
                   </div>
+                  <?php 
+                     $sessData = $this->session->userdata('sesslogin');
+                      $level = $sessData['akses'];
+                      if($level=="admin"){
+                  ?>
                   <div class="table-data__tool-right">
                      <a  href="<?php echo site_url('User/createUser/') ?>" class="au-btn au-btn-icon au-btn--green au-btn--small">
                      <i class="zmdi zmdi-plus"></i>add user</a>
                   </div>
+                      <?php }?>
                </div>
                <div class="row">
                   <div class="col-lg-12">
@@ -23,7 +29,7 @@
                                  <th>No</th>
                                  <th>Nama Cabang</th>
                                  <th>Username</th>
-                                 <th>Password</th>
+                                
                                  <th></th>
                               </tr>
                            </thead>
@@ -34,7 +40,7 @@
                                  <td><?php echo $i ?></td>
                                  <td><?php echo $key->nama ?></td>
                                  <td><?php echo $key->username ?></td>
-                                 <td><?php echo $key->password ?></td>
+                                
                                  <td>
                                     <div class="table-data-feature">
                                         <a href="<?php echo site_url('user/updateform1/').$key->id_user ?>" class="item" data-toggle="tooltip" data-placement="top" title="Edit">

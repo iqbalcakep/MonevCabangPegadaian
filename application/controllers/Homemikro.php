@@ -25,7 +25,7 @@ class Homemikro extends CI_Controller {
 		 }
 
 	}else{
-		redirect('Admin/login','refresh');
+		redirect('login','refresh');
 	}
     
 	}

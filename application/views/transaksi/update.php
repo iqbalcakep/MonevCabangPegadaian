@@ -141,7 +141,7 @@
                      <div class="col-4">
                         <label for="x_card_code" class="control-label mb-1">Jumlah Keping</label>
                         <div class="input-group">
-                           <input type="number" id="jumlah_keping" name="jumlah_keping" class="form-control" onkeyup="sum()" value="<?php echo $transaksi[0]->jumlah_keping ?>">
+                           <input type="number" id="jumlah_keping" name="jumlah_keping" class="form-control" onchange="sum()" value="<?php echo $transaksi[0]->jumlah_keping ?>">
                            <div class="input-group-addon">keping</div>
                         </div>
                      </div>

@@ -7,16 +7,43 @@ class User extends CI_Controller {
 	public function __construct()
 	{
 		parent::__construct();
-		if ($this->session->userdata('sesslogin')['username']=="") {
-			redirect('Login','refresh');
-		}
+		$sessData = $this->session->userdata('sesslogin');
+		$id_user = $sessData['id_user'];
+		$data['username'] = $sessData['username'];
+        $data['akses'] = $sessData['akses'];
+        $data['nama'] = $sessData['nama'];
+	if($this->session->userdata('sesslogin')){
+		$current_controller = $this->router->fetch_class();
+		$this->load->library('acl');
+		if(!$this->acl->is_public($current_controller))
+		 {
+			 if(!$this->acl->is_allowed($current_controller, $data['akses']))
+			 {
+				redirect('login/logout','refresh');
+			 }
+		 }
+
+	}else{
+		redirect('login','refresh');
+	}
 	}
 	
 
 	public function index()
 	{
+		$sessData = $this->session->userdata('sesslogin');
+		$level = $sessData['akses'];
+		$username = $sessData['username'];
 		$this->load->model('UserModel');
+		if($level=="admin"){
 		$data['user']=$this->UserModel->selectUser();
+		}else{
+		$getid = $this->UserModel->selectid($username);
+		foreach($getid as $h){
+			$id_cb = $h->id_cabang;
+		}
+		$data['user']=$this->UserModel->selectUserS($id_cb);
+		}
 		//$this->load->view('user/tryuser', $data);
 		$this->load->view('partials/header');
 		$this->load->view('user/dataCabang',$data);
