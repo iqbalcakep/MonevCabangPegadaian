@@ -17,7 +17,7 @@ class Transaksi_model extends CI_Model {
             'jumlah_keping' => $this->input->post('jumlah_keping'),
             'jumlah_gram' => $this->input->post('jumlah_gram'),
             'total' => $total,
-            'nilai_pembiayaan' => $this->input->post('nilai_pembiayaan'),
+            'nilai_pembiayaan' => str_replace(",","",$this->input->post('nilai_pembiayaan')),
             'jangka_waktu' => $this->input->post('jangka_waktu'),
             'id_user' => $this->input->post('id_user')
 		);
@@ -66,7 +66,7 @@ class Transaksi_model extends CI_Model {
             'jumlah_keping' => $this->input->post('jumlah_keping'),
             'jumlah_gram' => $this->input->post('jumlah_gram'),
             'total' => $total,
-            'nilai_pembiayaan' => $this->input->post('nilai_pembiayaan'),
+            'nilai_pembiayaan' => str_replace(",","",$this->input->post('nilai_pembiayaan')),
             'jangka_waktu' => $this->input->post('jangka_waktu'),
             'id_user' => $this->input->post('id_user')
 		);

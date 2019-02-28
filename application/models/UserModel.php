@@ -31,6 +31,21 @@ public function deleteUser($id)
 	$this->db->where('id_user', $id);
 	$this->db->delete('user');
 }
+
+public function selectid($username){
+	$this->db->select('id_cabang');
+	$this->db->from('user');
+	$this->db->where('username', $username);
+		$query= $this->db->get();
+		return $query->result();
+}
+public function selectUserS($getid){
+	$this->db->where('id_cabang', $getid);
+	$query= $this->db->get('user');
+		return $query->result();
+}
+
+
 }
 
 /* End of file userModel.php */

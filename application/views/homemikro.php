@@ -5,45 +5,6 @@
         $hasil_rupiah = number_format($angka,2,',','.');
         return $hasil_rupiah;
     } ?>
-<head>
-    <!-- Required meta tags-->
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="au theme template">
-    <meta name="author" content="Hau Nguyen">
-    <meta name="keywords" content="au theme template">
-    <!-- Title Page-->
-    <title>Dashboard</title>
-     <!-- Jquery JS-->
-     <style>
-
-        .judul{
-            vertical-align: center;
-            font-size:3vw;
-            color: #cc9933;
-            padding-bottom:10px;
-            }
-        .cimg{
-            max-width:150px!important;
-            padding:5px;
-        }
-
-        @media (min-width: 320px) and (max-width: 767px) {
-            .cimg{
-                max-width:100px!important;
-                padding:5px;
-            }
-            .judul{
-                vertical-align: center;
-                font-size:10vw;
-                color: #cc9933;
-                padding-bottom:10px;
-            }
-
-        
-        }
-     </style>
-</head>
 <body>
     <section class="statistic-chart" style="padding-left:1%;padding-right:1%;">
         <br>
@@ -52,9 +13,14 @@
                     Data Transaksi Mikro
                 </div>    
                 <br>
+                
+            </div>
+        <div style="padding-top: 1%" class="row">
+            <div class="col-md-12 col-lg-8">
+                <!-- 2 card -->
                 <div class="col-md-12 col-lg-12">
                     <div class="row">
-                        <div class="col-md-4 ">
+                        <div class="col-md-6 ">
                             <div class="overview-item overview-item--c4" style="margin:0;margin-bottom:10px">
                                 <div class="overview__inner">
                                     <div class="overview-box clearfix">
@@ -69,7 +35,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-4 ">
+                        <div class="col-md-6 ">
                             <div class="overview-item overview-item--c2" style="margin:0;margin-bottom:10px">
                                 <div class="overview__inner">
                                     <div class="overview-box clearfix">
@@ -78,7 +44,7 @@
                                         </div>
                                         <div class="text" style="padding-bottom: 2%">
                                             <h2><?php echo "Rp ". rupiah($biaya[0]->total);?></h2>
-                                            <span>Pembiayaan Area Malang</span>
+                                            <span>Peminjaman Area Malang</span>
                                         </div>
                                     </div>
                                 </div>
@@ -86,9 +52,10 @@
                         </div>
                     </div>
                 </div>
-            </div>
-        <div style="padding-top: 1%" class="row">
-            <div class="col-md-12 col-lg-8">
+                <!-- 2 card end -->
+                <br>
+
+                <!-- chart -->
                 <div class="card" style="border-radius: 10px;border-width: 0; box-shadow: 0px 10px 20px 0px rgba(204, 153, 51, 0.5); color: ">
                     <div class="card-body">
                         <ul class="nav nav-tabs" id="myTab" role="tablist">
@@ -119,6 +86,7 @@
                         </div>
                     </div>
                 </div>
+                <!-- chart end -->
             </div>
             <div class="col-md-12 col-lg-4">
                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">    
@@ -131,7 +99,7 @@
                                         <td>No</td>
                                         <td>Nama Cabang</td>
                                         <td>Transaksi</td>
-                                        <td>Pembiayaan</td>
+                                        <td>Peminjaman</td>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -158,7 +126,7 @@
                                     <td>No</td>
                                     <td>Nama Cabang</td>
                                     <td>Transaksi</td>
-                                    <td>Pembiayaan</td>
+                                    <td>Peminjaman</td>
                                 </tr>
                             </thead>
                             <tbody>
@@ -181,37 +149,23 @@
     </section>
     <!-- END STATISTIC CHART-->
     <!-- COPYRIGHT-->
-    <section class="p-t-70 p-b-10">
+    <section >
         <div class="container">
-            <div class="row">
-                <div class="col-lg-2 col-md-6 col-sm-2 col-xs-2" align="center">
-                    <img class="cimg" src="<?php echo base_url(''); ?>asset/images/icon/logologo.png" alt="CoolAdmin">
+             <div class="row">
+                <div class="col-xs-12 col-lg-6" align="right">
+                      <img class="img-responsive" src="<?php echo base_url(''); ?>asset/images/icon/1.png" >  
                 </div>
-                <div class="col-lg-2 col-md-6 col-sm-2 col-xs-2" align="center">
-                    <img class="cimg" src="<?php echo base_url(''); ?>asset/images/icon/pegadaiansyariah.png" alt="CoolAdmin">
+                <div class="col-xs-12 col-lg-6">    
+                    <img class="img-responsive" src="<?php echo base_url(''); ?>asset/images/icon/2.png">
                 </div>
-                <div class="col-lg-2 col-md-6 col-sm-2 col-xs-2" align="center">
-                    <img class="cimg" src="<?php echo base_url(''); ?>asset/images/icon/bumn.png" alt="CoolAdmin">
-                </div>
-                <div class="col-lg-2 col-md-6 col-sm-2 col-xs-2" align="center">
-                    <img class="cimg" src="<?php echo base_url(''); ?>asset/images/icon/ojk.png" alt="CoolAdmin">
-                </div>
-                <div class="col-lg-2 col-md-6 col-sm-2 col-xs-2" align="center">
-                    <img class="cimg" src="<?php echo base_url(''); ?>asset/images/icon/thegade.png" alt="CoolAdmin">
-                </div>
-                <div class="col-lg-2 col-md-6 col-sm-2 col-xs-2" align="center">
-                    <img class="cimg" src="<?php echo base_url(''); ?>asset/images/icon/galeri24.png" alt="CoolAdmin">
-                </div>
-            </div>
-        </div>
-        <hr>
-        <div class="copyright">
-            <p>Copyright © 2019 PT. Pegadaian - Persero. All Rights Reserved.</p>
-        </div>
-    </section>
+            </div>     
+        </div> 
+         <hr>
+         <div align="center">
+            <p class="copyr" style="color: black">Copyright © 2019 PT. Pegadaian - Persero. All Rights Reserved.</p>
+         </div>
+      </section>
     <!-- END COPYRIGHT-->
-
-
 
 <script src="<?php echo base_url(''); ?>/asset/vendor/jquery-3.2.1.min.js"></script>
 <!-- Bootstrap JS-->

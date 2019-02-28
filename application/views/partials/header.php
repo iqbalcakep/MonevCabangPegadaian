@@ -32,16 +32,21 @@
 
     <!-- Main CSS-->
     <link href="<?php echo base_url(''); ?>/asset/css/theme.css" rel="stylesheet" media="all">
+    <link href="<?php echo base_url(''); ?>/asset/css/img.css" rel="stylesheet" media="all">
 
 </head>
 <body class="animsition">
+    <?php 
+    $sessData = $this->session->userdata('sesslogin');
+    $level = $sessData['akses'];
+    ?>
     <div class="page-wrapper">
         <!-- HEADER DESKTOP-->
         <header class="header-desktop3 d-none d-lg-block">
             <div class="section__content section__content--p35">
                 <div class="header3-wrap">
                     <div class="header__logo">
-                        <a href="<?php echo site_url('') ?>">
+                        <a href="">
                             <img src="<?php echo base_url(''); ?>asset/images/icon/logold.png" style="max-height:52px;" alt="CoolAdmin" />
                         </a>
                     </div>
@@ -49,13 +54,13 @@
                         <ul class="list-unstyled" style="float:left;padding-left:25%;">
                             <li>
                                 <a style="color:#cc9933" href="<?php echo site_url('') ?>">
-                                    <i class="fas fa-tachometer-alt"></i>Penjualan Mulia
+                                    <i class="fas fa-tachometer-alt"></i>Rekap Mulia
                                     <span class="bot-line"></span>
                                 </a>
                             </li>
                             <li>
                                 <a style="color:#cc9933" href="<?php echo site_url('Homemikro') ?>">
-                                    <i class="fas fa-tachometer-alt"></i>Penjualan Mikro
+                                    <i class="fas fa-tachometer-alt"></i>Rekap Mikro
                                     <span class="bot-line"></span>
                                 </a>
                             </li>
@@ -74,12 +79,15 @@
                                 </ul>
                             </li>
                             
+                            <?php if ($session_data['akses']=='admin' || $session_data['akses']=='cabang')
+                            {?>
                             <li>
                                 <a style="color:#cc9933" href="<?php echo site_url('user') ?>">
                                     <i class="far fa-building"></i>Cabang
                                     <span class="bot-line"></span>
                                 </a>
                             </li>
+                            <?php } ?>
                             
                         </ul>
                     </div>
@@ -128,7 +136,7 @@
             <div class="header-mobile__bar">
                 <div class="container-fluid">
                     <div class="header-mobile-inner">
-                        <a class="logo" href="index.html">
+                        <a class="logo" href="<?php echo site_url('') ?>">
                         <img src="<?php echo base_url(''); ?>asset/images/icon/logold.png" style="max-height:50px;" alt="CoolAdmin" />
                         </a>
                         <button class="hamburger hamburger--slider" type="button">
@@ -139,18 +147,19 @@
                     </div>
                 </div>
             </div>
+            
             <nav class="navbar-mobile">
                 <div class="container-fluid">
                     <ul class="navbar-mobile__list list-unstyled">
                         <li>
                             <a style="color:#cc9933" href="<?php echo site_url('')?>">
-                                    <i class="fas fa-tachometer-alt"></i>Penjualan Mulia
+                                    <i class="fas fa-tachometer-alt"></i>Rekap Mulia
                                 </a>
                             </li>
                         </li>
                         <li>
-                            <a style="color:#cc9933" href="<?php echo site_url('')?>">
-                                    <i class="fas fa-tachometer-alt"></i>Penjualan Mikro
+                            <a style="color:#cc9933" href="<?php echo site_url('Homemikro') ?>">
+                                    <i class="fas fa-tachometer-alt"></i>Rekap Mikro
                                 </a>
                             </li>
                         </li>
