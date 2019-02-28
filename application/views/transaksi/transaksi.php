@@ -51,7 +51,7 @@
                           <h4>Cabang : <?php echo " ".$data['nama']; ?></h4>
                       </div>
                       <div style="padding-top: 1%" class="col-xs-12 col-lg-2">
-                        <a href="<?php echo site_url('Transaksi/create/') ?>" class="btn btn-success btn-block">
+                        <a href="<?php echo site_url('Transaksi/create/') ?>" class="btn btn-success btn-md btn-block">
                           <i class="fa  fa-plus-circle"></i> Tambah Transaksi
                         </a>
                       </div>
@@ -136,10 +136,10 @@
 
                      <!-- button detail -->
                      <!-- <div class="table-data__tool"> -->
-                        <center>
+                        <!-- <center>
                            <a href="<?php echo site_url('Transaksi/create/') ?>" class="btn btn-default btn-lg" style="background-color:#393939; color:#cc9933">
                            <i class="zmdi zmdi-download"></i> More</a>
-                        </center>
+                        </center> -->
                      <!-- </div> -->
                      <!-- button detail end -->
                      
