@@ -51,7 +51,7 @@
                           <h4>Cabang : <?php echo " ".$data['nama']; ?></h4>
                       </div>
                       <div style="padding-top: 1%" class="col-xs-12 col-lg-2">
-                        <a href="<?php echo site_url('Transaksi/create/') ?>" class="btn btn-success btn-lg btn-block">
+                        <a href="<?php echo site_url('Transaksi/create/') ?>" class="btn btn-success btn-md btn-block">
                           <i class="fa  fa-plus-circle"></i> Tambah Transaksi
                         </a>
                       </div>
