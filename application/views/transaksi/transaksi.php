@@ -116,7 +116,7 @@
                                  <td><?php echo $key->total ?></td>
                                  <td><?php echo rupiah($key->nilai_pembiayaan) ?></td>
                                  <td><?php echo $key->jangka_waktu ?></td>
-                                 <td><?php echo " ".$data['nama'] ; ?></td>
+                                 <td><?php echo $key->nama ?></td>
                                  <td>
                                     <div class="table-data-feature">
                                        <a href="<?php echo site_url('Transaksi/update/').$key->id_transaksi ?>" class="item" data-toggle="tooltip" data-placement="top" title="Edit">

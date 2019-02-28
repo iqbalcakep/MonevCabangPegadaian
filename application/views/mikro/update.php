@@ -58,29 +58,9 @@
                      <label for="cc-payment" class="control-label mb-1" style="color:black;">Nama Nasabah</label>
                      <input required value="<?php echo $mikro[0]->nama_nasabah ?>" id="nama_nasabah" name="nama_nasabah" type="text" class="form-control" aria-required="true" aria-invalid="false">
                   </div>
-                  <script>
-                        function mydate()
-                        {
-                        //alert("");
-                        document.getElementById("dt").hidden=false;
-                        document.getElementById("ndt").hidden=true;
-                        }
-                        function mydate1()
-                        {
-                        d=new Date(document.getElementById("dt").value);
-                        dt=d.getDate();
-                        mn=d.getMonth();
-                        mn++;
-                        yy=d.getFullYear();
-                        document.getElementById("ndt").value=dt+"/"+mn+"/"+yy
-                        document.getElementById("ndt").hidden=false;
-                        document.getElementById("dt").hidden=true;
-                        }
-                  </script>
                   <div class="form-group">
                      <label for="cc-payment" class="control-label mb-1" style="color:black;">Tanggal Transaksi</label>
-                     <input type="date" id="tanggal_transaksi" onchange="mydate1();" value="<?php echo date("d-m-Y", strtotime($mikro[0]->tanggal_transaksi)); ?>" name="tanggal_transaksi" class="form-control" aria-required="true" aria-invalid="false"/>
-                    <input type="text" id="ndt"  onclick="mydate();" hidden/>
+                     <input required value="<?php echo $mikro[0]->tanggal_transaksi ?>" id="tanggal_transaksi" name="tanggal_transaksi" type="date" class="form-control" aria-required="true" aria-invalid="false">
                   </div>
                   <div class="form-group">
                      <label for="country" class=" form-control-label" style="color:black;">Uang Pinjaman</label>

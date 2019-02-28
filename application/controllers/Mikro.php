@@ -87,6 +87,7 @@ class Mikro extends CI_Controller {
         $data['id_user'] = $session_data['id_user'];
         $data['username'] = $session_data['username'];
 		$data['nama'] = $session_data['nama'];
+		$level = $session_data["akses"];
 		$cabang = $session_data['id_cabang'];
 		$this->load->model('Mikro_model');
 		$data["cabang"] = $this->Mikro_model->selectCabang($cabang);
@@ -103,7 +104,11 @@ class Mikro extends CI_Controller {
 			$this->load->view('mikro/update',$data);
 			$this->load->view('partials/footer');
 		}else{
-			$this->Mikro_model->update($id_mikro);	
+			if($level=="admin"){
+				$this->Mikro_model->updateAdmin($id_mikro);	
+			}else{
+				$this->Mikro_model->update($id_mikro);	
+			}
 			$this->session->set_flashdata('sukses','1');
 			redirect('Mikro','refresh');
 			

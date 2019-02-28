@@ -85,6 +85,7 @@ class Transaksi extends CI_Controller {
         $data['id_user'] = $session_data['id_user'];
         $data['username'] = $session_data['username'];
 		$data['nama'] = $session_data['nama'];
+		$level = $session_data["akses"];
 		$cabang = $session_data['id_cabang'];
 		$this->load->model('Transaksi_model');
 		$data["cabang"] = $this->Transaksi_model->selectCabang($cabang);
@@ -102,7 +103,13 @@ class Transaksi extends CI_Controller {
 			$this->load->view('transaksi/update',$data);
 			$this->load->view('partials/footer');
 		}else{
+			if($level=="admin"){
+			$this->Transaksi_model->updateAdmin($id_transaksi);	
+
+			}else{
 			$this->Transaksi_model->update($id_transaksi);	
+
+			}
 			$this->session->set_flashdata('sukses','1');
 			redirect('Transaksi','refresh');
 			

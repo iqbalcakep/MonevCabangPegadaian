@@ -32,7 +32,9 @@ class Mikro_model extends CI_Model {
 	{
 		$this->db->select('*');
 		$this->db->from('mikro');
-		$this->db->where('id_user', $id_user);
+		$this->db->join('user','mikro.id_user = user.id_user');
+		//$this->db->join('cabang','user.id_cabang = cabang.id_cabang');
+		$this->db->where('mikro.id_user', $id_user);
 		$query = $this->db->get();
 
 		return $query->result();
@@ -52,6 +54,7 @@ class Mikro_model extends CI_Model {
 	public function getMikroAdmin(){
 		$this->db->select('*');
 		$this->db->from('mikro');
+		$this->db->join('user','mikro.id_user = user.id_user');
 		$query = $this->db->get();
 
 		return $query->result();
@@ -69,6 +72,9 @@ class Mikro_model extends CI_Model {
 
 	public function getMikroById($id_mikro)
 	{
+		$this->db->select('*');
+		$this->db->join('user','mikro.id_user = user.id_user');
+		$this->db->join('cabang','user.id_cabang = cabang.id_cabang');
 		$this->db->where('id_mikro', $id_mikro);
 		$query = $this->db->get('mikro',1);
 		return $query->result();
@@ -84,6 +90,21 @@ class Mikro_model extends CI_Model {
             'nama_produk' => $this->input->post('nama_produk'),
             'jangka_waktu' => $this->input->post('jangka_waktu'),
             'id_user' => $this->input->post('id_user'),
+            'jenis_pinjaman' => $this->input->post('jenis_pinjaman')
+		);
+		$this->db->where('id_mikro', $id_mikro);
+		$this->db->update('mikro', $object);
+	}
+
+	public function updateAdmin($id_mikro)
+	{
+		$object = array(
+            'rekening' => $this->input->post('rekening'),
+			'nama_nasabah' => $this->input->post('nama_nasabah'),
+            'tanggal_transaksi' => $this->input->post('tanggal_transaksi'),
+            'uang_pinjaman' => str_replace(",","",$this->input->post('uang_pinjaman')),
+            'nama_produk' => $this->input->post('nama_produk'),
+            'jangka_waktu' => $this->input->post('jangka_waktu'),
             'jenis_pinjaman' => $this->input->post('jenis_pinjaman')
 		);
 		$this->db->where('id_mikro', $id_mikro);

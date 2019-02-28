@@ -33,7 +33,9 @@ class Transaksi_model extends CI_Model {
 	{
 		$this->db->select('*');
 		$this->db->from('transaksi');
-		$this->db->where('id_user', $id_user);
+		$this->db->join('user','transaksi.id_user = user.id_user');
+		//$this->db->join('cabang','user.id_cabang = cabang.id_cabang');
+		$this->db->where('transaksi.id_user', $id_user);
 		$query = $this->db->get();
 
 		return $query->result();
@@ -52,6 +54,7 @@ class Transaksi_model extends CI_Model {
 	public function getTransaksiAdmin(){
 		$this->db->select('*');
 		$this->db->from('transaksi');
+		$this->db->join('user','transaksi.id_user = user.id_user');
 		$query = $this->db->get();
 
 		return $query->result();
@@ -87,6 +90,23 @@ class Transaksi_model extends CI_Model {
             'nilai_pembiayaan' => str_replace(",","",$this->input->post('nilai_pembiayaan')),
             'jangka_waktu' => $this->input->post('jangka_waktu'),
             'id_user' => $this->input->post('id_user')
+		);
+		$this->db->where('id_transaksi', $id_transaksi);
+		$this->db->update('transaksi', $object);
+	}
+
+	public function updateAdmin($id_transaksi)
+	{
+		$total = $this->input->post('jumlah_gram') * $this->input->post('jumlah_keping');
+		$object = array(
+			'rekening' => $this->input->post('rekening'),
+			'nama_nasabah' => $this->input->post('nama_nasabah'),
+            'tanggal_closing' => $this->input->post('tanggal_closing'),
+            'jumlah_keping' => $this->input->post('jumlah_keping'),
+            'jumlah_gram' => $this->input->post('jumlah_gram'),
+            'total' => $total,
+            'nilai_pembiayaan' => str_replace(",","",$this->input->post('nilai_pembiayaan')),
+            'jangka_waktu' => $this->input->post('jangka_waktu')
 		);
 		$this->db->where('id_transaksi', $id_transaksi);
 		$this->db->update('transaksi', $object);

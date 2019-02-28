@@ -115,7 +115,7 @@
                                  <td><?php echo $key->uang_pinjaman ?></td>
                                  <td><?php echo $key->nama_produk ?></td>
                                  <td><?php echo $key->jangka_waktu ?></td>
-                                 <td><?php echo " ".$data['nama'] ;  ?></td>
+                                 <td><?php echo $key->nama ;  ?></td>
                                  <td><?php echo $key->jenis_pinjaman ?></td>
                                  <td>
                                     <div class="table-data-feature">

@@ -70,32 +70,10 @@
                      <label for="cc-payment" class="control-label mb-1" style="color:black;">Nama Nasabah</label>
                      <input required id="nama_nasabah" name="nama_nasabah" type="text" class="form-control" aria-required="true" aria-invalid="false">
                   </div>
-                  <div class="form-group has-success">
-                  <script>
-                        function mydate()
-                        {
-                        //alert("");
-                        document.getElementById("dt").hidden=false;
-                        document.getElementById("ndt").hidden=true;
-                        }
-                        function mydate1()
-                        {
-                        d=new Date(document.getElementById("dt").value);
-                        dt=d.getDate();
-                        mn=d.getMonth();
-                        mn++;
-                        yy=d.getFullYear();
-                        document.getElementById("ndt").value=dt+"/"+mn+"/"+yy
-                        document.getElementById("ndt").hidden=false;
-                        document.getElementById("dt").hidden=true;
-                        }
-                  </script>
                   <div class="form-group">
-                     <label for="cc-payment" class="control-label mb-1" style="color:black;">Tanggal Closing</label>
-                     <input type="date" id="dt" onchange="mydate1();" name="tanggal_transaksi" class="form-control" aria-required="true" aria-invalid="false"/>
-                    <input type="text" id="ndt"  onclick="mydate();" hidden/>
-                  </div>                   
-                    </div>
+                     <label for="cc-payment" class="control-label mb-1" style="color:black;">Tanggal Transaksi</label>
+                     <input required id="tanggal_transaksi" name="tanggal_transaksi" type="date" class="form-control" aria-required="true" aria-invalid="false">
+                  </div>
                   <div class="form-group">
                      <label for="country" class=" form-control-label" style="color:black;">Uang Pinjaman</label>
                      <div class="input-group">
