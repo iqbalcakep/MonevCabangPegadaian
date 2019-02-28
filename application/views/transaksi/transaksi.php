@@ -113,7 +113,7 @@
                                  <td><?php echo $key->id_transaksi ?></td>
                                  <td><?php echo $key->rekening ?></td>
                                  <td><?php echo $key->nama_nasabah ?></td>
-                                 <td><?php echo $key->tanggal_closing ?></td>
+                                 <td><?php echo date("d-m-Y", strtotime($key->tanggal_closing)); ?></td>
                                  <td><?php echo $key->jumlah_keping ?></td>
                                  <td><?php echo $key->jumlah_gram ?></td>
                                  <td><?php echo $key->total ?></td>

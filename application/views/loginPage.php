@@ -37,7 +37,7 @@
 
 <body class="animsition">
     <div  class="page-wrapper">
-        <div class="page-content--bge5"  style="background-image: url('http://localhost/MonevCabangPegadaian/asset/images/bgg.jpg'); background-size: 1500px; background-attachment: fixed; background-position: center;" >
+        <div class="page-content--bge5"  style="background-image: url('http://localhost/MonevCabangPegadaian/asset/images/bgg.jpg'); background-size: 100%; background-attachment: fixed; background-position: center;" >
             <div class="container" style="padding-top: 0;margin-top: 0" >
                 <div class="login-wrap">
                     <div  class="login-content" style="background-color:rgba(255,255,255,0.95)">
@@ -74,7 +74,7 @@
         </div>
 
         <!-- COPYRIGHT-->
-            <section class="p-t-70 p-b-10">
+            <!-- <section class="p-t-70 p-b-10">
                     <div class="container">
                         <div class="row">
                             <div class="col-md-2" align="center">
@@ -100,7 +100,7 @@
                     <div class="copyright">
                         <p>Copyright © 2019 PT. Pegadaian - Persero. All Rights Reserved.</p>
                     </div>
-            </section>
+            </section> -->
             <!-- END COPYRIGHT-->
 
     </div>

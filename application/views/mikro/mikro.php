@@ -96,7 +96,7 @@
                                  <td><?php echo $key->id_mikro ?></td>
                                  <td><?php echo $key->rekening ?></td>
                                  <td><?php echo $key->nama_nasabah ?></td>
-                                 <td><?php echo $key->tanggal_transaksi ?></td>
+                                 <td><?php echo date("d-m-Y", strtotime($key->tanggal_transaksi)); ?></td>
                                  <td><?php echo $key->uang_pinjaman ?></td>
                                  <td><?php echo $key->nama_produk ?></td>
                                  <td><?php echo $key->jangka_waktu ?></td>
