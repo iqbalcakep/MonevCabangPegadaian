@@ -29,7 +29,7 @@
                                         </div>
                                         <div class="text" style="padding-bottom: 2%">
                                             <h2><?php echo $transaksi[0]->total;?> Transaksi</h2>
-                                            <span>Jumlah Transaksi Area Malang</span>
+                                            <span>Jumlah Transaksi Bulan <?php echo date("M") ?> Area Malang</span>
                                         </div>
                                     </div>
                                 </div>
@@ -44,7 +44,7 @@
                                         </div>
                                         <div class="text" style="padding-bottom: 2%">
                                             <h2><?php echo "Rp ". rupiah($biaya[0]->total);?></h2>
-                                            <span>Peminjaman Area Malang</span>
+                                            <span>Peminjaman Bulan <?php echo date("M") ?> Area Malang</span>
                                         </div>
                                     </div>
                                 </div>
