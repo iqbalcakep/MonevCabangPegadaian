@@ -15,11 +15,24 @@ class Mikro extends CI_Controller {
 	public function index()
 	{
 		$session_data = $this->session->userdata('sesslogin');
+		$level = $session_data["akses"];
         $data['id_user'] = $session_data['id_user'];
         $data['username'] = $session_data['username'];
         $data['nama'] = $session_data['nama'];
 		$this->load->model('Mikro_model');
+		$this->load->model('UserModel');
+		if($level!="admin" && $level != "cabang"){
 		$data["mikro_list"] = $this->Mikro_model->getMikro($data['id_user']);
+		}else if($level=="cabang"){
+		$getid = $this->UserModel->selectid($username);
+		foreach($getid as $h){
+			$id_cb = $h->id_cabang;
+		}
+		$data["mikro_list"] = $this->Mikro_model->getMikroCabang($id_cb);
+		}else{
+		$data["mikro_list"] = $this->Mikro_model->getMikroAdmin();
+		}
+		
 		$this->load->view('partials/header');
 		$this->load->view('mikro/mikro', $data);
 		$this->load->view('partials/footer');
@@ -74,6 +87,7 @@ class Mikro extends CI_Controller {
         $data['id_user'] = $session_data['id_user'];
         $data['username'] = $session_data['username'];
 		$data['nama'] = $session_data['nama'];
+		$level = $session_data["akses"];
 		$cabang = $session_data['id_cabang'];
 		$this->load->model('Mikro_model');
 		$data["cabang"] = $this->Mikro_model->selectCabang($cabang);
@@ -90,7 +104,11 @@ class Mikro extends CI_Controller {
 			$this->load->view('mikro/update',$data);
 			$this->load->view('partials/footer');
 		}else{
-			$this->Mikro_model->update($id_mikro);	
+			if($level=="admin"){
+				$this->Mikro_model->updateAdmin($id_mikro);	
+			}else{
+				$this->Mikro_model->update($id_mikro);	
+			}
 			$this->session->set_flashdata('sukses','1');
 			redirect('Mikro','refresh');
 			

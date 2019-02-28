@@ -29,6 +29,10 @@ class Home extends CI_Controller {
 	}
     
 	}
+
+	public function blank(){
+		$this->load->view('partials/error');
+	}
 	public function index()
 	{
 		$this->load->model('Transaksi_model');

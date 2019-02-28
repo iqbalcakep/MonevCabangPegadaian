@@ -110,13 +110,13 @@
                                  <td><?php echo $key->id_transaksi ?></td>
                                  <td><?php echo $key->rekening ?></td>
                                  <td><?php echo $key->nama_nasabah ?></td>
-                                 <td><?php echo $key->tanggal_closing ?></td>
+                                 <td><?php echo date("d-m-Y", strtotime($key->tanggal_closing)); ?></td>
                                  <td><?php echo $key->jumlah_keping ?></td>
                                  <td><?php echo $key->jumlah_gram ?></td>
                                  <td><?php echo $key->total ?></td>
                                  <td><?php echo rupiah($key->nilai_pembiayaan) ?></td>
                                  <td><?php echo $key->jangka_waktu ?></td>
-                                 <td><?php echo " ".$data['nama'] ; ?></td>
+                                 <td><?php echo $key->nama ?></td>
                                  <td>
                                     <div class="table-data-feature">
                                        <a href="<?php echo site_url('Transaksi/update/').$key->id_transaksi ?>" class="item" data-toggle="tooltip" data-placement="top" title="Edit">

@@ -58,10 +58,9 @@
                      <label for="cc-payment" class="control-label mb-1" style="color:black;">Nama Nasabah</label>
                      <input required value="<?php echo $mikro[0]->nama_nasabah ?>" id="nama_nasabah" name="nama_nasabah" type="text" class="form-control" aria-required="true" aria-invalid="false">
                   </div>
-                  <div class="form-group has-success">
-                     <label for="cc-name" class="control-label mb-1" style="color:black;">Tanggal Transaksi</label>
-                     <input required type="date" value="<?php echo $mikro[0]->tanggal_transaksi ?>" id="tanggal_transaksi" name="tanggal_transaksi" class="form-control cc-name valid" autocomplete="cc-name" aria-required="true" aria-invalid="false" aria-describedby="cc-name-error">
-                     <!-- <span class="help-block field-validation-valid" data-valmsg-for="cc-name" data-valmsg-replace="true"></span> -->
+                  <div class="form-group">
+                     <label for="cc-payment" class="control-label mb-1" style="color:black;">Tanggal Transaksi</label>
+                     <input required value="<?php echo $mikro[0]->tanggal_transaksi ?>" id="tanggal_transaksi" name="tanggal_transaksi" type="date" class="form-control" aria-required="true" aria-invalid="false">
                   </div>
                   <div class="form-group">
                      <label for="country" class=" form-control-label" style="color:black;">Uang Pinjaman</label>

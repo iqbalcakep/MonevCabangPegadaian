@@ -206,11 +206,13 @@
       <script src="<?php echo base_url(''); ?>/asset/data.js"></script>
       <script type="text/javascript"> 
         $(document).ready(function(){
-          var loadDat=setInterval(function () {
-                //$("#tabCabang").fadeIn("slow");
-                tampil_data_barang();
-            }, 5000);
-          tampil_data_barang();         
+          var loadDat=setInterval(function ()
+            {
+              tampil_data_barang();
+              tampil_data_barang2();  
+            },5000);
+          tampil_data_barang();
+          tampil_data_barang2();         
              //pemanggilan fungsi tampil barang.
           function tampil_data_barang(){
               $.ajax({
@@ -232,17 +234,7 @@
                       $('#show_data').html(html);
                   }
               });
-          }
-        }
-        );
-      </script>
-      <script type="text/javascript"> 
-        $(document).ready(function(){
-          var loadDat2=setInterval(function () {
-                tampil_data_barang();
-            }, 5000);
-          tampil_data_barang2();         
-             //pemanggilan fungsi tampil barang.
+            }
           function tampil_data_barang2(){
               $.ajax({
                   type  : 'ajax',
@@ -250,22 +242,20 @@
                   async : false,
                   dataType : 'json',
                   success : function(data){
-                      var html = '';
-                      var i;
-                      for(i=0; i<data.length; i++){
-                          html += '<tr>'+
-                                '<td>'+(i+1)+'</td>'+
-                                  '<td>'+data[i].nama+'</td>'+
-                                  '<td>'+data[i].transaksi+'</td>'+
-                                  '<td>'+new Intl.NumberFormat().format(data[i].biaya)+'</td>'+
+                      var htmls = '';
+                      var s;
+                      for(s=0; s<data.length; s++){
+                          htmls += '<tr>'+
+                                '<td>'+(s+1)+'</td>'+
+                                  '<td>'+data[s].nama+'</td>'+
+                                  '<td>'+data[s].transaksi+'</td>'+
+                                  '<td>'+new Intl.NumberFormat().format(data[s].biaya)+'</td>'+
                                   '</tr>';
                       }
-                      $('#show_data2').html(html);
+                      $('#show_data2').html(htmls);
                   }
               });
           }
-        }
-        );
-
+        });
       </script>
 <!-- end document-->

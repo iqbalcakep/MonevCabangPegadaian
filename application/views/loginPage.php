@@ -74,8 +74,6 @@
             </div>
         </div>
 
-        <!-- COPYRIGHT-->
-        <!-- END COPYRIGHT-->
 
     </div>
 

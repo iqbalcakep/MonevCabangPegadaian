@@ -36,14 +36,20 @@ class Homemikro extends CI_Controller {
         $this->load->model('mikro_model');
 		$data['transaksi']=$this->mikro_model->getJumTransaksi();
 		$data['biaya']=$this->mikro_model->getJumPembiayaan();
-		$data['rankCabang']=$this->mikro_model->rankCabang();
-		$data['rankUnit']=$this->mikro_model->rankUnit($sessData['id_cabang']);
 		$this->load->view('partials/header');
 		$this->load->view('homemikro',$data);
 		// $this->load->view('user/dataCabang');
 		//$this->load->view('partials/footer');	
 	}
-
+	public function getRank(){
+		$data = $this->mikro_model->rankCabang();;
+		echo json_encode($data);
+	}
+	public function getUnit(){
+		$sessData = $this->session->userdata('sesslogin');
+		$data = $this->mikro_model->rankUnit($sessData['id_cabang']);
+		echo json_encode($data);
+	}
 	public function getdata(){
 		$data = $this->mikro_model->ambildata();
 		echo json_encode($data);

@@ -70,10 +70,9 @@
                      <label for="cc-payment" class="control-label mb-1" style="color:black;">Nama Nasabah</label>
                      <input required id="nama_nasabah" name="nama_nasabah" type="text" class="form-control" aria-required="true" aria-invalid="false">
                   </div>
-                  <div class="form-group has-success">
-                     <label for="cc-name" class="control-label mb-1" style="color:black;">Tanggal Transaksi</label>
-                     <input required type="date" id="tanggal_transaksi" name="tanggal_transaksi" class="form-control cc-name valid" autocomplete="cc-name" aria-required="true" aria-invalid="false" aria-describedby="cc-name-error">
-                     <!-- <span class="help-block field-validation-valid" data-valmsg-for="cc-name" data-valmsg-replace="true"></span> -->
+                  <div class="form-group">
+                     <label for="cc-payment" class="control-label mb-1" style="color:black;">Tanggal Transaksi</label>
+                     <input required id="tanggal_transaksi" name="tanggal_transaksi" type="date" class="form-control" aria-required="true" aria-invalid="false">
                   </div>
                   <div class="form-group">
                      <label for="country" class=" form-control-label" style="color:black;">Uang Pinjaman</label>
@@ -150,6 +149,7 @@
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
 <style>
    .files input {
    outline: 2px dashed #92b0b3;
