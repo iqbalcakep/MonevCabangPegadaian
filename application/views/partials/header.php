@@ -78,7 +78,13 @@
                                     </li>
                                 </ul>
                             </li>
+<<<<<<< HEAD
                             <?php if($level!="user"){ ?>
+=======
+                            
+                            <?php if ($session_data['akses']=='admin' || $session_data['akses']=='cabang')
+                            {?>
+>>>>>>> 25fd0accc32e1026eb191c794c952d7733fc39be
                             <li>
                                 <a style="color:#cc9933" href="<?php echo site_url('user') ?>">
                                     <i class="far fa-building"></i>Cabang
@@ -145,6 +151,7 @@
                     </div>
                 </div>
             </div>
+            
             <nav class="navbar-mobile">
                 <div class="container-fluid">
                     <ul class="navbar-mobile__list list-unstyled">
