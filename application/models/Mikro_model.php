@@ -38,6 +38,25 @@ class Mikro_model extends CI_Model {
 		return $query->result();
 	}
 
+	public function getMikroCabang($id_cb){
+		$this->db->select('*');
+		$this->db->from('mikro');
+		$this->db->join('user','mikro.id_user = user.id_user');
+		$this->db->join('cabang','user.id_cabang = cabang.id_cabang');
+		$this->db->where('user.id_cabang', $id_cb);
+		$query = $this->db->get();
+
+		return $query->result();
+	}
+
+	public function getMikroAdmin(){
+		$this->db->select('*');
+		$this->db->from('mikro');
+		$query = $this->db->get();
+
+		return $query->result();
+	}
+
 	public function selectCabang($id_cabang)
 	{
 		$this->db->select('*');

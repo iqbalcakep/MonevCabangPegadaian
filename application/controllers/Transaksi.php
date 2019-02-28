@@ -24,11 +24,24 @@ class Transaksi extends CI_Controller {
 	public function index()
 	{
 		$session_data = $this->session->userdata('sesslogin');
+		$username = $session_data["username"];
+		$level = $session_data["akses"];
         $data['id_user'] = $session_data['id_user'];
         $data['username'] = $session_data['username'];
         $data['nama'] = $session_data['nama'];
 		$this->load->model('Transaksi_model');
+		$this->load->model('UserModel');
+		if($level!="admin" && $level != "cabang"){
 		$data["transaksi_list"] = $this->Transaksi_model->getTransaksi($data['id_user']);
+		}else if($level=="cabang"){
+		$getid = $this->UserModel->selectid($username);
+		foreach($getid as $h){
+			$id_cb = $h->id_cabang;
+		}
+		$data["transaksi_list"] = $this->Transaksi_model->getTransaksiCabang($id_cb);
+		}else{
+		$data["transaksi_list"] = $this->Transaksi_model->getTransaksiAdmin();
+		}
 		$this->load->view('partials/header');
 		$this->load->view('transaksi/transaksi', $data);
 		$this->load->view('partials/footer');

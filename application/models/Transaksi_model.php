@@ -39,6 +39,24 @@ class Transaksi_model extends CI_Model {
 		return $query->result();
 	}
 
+	public function getTransaksiCabang($idcb){
+		$this->db->select('*');
+		$this->db->from('transaksi');
+		$this->db->join('user','transaksi.id_user = user.id_user');
+		$this->db->join('cabang','user.id_cabang = cabang.id_cabang');
+		$this->db->where('user.id_cabang', $idcb);
+		$query = $this->db->get();
+		return $query->result();
+	}
+
+	public function getTransaksiAdmin(){
+		$this->db->select('*');
+		$this->db->from('transaksi');
+		$query = $this->db->get();
+
+		return $query->result();
+	}
+
 	public function selectCabang($id_cabang)
 	{
 		$this->db->select('*');
