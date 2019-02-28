@@ -90,10 +90,14 @@
                         document.getElementById("dt").hidden=true;
                         }
                   </script>
-                  <div class="form-group">
+                  <!-- <div class="form-group">
                      <label for="cc-payment" class="control-label mb-1" style="color:black;">Tanggal Closing</label>
                      <input type="date" id="dt" onchange="mydate1();" name="tanggal_closing" class="form-control" aria-required="true" aria-invalid="false"/>
                     <input type="text" id="ndt"  onclick="mydate();" hidden class="form-control"/>
+                  </div> -->
+                  <div class="form-group">
+                     <label for="cc-payment" class="control-label mb-1" style="color:black;">Tanggal Closing</label>
+                     <input required id="tanggal_closing" name="tanggal_closing" type="date" class="form-control" aria-required="true" aria-invalid="false">
                   </div>
 
                   <div class="row">
