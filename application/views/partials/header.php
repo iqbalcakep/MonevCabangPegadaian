@@ -9,12 +9,12 @@
     <meta name="author" content="Hau Nguyen">
     <meta name="keywords" content="au theme template">
 
-
+    <title>Pegadaian Area Malang</title>
     <!-- Fontfaces CSS-->
+    <link rel="shortcut icon" type="image/x-icon" href="<?php echo base_url(''); ?>asset/images/icon/icon.ico" />
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.css">
     
     <link href="<?php echo base_url(''); ?>/asset/css/font-face.css" rel="stylesheet" media="all">
-    <link href="<?php echo base_url(''); ?>/asset/vendor/font-awesome-4.7/css/font-awesome.min.css" rel="stylesheet" media="all">
     <link href="<?php echo base_url(''); ?>/asset/vendor/font-awesome-5/css/fontawesome-all.min.css" rel="stylesheet" media="all">
     <link href="<?php echo base_url(''); ?>/asset/vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
 

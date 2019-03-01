@@ -29,7 +29,6 @@
                                  <th>No</th>
                                  <th>Nama Cabang</th>
                                  <th>Username</th>
-                                
                                  <th></th>
                               </tr>
                            </thead>

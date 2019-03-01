@@ -29,7 +29,7 @@
                                         </div>
                                         <div class="text" style="padding-bottom: 2%">
                                             <h2><?php echo $transaksi[0]->total;?> Transaksi</h2>
-                                            <span>Jumlah Transaksi Area Malang</span>
+                                            <span>Jumlah Transaksi Bulan <?php echo date("M") ?> Area Malang</span>
                                         </div>
                                     </div>
                                 </div>
@@ -44,7 +44,7 @@
                                         </div>
                                         <div class="text" style="padding-bottom: 2%">
                                             <h2><?php echo "Rp ". rupiah($biaya[0]->total);?></h2>
-                                            <span>Peminjaman Area Malang</span>
+                                            <span>Peminjaman Bulan <?php echo date("M") ?> Area Malang</span>
                                         </div>
                                     </div>
                                 </div>
@@ -102,15 +102,7 @@
                                         <td>Peminjaman</td>
                                     </tr>
                                 </thead>
-                                <tbody>
-                                    <?php $i=1; foreach ($rankCabang as $key){ ?>
-                                    <tr>
-                                        <td><?php echo $i; ?></td>
-                                        <td><?php echo $key->nama_cabang ?></td>
-                                        <td><?php echo $key->transaksi?></td>
-                                        <td><?php echo "Rp ". rupiah($key->biaya) ?></td>
-                                    </tr>
-                                    <?php $i++;} ?>
+                                <tbody id="show_data">
                                 </tbody>
                             </table>
                         </div>
@@ -129,15 +121,7 @@
                                     <td>Peminjaman</td>
                                 </tr>
                             </thead>
-                            <tbody>
-                                <?php $i=1; foreach ($rankUnit as $key){ ?>
-                                <tr>
-                                    <td><?php echo $i; ?></td>
-                                    <td><?php echo $key->nama ?></td>
-                                    <td><?php echo $key->transaksi?></td>
-                                    <td><?php echo "Rp ". rupiah($key->biaya) ?></td>
-                                </tr>
-                                <?php $i++;} ?>
+                            <tbody id="show_data2">
                             </tbody>
                         </table>
                     </div>
@@ -189,7 +173,61 @@
     <!-- Main JS-->
 <script src="<?php echo base_url(''); ?>/asset/js/main.js"></script>
 <script src="<?php echo base_url(''); ?>/asset/datamikro.js"></script>
+      <script type="text/javascript"> 
+        $(document).ready(function(){
+          var loadDat=setInterval(function ()
+            {
+              tampil_data_barang();
+              tampil_data_barang2();  
+            },5000);
+          tampil_data_barang();
+          tampil_data_barang2();         
+             //pemanggilan fungsi tampil barang.
+          function tampil_data_barang(){
+              $.ajax({
+                  type  : 'ajax',
+                  url   : '<?php echo site_url('')?>/Homemikro/getRank',
+                  async : false,
+                  dataType : 'json',
+                  success : function(data){
+                      var html = '';
+                      var i;
 
+                      for(i=0; i<data.length; i++){
+                          html += '<tr>'+
+                                '<td>'+(i+1)+'</td>'+
+                                  '<td>'+data[i].nama_cabang+'</td>'+
+                                  '<td>'+data[i].transaksi+'</td>'+
+                                  '<td>'+new Intl.NumberFormat().format(data[i].biaya)+'</td>'+
+                                  '</tr>';
+                      }
+                      $('#show_data').html(html);
+                  }
+              });
+            }
+          function tampil_data_barang2(){
+              $.ajax({
+                  type  : 'ajax',
+                  url   : '<?php echo site_url('')?>/Homemikro/getUnit',
+                  async : false,
+                  dataType : 'json',
+                  success : function(data){
+                      var htmls = '';
+                      var s;
+                      for(s=0; s<data.length; s++){
+                          htmls += '<tr>'+
+                                '<td>'+(s+1)+'</td>'+
+                                  '<td>'+data[s].nama+'</td>'+
+                                  '<td>'+data[s].transaksi+'</td>'+
+                                  '<td>'+new Intl.NumberFormat().format(data[s].biaya)+'</td>'+
+                                  '</tr>';
+                      }
+                      $('#show_data2').html(htmls);
+                  }
+              });
+          }
+        });
+      </script>
 </body>
 </html>
 <!-- end document-->
