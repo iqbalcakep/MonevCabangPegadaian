@@ -45,6 +45,29 @@
                                     </div>
                                 </div>
                             </div>
+                            <div class="col-md-6">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <font color="black">
+                                        <strong>Transaksi Mulia </strong>
+                                        <small>tiap bulan
+                                        </small>
+                                        </font>
+                                    </div>
+                                    <div class="card-body">
+                                        <button type="button" class="btn btn-warning btn-sm">Malang</button>
+                                        <button type="button" class="btn btn-warning btn-sm">Blimbing</button>
+                                        <button type="button" class="btn btn-warning btn-sm">Kotalama</button>
+                                        <button type="button" class="btn btn-warning btn-sm">Rampal</button>
+                                        <button type="button" class="btn btn-warning btn-sm">Turen</button>
+                                        <button type="button" class="btn btn-warning btn-sm">Landungsari</button>
+                                        <button type="button" class="btn btn-warning btn-sm">Tlogomas</button>
+                                        <button type="button" class="btn btn-warning btn-sm">Singosari</button>
+                                        <button type="button" class="btn btn-warning btn-sm">Kepanjen</button>
+                                        <button type="button" class="btn btn-warning btn-sm">Blitar</button>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
