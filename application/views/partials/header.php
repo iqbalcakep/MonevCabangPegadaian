@@ -13,7 +13,14 @@
     <!-- Fontfaces CSS-->
     <link rel="shortcut icon" type="image/x-icon" href="<?php echo base_url(''); ?>asset/images/icon/icon.ico" />
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.css">
-    
+    <!-- <link rel="stylesheet" href="<?php echo base_url('') ?>asset/datatables.min.css"> -->
+    <!-- <link rel="stylesheet" href="<?php echo base_url('') ?>assets/css/bootstrap.min.css"> -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
     <link href="<?php echo base_url(''); ?>/asset/css/font-face.css" rel="stylesheet" media="all">
     <link href="<?php echo base_url(''); ?>/asset/vendor/font-awesome-5/css/fontawesome-all.min.css" rel="stylesheet" media="all">
     <link href="<?php echo base_url(''); ?>/asset/vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">

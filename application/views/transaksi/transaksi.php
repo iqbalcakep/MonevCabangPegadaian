@@ -87,8 +87,9 @@
                         </div>
                         </div>
                      <!-- tabel -->
+                     
                      <div class="table-responsive table--no-card m-t-10" style="box-shadow: none" >
-                        <table class="table table-borderless table-striped table-earning" id="example">
+                        <table class="table table-borderless table-striped table-earning" id="example"width="100%">
                            <thead>
                               <tr class="text-center">
                                  <th>Id <br>Transaksi</th>
