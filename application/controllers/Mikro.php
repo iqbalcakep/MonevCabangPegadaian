@@ -16,6 +16,7 @@ class Mikro extends CI_Controller {
 	{
 		$session_data = $this->session->userdata('sesslogin');
 		$level = $session_data["akses"];
+		$username = $session_data["username"];
         $data['id_user'] = $session_data['id_user'];
         $data['username'] = $session_data['username'];
         $data['nama'] = $session_data['nama'];
