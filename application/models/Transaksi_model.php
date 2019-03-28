@@ -10,18 +10,18 @@ class Transaksi_model extends CI_Model {
 	public function create()
 	{
 		$total = $this->input->post('jumlah_gram') * $this->input->post('jumlah_keping');
-		$object = array(
-			'rekening' => $this->input->post('rekening'),
-			'nama_nasabah' => $this->input->post('nama_nasabah'),
-            'tanggal_closing' => $this->input->post('tanggal_closing'),
-            'jumlah_keping' => $this->input->post('jumlah_keping'),
-            'jumlah_gram' => $this->input->post('jumlah_gram'),
-            'total' => $total,
-            'nilai_pembiayaan' => str_replace(",","",$this->input->post('nilai_pembiayaan')),
-            'jangka_waktu' => $this->input->post('jangka_waktu'),
-            'id_user' => $this->input->post('id_user')
-		);
-		$this->db->insert('transaksi', $object);	
+			$object = array(
+				'rekening' => $this->input->post('rekening'),
+				'nama_nasabah' => $this->input->post('nama_nasabah'),
+				'tanggal_closing' => $this->input->post('tanggal_closing'),
+				'jumlah_keping' => $this->input->post('jumlah_keping'),
+				'jumlah_gram' => $this->input->post('jumlah_gram'),
+				'total' => $total,
+				'nilai_pembiayaan' => str_replace(",","",$this->input->post('nilai_pembiayaan')),
+				'jangka_waktu' => $this->input->post('jangka_waktu'),
+				'id_user' => $this->input->post('id_user')
+			);
+			$this->db->insert('transaksi', $object);	
 	}
 
 	public function delete($id_transaksi)

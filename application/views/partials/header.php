@@ -11,7 +11,7 @@
 
     <title>Pegadaian Area Malang</title>
     <!-- Fontfaces CSS-->
-    <link rel="shortcut icon" type="image/x-icon" href="<?php echo base_url(''); ?>asset/images/icon/icon.ico" />
+    <link rel="shortcut icon" type="image/x-icon" href="<?php echo base_url(''); ?>/asset/images/icon/icon.ico" />
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.css">
     
     <link href="<?php echo base_url(''); ?>/asset/css/font-face.css" rel="stylesheet" media="all">
