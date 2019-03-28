@@ -45,13 +45,22 @@
     <script src="<?php echo base_url(''); ?>/asset/js/main.js"></script>
     <script src="<?php echo base_url(''); ?>/asset/data.js"></script>
 
-    <script src="<?php echo base_url('') ?>asset/datatables.min.js"></script>
-    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.js"></script>
+     <script src="//code.jquery.com/jquery.js"></script>
+    <!-- <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.js"></script> -->
+    <!--<script src="<?php echo base_url('') ?>asset/js/bootstrap.min.js"></script>-->
+    <!--<script src="<?php echo base_url('') ?>asset/datatables.min.js"></script>-->
+    <!--<script src="https://code.jquery.com/jquery-3.3.1.js"></script>-->
+    <script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.16/js/dataTables.bootstrap4.min.js"></script>
+
     <script type="text/javascript">
        $(document).ready(function(){
           $('#example').DataTable();
        });
     </script>
+    <style>
+        table.dataTable{border-collapse:collapse !important;}
+    </style>
 
     
 </body>

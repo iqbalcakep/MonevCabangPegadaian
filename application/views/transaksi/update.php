@@ -42,7 +42,7 @@
                 <div class="card-header" style="background-color:#393939; color:#cc9933;">Kredit Emas</div>
                 <div class="card-body">
                     <div class="card-title">
-                        <h3 class="text-center title-2">Tambah Data Transaksi</h3>
+                        <h3 class="text-center title-2">Edit Data Transaksi</h3>
                     </div>
                     <hr>
                     <?php echo form_open('Transaksi/update/'.$this->uri->segment(3)); ?>
@@ -57,98 +57,14 @@
                   </div>
                   <div class="form-group has-success">
                      <label for="cc-name" class="control-label mb-1" style="color:black;">Tanggal Closing</label>
-                     <input type="date" id="tanggal_closing" name="tanggal_closing" class="form-control cc-name valid" autocomplete="cc-name" aria-required="true" aria-invalid="false" aria-describedby="cc-name-error" value="<?php echo $transaksi[0]->tanggal_closing ?>">
+                     <input type="date" id="tanggal_closing" name="tanggal_closing" class="form-control col-lg-6 cc-name valid" autocomplete="cc-name" aria-required="true" aria-invalid="false" aria-describedby="cc-name-error" value="<?php echo $transaksi[0]->tanggal_closing ?>">
                      <!-- <span class="help-block field-validation-valid" data-valmsg-for="cc-name" data-valmsg-replace="true"></span> -->
                   </div>
                   <div class="row">
-                     <div class="col-3">
-                        <label for="city" class=" form-control-label" style="color:black;">Jumlah Gram</label>
-                        <select id="jumlah_gram" name="jumlah_gram" class="form-control" onchange="sum()" value="<?php echo $transaksi[0]->jumlah_gram ?>">
-                           <option value="1" 
-                              <?php 
-                                 if($transaksi[0]->jumlah_gram == "1")
-                                    {echo 'selected';} 
-                              ?>
-                           >
-                              1
-                           </option>
-                           <option value="2" 
-                              <?php 
-                                 if($transaksi[0]->jumlah_gram == "2")
-                                    {echo 'selected';} 
-                              ?>
-                           >
-                              2
-                           </option>
-                           <option value="5" 
-                              <?php 
-                                 if($transaksi[0]->jumlah_gram == "5")
-                                    {echo 'selected';} 
-                              ?>
-                           >
-                              5
-                           </option>
-                           <option value="10" 
-                              <?php 
-                                 if($transaksi[0]->jumlah_gram == "10")
-                                    {echo 'selected';} 
-                              ?>
-                           >
-                              10
-                           </option>
-                           <option value="25" 
-                              <?php 
-                                 if($transaksi[0]->jumlah_gram == "25")
-                                    {echo 'selected';} 
-                              ?>
-                           >
-                              25
-                           </option>
-                           <option value="50" 
-                              <?php 
-                                 if($transaksi[0]->jumlah_gram == "50")
-                                    {echo 'selected';} 
-                              ?>
-                           >
-                              50
-                           </option>
-                           <option value="100" 
-                              <?php 
-                                 if($transaksi[0]->jumlah_gram == "100")
-                                    {echo 'selected';} 
-                              ?>
-                           >
-                              100
-                           </option>
-                           <option value="250" 
-                              <?php 
-                                 if($transaksi[0]->jumlah_gram == "250")
-                                    {echo 'selected';} 
-                              ?>
-                           >
-                              250
-                           </option>
-                           <option value="1000" 
-                              <?php 
-                                 if($transaksi[0]->jumlah_gram == "1000")
-                                    {echo 'selected';} 
-                              ?>
-                           >
-                              1000
-                           </option>
-                        </select>
-                     </div>
-                     <div class="col-4">
-                        <label for="x_card_code" class="control-label mb-1">Jumlah Keping</label>
-                        <div class="input-group">
-                           <input type="number" id="jumlah_keping" name="jumlah_keping" class="form-control" onchange="sum()" value="<?php echo $transaksi[0]->jumlah_keping ?>">
-                           <div class="input-group-addon">keping</div>
-                        </div>
-                     </div>
-                     <div class="col-4">
+                     <div class="col-6">
                         <label for="x_card_code" class="control-label mb-1">Total</label>
                         <div class="input-group">
-                           <input type="number" id="total" name="total" class="form-control" readonly value="<?php echo $transaksi[0]->total ?>">
+                           <input type="number" id="total" name="total" class="form-control" value="<?php echo $transaksi[0]->total ?>">
                            <div class="input-group-addon">gram</div>
                         </div>
                      </div>

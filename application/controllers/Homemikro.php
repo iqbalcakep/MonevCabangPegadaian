@@ -29,25 +29,35 @@ class Homemikro extends CI_Controller {
 	}
     
 	}
-	public function index()
+    public function index()
 	{
-		$sessData = $this->session->userdata('sesslogin');
-        $this->load->model('Transaksi_model');
-        $this->load->model('mikro_model');
-		$data['transaksi']=$this->mikro_model->getJumTransaksi();
-		$data['biaya']=$this->mikro_model->getJumPembiayaan();
 		$this->load->view('partials/header');
-		$this->load->view('homemikro',$data);
+		$this->load->view('homemikro');
 		// $this->load->view('user/dataCabang');
 		//$this->load->view('partials/footer');	
 	}
-	public function getRank(){
-		$data = $this->mikro_model->rankCabang();;
+
+	public function gettrans($bulan){
+		$data=$this->mikro_model->getJumTransaksi($bulan);
 		echo json_encode($data);
 	}
-	public function getUnit(){
+
+	public function getbiaya($bulan){
+		$data=$this->mikro_model->getJumPembiayaan($bulan);
+		echo json_encode($data);
+	}
+	public function getRank($bulan){
+		$data = $this->mikro_model->rankCabang($bulan);;
+		echo json_encode($data);
+	}
+	public function getUnit($bulan){
 		$sessData = $this->session->userdata('sesslogin');
-		$data = $this->mikro_model->rankUnit($sessData['id_cabang']);
+		$level = $sessData['akses'];
+		if($level=="admin"){
+		$data = $this->mikro_model->rankUnitAdmin($bulan);
+		}else{
+		$data = $this->mikro_model->rankUnit($bulan,$sessData['id_cabang']);
+		}
 		echo json_encode($data);
 	}
 	public function getdata(){
@@ -59,9 +69,19 @@ class Homemikro extends CI_Controller {
 		$data = $this->mikro_model->ambildataminggu();
 		echo json_encode($data);
 	}
+	
+	public function getRollover($bulan){
+		$data = $this->mikro_model->getRollover($bulan);
+		echo json_encode($data);
+	}
 
-	public function getdatabulanan(){
-		$data = $this->mikro_model->ambildatabulan();
+    public function getBaru($bulan){
+		$data = $this->mikro_model->getBaru($bulan);
+		echo json_encode($data);
+	}
+
+	public function getdatabulanan($bulan){
+		$data = $this->mikro_model->ambildatabulan($bulan);
 		echo json_encode($data);
 	}
 

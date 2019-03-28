@@ -32,7 +32,7 @@
     <link href="<?php echo base_url(''); ?>/asset/vendor/perfect-scrollbar/perfect-scrollbar.css" rel="stylesheet" media="all">
 
     <!-- Main CSS-->
-    <link href="<?php echo base_url(''); ?>/asset/css/theme.css" rel="stylesheet" media="all">
+    <link href="<?php echo base_url(''); ?>/asset/css/themes.css" rel="stylesheet" media="all">
 
 </head>
 

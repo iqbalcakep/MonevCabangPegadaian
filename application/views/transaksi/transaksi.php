@@ -79,56 +79,56 @@
                                  <i class="fa  fa-plus-circle"></i> Tambah Transaksi
                                  </a>
                               </div>
-                              <div style="padding-top: 1%" class="col-xs-12 col-lg-2 rs-select2--dark rs-select2--dark2">
-                                 <select class="js-select2" id="typeexport" onchange="aktif(this.value)" name="type">
-                                    <option selected="selected" disabled>Export</option>
-                                    <option value="harian">Harian</option>
-                                    <option value="mingguan">Mingguan &nbsp;</option>
-                                    <option value="bulanan">Bulanan</option>
-                                 </select>
-                                 <div class="dropDownSelect2"></div>
-                              </div>
-                              <div style="padding-top: 1%; display: none;" id="frmtambah" class="col-xs-12 col-lg-7 rs-select2--dark rs-select2--dark2">
-                                <div class="row">
-                                  <div class="col-lg-4 col-xs-4">
-                                    <select style="float:left;" class="js-select2" name="isibulan" id="pilihbulan">
-                                        <option selected="selected" disabled>Pilih Bulan</option>
-                                        <option value="01">Januari</option>
-                                        <option value="02">Februari</option>
-                                        <option value="03">Maret</option>
-                                        <option value="04">April</option>
-                                        <option value="05">Mei</option>
-                                        <option value="06">Juni</option>
-                                        <option value="07">Juli</option>
-                                        <option value="08">Agustus</option>
-                                        <option value="09">September</option>
-                                        <option value="10">Oktober</option>
-                                        <option value="11">November</option>
-                                        <option value="12">Desember</option>
-                                    </select>
-                                    <div class="dropDownSelect2"></div>
-                                  </div>
-                                  <div class="col-lg-2 col-xs-2">
-                                    <select name="isitahun" id="tahun" class="btn btn-lg btn-default" style="float:left;font-size:14px;"></select>
-                                  </div>
-                                  <div class="col-lg-4 col-xs-6">
-                                    <button style="float:left;font-size:14px" name="btn" onclick="window.location = '<?= site_url();?>/Home/exportmuliabulanan/'+document.getElementById('pilihbulan').value+'/'+document.getElementById('tahun').value" class="btn btn-success">EXPORT</button>  
-                                  </div>
+                              <!--<div style="padding-top: 1%" class="col-xs-12 col-lg-2 rs-select2--dark rs-select2--dark2">-->
+                              <!--   <select class="js-select2" id="typeexport" onchange="aktif(this.value)" name="type">-->
+                              <!--      <option selected="selected" disabled>Export</option>-->
+                              <!--      <option value="harian">Harian</option>-->
+                              <!--      <option value="mingguan">Mingguan &nbsp;</option>-->
+                              <!--      <option value="bulanan">Bulanan</option>-->
+                              <!--   </select>-->
+                              <!--   <div class="dropDownSelect2"></div>-->
+                              <!--</div>-->
+                              <!--<div style="padding-top: 1%; display: none;" id="frmtambah" class="col-xs-12 col-lg-6 rs-select2--dark rs-select2--dark2">-->
+                              <!--  <div class="row">-->
+                              <!--    <div class="col-lg-4 col-xs-12">-->
+                              <!--      <select style="float:left;" class="js-select2" name="isibulan" id="pilihbulan">-->
+                              <!--          <option selected="selected" disabled>Pilih Bulan</option>-->
+                              <!--          <option value="01">Januari</option>-->
+                              <!--          <option value="02">Februari</option>-->
+                              <!--          <option value="03">Maret</option>-->
+                              <!--          <option value="04">April</option>-->
+                              <!--          <option value="05">Mei</option>-->
+                              <!--          <option value="06">Juni</option>-->
+                              <!--          <option value="07">Juli</option>-->
+                              <!--          <option value="08">Agustus</option>-->
+                              <!--          <option value="09">September</option>-->
+                              <!--          <option value="10">Oktober</option>-->
+                              <!--          <option value="11">November</option>-->
+                              <!--          <option value="12">Desember</option>-->
+                              <!--      </select>-->
+                              <!--      <div class="dropDownSelect2"></div>-->
+                              <!--    </div>-->
+                              <!--    <div class="col-lg-2 col-xs-12">-->
+                              <!--      <select name="isitahun" id="tahun" class="btn btn-lg btn-default" style="float:left;font-size:14px;"></select>-->
+                              <!--    </div>-->
+                              <!--    <div class="col-lg-4 col-xs-12">-->
+                              <!--      <button style="float:left;" name="btn" onclick="window.location = '<?= site_url();?>/Home/exportmuliabulanan/'+document.getElementById('pilihbulan').value+'/'+document.getElementById('tahun').value" class="btn btn-success">EXPORT</button>  -->
+                              <!--    </div>-->
                                    
-                                </div>
-                              </div>
+                              <!--  </div>-->
+                              <!--</div>-->
                            </div>
                            <div class="table-responsive table--no-card m-t-10" style="box-shadow: none;"  >
-                              <table class="table table-borderless table-striped table-earning" id="example">
+                              <table class="table table-borderless table-striped table-earning" id="example" style="width:100%">
                                  <thead>
                                     <tr class="text-center">
                                        <th>Id </th>
                                        <th>No Kredit</th>
                                        <th>Nasabah</th>
                                        <th>Tgl <br>Closing</th>
-                                       <th>Keping</th>
-                                       <th>Gram</th>
-                                       <th>Total</th>
+                                       <!--<th>Keping</th>-->
+                                       <!--<th>Gram</th>-->
+                                       <th>Total Gram</th>
                                        <th>Nilai <br> Pembiayaan</th>
                                        <th>Jangka <br>Waktu</th>
                                        <th>Nama <br>Cabang</th>
@@ -142,8 +142,8 @@
                                        <td><?php echo $key->rekening ?></td>
                                        <td><?php echo $key->nama_nasabah ?></td>
                                        <td><?php echo date("d-m-Y", strtotime($key->tanggal_closing)); ?></td>
-                                       <td><?php echo $key->jumlah_keping ?></td>
-                                       <td><?php echo $key->jumlah_gram ?></td>
+                                       <!--<td><?php echo $key->jumlah_keping ?></td>-->
+                                       <!--<td><?php echo $key->jumlah_gram ?></td>-->
                                        <td><?php echo $key->total ?></td>
                                        <td><?php echo rupiah($key->nilai_pembiayaan) ?></td>
                                        <td><?php echo $key->jangka_waktu ?></td>

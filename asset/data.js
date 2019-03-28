@@ -1,5 +1,6 @@
 
-        function drawLineChart() {
+    
+    function drawLineChart() {
             var url = $('#url').val();
             var jsonData = $.ajax({
             url: url,
@@ -15,9 +16,11 @@
             dp.push(packet.biaya);
         });
 
-        var densityCanvas = document.getElementById("myChart");
+        var densityCanvas = $('#myChart').get(0).getContext("2d");
+        densityCanvas.canvas.height = "125";
+        densityCanvas.canvas.width = "420";
 
-        Chart.defaults.global.defaultFontSize = 10;
+
 
         var dataBiaya = {
             label: 'Harga Pembiayaan (Rupiah)',
@@ -88,7 +91,9 @@
             dp.push(packet.biaya);
         });
 
-        var densityCanvas = document.getElementById("myChart2");
+        var densityCanvas2 = $('#myChart2').get(0).getContext("2d");
+        densityCanvas2.canvas.height = "125";
+        densityCanvas2.canvas.width = "420";
 
         Chart.defaults.global.defaultFontFamily = "Lato";
         Chart.defaults.global.defaultFontSize = 18;
@@ -138,7 +143,7 @@
             }
         };
 
-        var barChart = new Chart(densityCanvas, {
+        var barChart = new Chart(densityCanvas2, {
             type: 'bar',
             data: userData,
             options: chartOptions
@@ -163,11 +168,10 @@
             dp.push(packet.biaya);
         });
 
-        var densityCanvas = document.getElementById("myChart3");
+        var densityCanvas3 = $('#myChart3').get(0).getContext("2d");
 
-        Chart.defaults.global.defaultFontFamily = "Lato";
-        Chart.defaults.global.defaultFontSize = 18;
-
+        densityCanvas3.canvas.height = "125";
+        densityCanvas3.canvas.width = "420";
         var dataBiaya = {
             label: 'Harga Pembiayaan (Rupiah)',
             data: dp,
@@ -213,7 +217,7 @@
             }
         };
 
-        var barChart = new Chart(densityCanvas, {
+        var barChart = new Chart(densityCanvas3, {
             type: 'bar',
             data: userData,
             options: chartOptions
@@ -221,12 +225,22 @@
         });
     }
 
-       drawLineChart();
+      
+    $(document).ready(function(){
+          
+        drawLineChart();
         drawLineChart2();
         drawLineChart3();
-
-        $(document).ready(function() {
-        setInterval(drawLineChart, 20000);
-        setInterval(drawLineChart2, 20000);
-        setInterval(drawLineChart3, 20000);
-        });
+        var loadDat=setInterval(function ()
+          {
+            $('canvas#myChart').remove();
+            $('canvas#myChart2').remove();
+            $('canvas#myChart3').remove();
+            $("#harian").append('<canvas id="myChart"></canvas>');
+            $("#mingguan").append('<canvas id="myChart2"></canvas>');
+            $("#bulanan").append('<canvas id="myChart3"></canvas>');
+            drawLineChart();
+            drawLineChart2();
+            drawLineChart3(); 
+          },5000);         
+      });

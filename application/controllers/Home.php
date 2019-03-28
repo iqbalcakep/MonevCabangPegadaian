@@ -7,6 +7,7 @@ class Home extends CI_Controller {
 	{
 		parent::__construct();
 		$this->load->library('excel');
+		$this->load->model('Transaksi_model');
 		$this->load->model('transaksi_model');
         $sessData = $this->session->userdata('sesslogin');
 		$id_user = $sessData['id_user'];
@@ -33,39 +34,53 @@ class Home extends CI_Controller {
 	public function blank(){
 		$this->load->view('partials/error');
 	}
-	public function index()
-	{
-		$this->load->model('Transaksi_model');
-		$data['emas']=$this->Transaksi_model->getJumEmas();
-		$data['transaksi']=$this->Transaksi_model->getJumTransaksi();
-		$data['biaya']=$this->Transaksi_model->getJumPembiayaan();
+
+    public function index()
+	{	
 		$this->load->view('partials/header');
-		$this->load->view('home',$data);
+		$this->load->view('home');
 		//$this->load->view('partials/footer');	
 	}
 
+	public function gettrans($bulan){
+		$data=$this->Transaksi_model->getJumTransaksi($bulan);
+		echo json_encode($data);
+	}
+
+	public function getbiaya($bulan){
+		$data=$this->Transaksi_model->getJumPembiayaan($bulan);
+		echo json_encode($data);
+	}
+	public function getemas($bulan){
+		$data = $this->Transaksi_model->getJumEmas($bulan);
+		echo json_encode($data);
+	}
 	public function getdata(){
 		$data = $this->transaksi_model->ambildata();
 		echo json_encode($data);
 	}
 
-	public function getRank(){
-		$data = $this->transaksi_model->rankCabang();;
+public function getRank($bulan){
+		$data = $this->transaksi_model->rankCabang($bulan);;
 		echo json_encode($data);
 	}
-	public function getUnit(){
+public function getUnit($bulan){
 		$sessData = $this->session->userdata('sesslogin');
-		$data = $this->transaksi_model->rankUnit($sessData['id_cabang']);
+		$level = $sessData['akses'];
+		if($level=="admin"){
+		$data = $this->transaksi_model->rankUnitAdmin($bulan);
+		}else{
+		$data = $this->transaksi_model->rankUnit($bulan,$sessData['id_cabang']);
+		}
 		echo json_encode($data);
 	}
-
 	public function getdatamingguan(){
 		$data = $this->transaksi_model->ambildataminggu();
 		echo json_encode($data);
 	}
 
-	public function getdatabulanan(){
-		$data = $this->transaksi_model->ambildatabulan();
+	public function getdatabulanan($bulan){
+		$data = $this->transaksi_model->ambildatabulan($bulan);
 		echo json_encode($data);
 	}
 
@@ -150,10 +165,10 @@ class Home extends CI_Controller {
 		}
 
 	
-		public function exportmuliabulanan(){ 
+		public function exportmuliabulanan($bulan,$tahun){ 
 			// load excel library
 			$this->load->library('excel');
-			$datalist = $this->transaksi_model->exportmuliabulanan();
+			$datalist = $this->transaksi_model->exportmuliabulanan($bulan,$tahun);
 			$objPHPExcel = new PHPExcel();
 			$objPHPExcel->setActiveSheetIndex(0);
 			// set Header
@@ -186,7 +201,7 @@ class Home extends CI_Controller {
 			$objPHPExcel->getActiveSheet()->SetCellValue('D' . $rowCount, $total);
 			$object_writer = PHPExcel_IOFactory::createWriter($objPHPExcel, 'Excel5');
 			header('Content-Type: application/vnd.ms-excel');
-			header('Content-Disposition: attachment;filename="Laporan Mulia Bulanan'.date("m-Y").'.xls"');
+			header('Content-Disposition: attachment;filename="Laporan Mulia Bulanan'.$bulan.'-'.$tahun.'.xls"');
 			$object_writer->save('php://output');   
 		}
 

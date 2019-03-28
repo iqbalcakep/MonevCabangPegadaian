@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-<?php function rupiah($angka)
+  <?php function rupiah($angka)
     {
-        $hasil_rupiah = number_format($angka,2,',','.');
+        $hasil_rupiah = number_format($angka,0,',','.');
         return $hasil_rupiah;
     } ?>
-   <body class="animsition">
+   <body class="animsition" style="color:#666">
    <script type="text/javascript">
         function timedMsg()
         {
@@ -35,7 +35,7 @@
         //  echo " ".$data['id_user'] ;
         //  echo " ".$data['nama'] ;
          ?>
-      <!-- <a href="<?php echo site_url('Mikro/create/') ?>" type="button" class="btn btn-sm btn-success">Create</a> -->
+      <!-- <a href="<?php echo site_url('Transaksi/create/') ?>" type="button" class="btn btn-sm btn-success">Create</a> -->
       
     <script language="JavaScript" type="text/javascript">timedMsg()</script>
       <div class="main-content" style="padding-top:30px">
@@ -46,27 +46,11 @@
                 <br>
                <div class="row">
                   <div class="col-lg-12">
-                      <!-- button atas -->
-                     <div class="row">
+                    <div class="row">
                       <div class="col-xs-12 col-lg-8">
                           <h4>Cabang : <?php echo " ".$data['nama']; ?></h4>
                       </div>
-                      <div style="padding-top: 1%" class="col-xs-12 col-lg-2">
-                        <a href="<?php echo site_url('Mikro/create/') ?>" class="btn btn-success btn-md btn-block">
-                          <i class="fa  fa-plus-circle"></i> Tambah Transaksi
-                        </a>
-                      </div>
-                      <div style="padding-top: 1%" class="col-xs-12 col-lg-2 rs-select2--dark rs-select2--dark2">
-                        <select class="js-select2" name="type">
-                          <option selected="selected" disabled>Export</option>
-                          <option value="">Harian</option>
-                          <option value="">Mingguan &nbsp;</option>
-                          <option value="">Bulanan</option>
-                        </select>
-                        <div class="dropDownSelect2"></div>
-                      </div>
                     </div>
-                     <!-- button atas end -->
                      <div class="row">
                      <div class="col-lg-12">
                      <?php 
@@ -89,8 +73,27 @@
                         </div>
                         </div>
                      <!-- tabel -->
-                     <div class="table-responsive table--no-card m-t-10" style="box-shadow: none">
-                        <table class="table table-borderless table-striped table-earning" id="example">
+                     <div class="row">  
+                      <div class="col-xs-12 col-lg-8">
+                        <div class="row" class="pull-right" >
+
+                          <div style="padding-top: 1%" class="col-xs-12 col-lg-3">
+                            <a href="<?php echo site_url('Mikro/create/') ?>" class="btn btn-success btn-md btn-block">
+                              <i class="fa  fa-plus-circle"></i> Tambah Transaksi
+                            </a>
+                          </div>
+                          <!--<div style="padding-top: 1%" class="col-xs-12 col-lg-3 rs-select2--dark rs-select2--dark2">-->
+                          <!--  <select class="js-select2" name="type">-->
+                          <!--    <option selected="selected" disabled>Export</option>-->
+                          <!--    <option value="">Harian</option>-->
+                          <!--    <option value="">Mingguan &nbsp;</option>-->
+                          <!--    <option value="">Bulanan</option>-->
+                          <!--  </select>-->
+                          <!--  <div class="dropDownSelect2"></div>-->
+                          <!--</div>-->
+                        </div>
+                        <div class="table-responsive table--no-card m-t-10" style="box-shadow: none">
+                        <table class="table table-borderless table-striped table-earning" id="example" style="width:100%">
                            <thead>
                               <tr class="text-center">
                                  <th>Id <br>Transaksi</th>
@@ -131,18 +134,56 @@
                               <?php } ?>
                            </tbody>
                         </table>
-                     </div><br>
-                     <!-- end tabel -->
-
-                     <!-- button detail -->
-                     <!-- <div class="table-data__tool"> -->
-                        <!-- <center>
-                           <a href="<?php echo site_url('Transaksi/create/') ?>" class="btn btn-default btn-lg" style="background-color:#393939; color:#cc9933">
-                           <i class="zmdi zmdi-download"></i> More</a>
-                        </center> -->
-                     <!-- </div> -->
-                     <!-- button detail end -->
+                     </div>
+                      </div>
+                      <div class="col-xs-12 col-lg-4">
+                      <div class="top-campaign" style="border-radius: 10px;border-width: 0; box-shadow: 0px 10px 20px 0px rgba(204, 153, 51, 0.5);padding: 5%; margin-top:5%">
+                        <div class="row"> 
+                          <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
+                            <h3 class="title-3 m-b-30">Daftar Transaksi Tahun <?php echo $tahun ?></h3>
+                          </div>
+                            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                            <?php echo form_open('transaksi');;  ?>  
+                              <div class="input-group input-sm ">
+                                  <input type="text" id="input3-group2" name="tahun" placeholder="Tahun" class="form-control">
+                                  <div class="input-group-btn">
+                                      <button class="btn btn-primary" type="submit" style="background-color: #cc9933; color: #111111;border-color: #cc9933">
+                                          <i class="fa fa-search"></i>
+                                      </button>
+                                  </div>
+                                  <?php echo form_close(); ?>
+                              </div>
+                            </div>  
+                        </div>
+                           <div class="table-responsive">
+                              <table class="table" style="color: #333333">
+                                 <thead>
+                                    <tr>
+                                       <td>No</td>
+                                       <td>Bulan</td>
+                                       <td>Transaksi</td>
+                                       <td>Pembiayaan</td>
+                                    </tr>
+                                 </thead>
+                                 <tbody>
+                                  <?php $i=1; foreach ($transaksi_bulan as $key){?>
+                                    <tr>
+                                       <td><?php echo $i; ?></td>
+                                       <td><?php echo $key->bulan; ?></td>
+                                       <td><?php echo rupiah($key->transaksi); ?></td>
+                                       <td><?php echo rupiah($key->biaya); ?></td>
+                                    </tr>
+                                  <?php $i++;} ?>
+                                 </tbody>
+                              </table>
+                          </div>
+                      </div>
+                      </div>
+                      </div>
                      
+                     </div>
+                     <br>
+                     <!-- end tabel -->   
                   </div>
                </div>
             </div>

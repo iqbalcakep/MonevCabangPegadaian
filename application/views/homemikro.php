@@ -28,18 +28,11 @@
                                  </div>
                                  <div class="text" style="padding-bottom: 2%">
                                     <h2>
-                                       <div id="jmltrans" style="float:left">0</div>
-                                       Transaksi
+                                       <div id="jmltrans" style="float:left">0 </div>
+                                        Transaksi
                                     </h2>
                                     <input type="hidden" id="urltrans" value="<?= site_url('Homemikro/gettrans/0');?>">
-                                    <span>Jumlah Transaksi Bulan
-                                    <?php 
-                                       $eng = array('january', 'february', 'march', 'april', 'may', 'june', 'july', 'august', 'september', 'october', 'november', 'desember');
-                                       $indo = array('Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember'); 
-                                       $month = strftime('%B'); 
-                                       $dt=str_ireplace($eng, $indo, $month); echo $dt; 
-                                       ?>
-                                    Area Malang</span>
+                                    Jumlah Transaksi Bulan <span class="bulaan">-</span> Area Malang
                                  </div>
                               </div>
                            </div>
@@ -57,14 +50,7 @@
                                        <div id="jmlbiaya">RP. 0</div>
                                     </h2>
                                     <input type="hidden" id="urlbiaya" value="<?= site_url('Homemikro/getbiaya/0');?>">
-                                    <span>Pembiayaan  Bulan
-                                    <?php 
-                                       $eng = array('january', 'february', 'march', 'april', 'may', 'june', 'july', 'august', 'september', 'october', 'november', 'desember');
-                                       $indo = array('Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember'); 
-                                       $month = strftime('%B'); 
-                                       $dt=str_ireplace($eng, $indo, $month); echo $dt; 
-                                       ?>
-                                    Area Malang</span>
+                                    Pembiayaan Bulan <span class="bulaan">-</span> Area Malang
                                  </div>
                               </div>
                            </div>
@@ -73,7 +59,7 @@
                   </div>
                </div>
                <!-- 2 card end -->
-
+               
                <!-- 2 card -->
                <div class="col-md-12 col-lg-12">
                   <div class="row">
@@ -86,18 +72,10 @@
                                  </div>
                                  <div class="text" style="padding-bottom: 2%">
                                     <h2>
-                                       <div id="jmltrans" style="float:left">0</div>
-                                       Transaksi
+                                       <div id="jmlBaru">RP. 0</div>
                                     </h2>
-                                    <input type="hidden" id="urltrans" value="<?= site_url('Homemikro/gettrans/0');?>">
-                                    <span>Jumlah Transaksi Baru Bulan
-                                    <?php 
-                                       $eng = array('january', 'february', 'march', 'april', 'may', 'june', 'july', 'august', 'september', 'october', 'november', 'desember');
-                                       $indo = array('Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember'); 
-                                       $month = strftime('%B'); 
-                                       $dt=str_ireplace($eng, $indo, $month); echo $dt; 
-                                       ?>
-                                    Area Malang</span>
+                                    <input type="hidden" id="urlBaru" value="<?= site_url('Homemikro/getBaru/0');?>">
+                                    Kreasi Baru Bulan <span class="bulaan">-</span> Area Malang
                                  </div>
                               </div>
                            </div>
@@ -112,17 +90,10 @@
                                  </div>
                                  <div class="text" style="padding-bottom: 2%">
                                     <h2>
-                                       <div id="jmlbiaya">RP. 0</div>
+                                       <div id="jmlroll">RP. 0</div>
                                     </h2>
-                                    <input type="hidden" id="urlbiaya" value="<?= site_url('Homemikro/getbiaya/0');?>">
-                                    <span>Rollover  Bulan
-                                    <?php 
-                                       $eng = array('january', 'february', 'march', 'april', 'may', 'june', 'july', 'august', 'september', 'october', 'november', 'desember');
-                                       $indo = array('Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember'); 
-                                       $month = strftime('%B'); 
-                                       $dt=str_ireplace($eng, $indo, $month); echo $dt; 
-                                       ?>
-                                    Area Malang</span>
+                                    <input type="hidden" id="urlRoll" value="<?= site_url('Homemikro/getRoll/0');?>">
+                                    RollOver Bulan <span class="bulaan">-</span> Area Malang
                                  </div>
                               </div>
                            </div>
@@ -131,6 +102,7 @@
                   </div>
                </div>
                <!-- 2 card end -->
+               
                <br>
                <!-- chart -->
                <div class="card d-none d-lg-block" style="border-radius: 10px;border-width: 0; box-shadow: 0px 10px 20px 0px rgba(204, 153, 51, 0.5); color: ">
@@ -171,13 +143,8 @@
                   <div class="top-campaign" style="border-radius: 10px;border-width: 0; box-shadow: 0px 10px 20px 0px rgba(204, 153, 51, 0.5);padding: 5%">
                      <div class="row">
                          <div class="col-xs-12 col-sm-12 col-md-12 col-lg-8">
-                            <h3 class="title-3 m-b-30">Peringkat Bulan
-                                <?php 
-                                   $eng = array('january', 'february', 'march', 'april', 'may', 'june', 'july', 'august', 'september', 'october', 'november', 'desember');
-                                   $indo = array('Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember'); 
-                                   $month = strftime('%B'); 
-                                   $dt=str_ireplace($eng, $indo, $month); echo $dt; 
-                                   ?>
+                            <h3 class="title-3 m-b-30">Peringkat Bulan <span class="bulaan">-</span>
+            
                              </h3>        
                          </div>
                          <div class="col-xs-12 col-sm-12 col-md-12 col-lg-4">
@@ -221,7 +188,7 @@
                <div class="col-md-12 col-lg-12">
                   <input type="hidden" id="urlunit" value="<?php echo site_url('')?>/Homemikro/getunit/0">
                   <div class="top-campaign" style="border-radius: 10px;border-width: 0; box-shadow: 0px 10px 20px 0px rgba(204, 153, 51, 0.5);padding: 5%">
-                     <h3 class="title-3 m-b-30">Peringkat Unit Bulan <?php echo Date('F'); ?></h3>
+                     <h3 class="title-3 m-b-30">Peringkat Unit Bulan <span class="bulaan">-</span></h3>
                      <div class="table-responsive">
                         <table class="table" style="color: #333333">
                            <thead>
@@ -281,16 +248,29 @@
     
          gantibiaya();
          gantitrans();
+           var d = new Date();
+        var val = d.getMonth()+1;
+        var bulan="";
+        if(val==01){bulan="Januari"}else if(val==02){bulan="Februari"}else if(val==03){bulan="Maret"}else if(val==04){bulan="April"}else if(val==05){bulan="Mei"}else if(val==06){bulan="Juni"}
+        $(".bulaan").html(bulan);
          function gantibulan(val){
+              var bulan="";
+             if(val==01){bulan="Januari"}else if(val==02){bulan="Februari"}else if(val==03){bulan="Maret"}else if(val==04){bulan="April"}else if(val==05){bulan="Mei"}else if(val==06){bulan="Juni"}
+             else if(val==07){bulan="Juli"}else if(val==08){bulan="Agustus"}else if(val==09){bulan="September"}else if(val==10){bulan="Oktober"}else if(val==11){bulan="November"}else if(val==12){bulan="Desember"}
          document.getElementById('url3').value = "<?= site_url('Homemikro/getdatabulanan/"+val+"');?>";
          document.getElementById('urlbiaya').value = "<?= site_url('Homemikro/getbiaya/"+val+"');?>";
          document.getElementById('urltrans').value = "<?= site_url('Homemikro/gettrans/"+val+"');?>";
          document.getElementById('urlrank').value = "<?= site_url('Homemikro/getrank/"+val+"');?>";
          document.getElementById('urlunit').value = "<?= site_url('Homemikro/getunit/"+val+"');?>";
+         document.getElementById('urlRoll').value = "<?= site_url('Homemikro/getRollover/"+val+"');?>";
+         document.getElementById('urlBaru').value = "<?= site_url('Homemikro/getBaru/"+val+"');?>";
+         $(".bulaan").html(bulan);
          window.drawLineChart3();
          
          gantibiaya();
          gantitrans();
+         gantiRoll();
+         gantiBaru();
          tampil_data_barang();
          tampil_data_barang2()
          }
@@ -311,6 +291,47 @@
          }
          });
          }
+         
+         function gantiRoll(){
+         var url = $('#urlRoll').val();
+         return $.ajax({
+         contentType: 'aplication/json; charset=utf-8',
+         dataType: "json",
+         url: url,
+         success: function(data) {
+           var bilangan = data[0].total;
+           if(bilangan==null){
+           $('#jmlroll').html("RP.0");
+           }else{
+           var	reverse = bilangan.toString().split('').reverse().join(''),
+           ribuan 	= reverse.match(/\d{1,3}/g);
+           ribuan	= ribuan.join('.').split('').reverse().join('');
+           $('#jmlroll').html("Rp."+ribuan);
+           }
+         }
+         });
+         }
+         
+         function gantiBaru(){
+         var url = $('#urlBaru').val();
+         return $.ajax({
+         contentType: 'aplication/json; charset=utf-8',
+         dataType: "json",
+         url: url,
+         success: function(data) {
+           var bilangan = data[0].total;
+           if(bilangan==null){
+           $('#jmlBaru').html("RP.0");
+           }else{
+           var	reverse = bilangan.toString().split('').reverse().join(''),
+           ribuan 	= reverse.match(/\d{1,3}/g);
+           ribuan	= ribuan.join('.').split('').reverse().join('');
+           $('#jmlBaru').html("Rp."+ribuan);
+           }
+         }
+         });
+         }
+         
          
          function gantibiaya(){
          var url = $('#urlbiaya').val();

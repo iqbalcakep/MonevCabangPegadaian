@@ -52,6 +52,11 @@ class User extends CI_Controller {
 		}
 		public function createUser()
 		{
+		    $sessData = $this->session->userdata('sesslogin');
+		    $level = $sessData['akses'];
+		    if($level!="admin"){
+		        redirect('login/logout','refresh');
+		    }else{
 			$this->load->model('UserModel');
 			//$data['user']=$this->UserModel->selectUser();
 			//$this->load->view('user/tryuser', $data);
@@ -60,6 +65,7 @@ class User extends CI_Controller {
 			$this->load->view('partials/footer');
 			
 			}
+		}
 
 	public function input()
 	{

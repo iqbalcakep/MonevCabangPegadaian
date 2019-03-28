@@ -97,35 +97,35 @@
                   </div> -->
                   <div class="form-group">
                      <label for="cc-payment" class="control-label mb-1" style="color:black;">Tanggal Closing</label>
-                     <input required id="tanggal_closing" name="tanggal_closing" type="date" class="form-control" aria-required="true" aria-invalid="false">
+                     <input required id="tanggal_closing" name="tanggal_closing" type="date" class="form-control col-6" aria-required="true" aria-invalid="false">
                   </div>
 
                   <div class="row">
-                     <div class="col-3">
-                        <label for="city" class=" form-control-label" style="color:black;">Jumlah Gram</label>
-                        <select id="jumlah_gram" name="jumlah_gram" class="form-control" onchange="sum()" required>
-                           <option value="1">1 Gram</option>
-                           <option value="2">2 Gram</option>
-                           <option value="5">5 Gram</option>
-                           <option value="10">10 Gram</option>
-                           <option value="25">25 Gram</option>
-                           <option value="50">50 Gram</option>
-                           <option value="100">100 Gram</option>
-                           <option value="250">250 Gram</option>
-                           <option value="1000">1000 Gram</option>
-                        </select>
-                     </div>
-                     <div class="col-4">
-                        <label for="x_card_code" class="control-label mb-1">Jumlah Keping</label>
-                        <div class="input-group">
-                           <input required type="number" id="jumlah_keping" name="jumlah_keping" class="form-control" onchange="sum()">
-                           <div class="input-group-addon">keping</div>
-                        </div>
-                     </div>
-                     <div class="col-4">
+                     <!--<div class="col-3">-->
+                     <!--   <label for="city" class=" form-control-label" style="color:black;">Jumlah Gram</label>-->
+                     <!--   <select id="jumlah_gram" name="jumlah_gram" class="form-control" onchange="sum()" required>-->
+                     <!--      <option value="1">1 Gram</option>-->
+                     <!--      <option value="2">2 Gram</option>-->
+                     <!--      <option value="5">5 Gram</option>-->
+                     <!--      <option value="10">10 Gram</option>-->
+                     <!--      <option value="25">25 Gram</option>-->
+                     <!--      <option value="50">50 Gram</option>-->
+                     <!--      <option value="100">100 Gram</option>-->
+                     <!--      <option value="250">250 Gram</option>-->
+                     <!--      <option value="1000">1000 Gram</option>-->
+                     <!--   </select>-->
+                     <!--</div>-->
+                     <!--<div class="col-4">-->
+                     <!--   <label for="x_card_code" class="control-label mb-1">Jumlah Keping</label>-->
+                     <!--   <div class="input-group">-->
+                     <!--      <input required type="number" id="jumlah_keping" name="jumlah_keping" class="form-control" onchange="sum()">-->
+                     <!--      <div class="input-group-addon">keping</div>-->
+                     <!--   </div>-->
+                     <!--</div>-->
+                     <div class="col-6">
                         <label for="x_card_code" class="control-label mb-1">Total</label>
                         <div class="input-group">
-                           <input type="number" id="total" name="total" class="form-control" readonly required>
+                           <input type="number" id="total" name="total" class="form-control" required>
                            <div class="input-group-addon">gram</div>
                         </div>
                      </div>

@@ -11,10 +11,19 @@
 
     <title>Pegadaian Area Malang</title>
     <!-- Fontfaces CSS-->
-    <link rel="shortcut icon" type="image/x-icon" href="<?php echo base_url(''); ?>/asset/images/icon/icon.ico" />
+    <link rel="shortcut icon" type="image/x-icon" href="<?php echo base_url(''); ?>asset/images/icon/icon.ico" />
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.css">
-    
-    <link href="<?php echo base_url(''); ?>/asset/css/font-face.css" rel="stylesheet" media="all">
+     <!--<link rel="stylesheet" href="<?php echo base_url('') ?>asset/datatables.min.css"> -->
+    <!-- <link rel="stylesheet" href="<?php echo base_url('') ?>assets/css/bootstrap.min.css"> -->
+    <!--<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.css" rel="stylesheet">-->
+    <!--<link href="https://cdn.datatables.net/1.10.16/css/dataTables.bootstrap4.min.css" rel="stylesheet">-->
+
+    <script src="<?php echo base_url(); ?>asset/js/jquery/dist/jquery.min.js"></script>
+    <!-- morris.js -->
+    <script src="<?php echo base_url(); ?>asset/js/raphael/raphael.min.js"></script>
+    <script src="<?php echo base_url(); ?>asset/js/morris.js/morris.min.js"></script>
+
+    <link rel="stylesheet" href="<?php echo base_url(); ?>asset/js/morris.js/morris.css">
     <link href="<?php echo base_url(''); ?>/asset/vendor/font-awesome-5/css/fontawesome-all.min.css" rel="stylesheet" media="all">
     <link href="<?php echo base_url(''); ?>/asset/vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
 
@@ -31,7 +40,8 @@
     <link href="<?php echo base_url(''); ?>/asset/vendor/perfect-scrollbar/perfect-scrollbar.css" rel="stylesheet" media="all">
 
     <!-- Main CSS-->
-    <link href="<?php echo base_url(''); ?>/asset/css/theme.css" rel="stylesheet" media="all">
+    <!--<link href="<?php echo base_url(''); ?>/asset/css/theme.css" rel="stylesheet" media="all">-->
+    <link href="<?php echo base_url(''); ?>/asset/css/themes.css" rel="stylesheet" media="all">
     <link href="<?php echo base_url(''); ?>/asset/css/img.css" rel="stylesheet" media="all">
 
 </head>
@@ -64,17 +74,47 @@
                                     <span class="bot-line"></span>
                                 </a>
                             </li>
+                             <li>
+                                <a style="color:#cc9933" href="<?php echo site_url('Homeamanah') ?>">
+                                    <i class="fas fa-tachometer-alt"></i>Rekap Amanah
+                                    <span class="bot-line"></span>
+                                </a>
+                            </li>
                             <li class="has-sub">
                                 <a href="#" style="color: #cc9933">
                                     <i class="fas fa-money-bill-alt"></i>Transaksi
                                     <span class="bot-line"></span>
                                 </a>
-                                <ul class="header3-sub-list list-unstyled">
+                                 <ul class="header3-sub-list list-unstyled">
                                     <li>
-                                        <a href="<?php echo site_url('transaksi') ?>">Mulia</a>
+                                        <a href="<?php if ($session_data['akses']=='admin')
+                                        {
+                                            echo site_url('Transaksi/admin'); 
+                                        }
+                                        else
+                                        {
+                                            echo site_url('Transaksi');
+                                        } ?>">Mulia</a>
                                     </li>
                                     <li>
-                                        <a href="<?php echo site_url('mikro') ?>">Mikro</a>
+                                        <a href="<?php if ($session_data['akses']=='admin')
+                                        {
+                                            echo site_url('Mikro/admin'); 
+                                        }
+                                        else
+                                        {
+                                            echo site_url('Mikro');
+                                        } ?>">Mikro</a>
+                                    </li>
+                                    <li>
+                                        <a href="<?php if ($session_data['akses']=='admin')
+                                        {
+                                            echo site_url('Amanah/admin'); 
+                                        }
+                                        else
+                                        {
+                                            echo site_url('Amanah');
+                                        } ?>">Amanah</a>
                                     </li>
                                 </ul>
                             </li>
@@ -164,16 +204,50 @@
                             </li>
                         </li>
                         <li>
-                            <a style="color:#cc9933" href="<?php echo site_url('transaksi') ?>">
-                                <i class="far fa-money-bill-alt"></i>Transaksi Mulia
+                            <a style="color:#cc9933" href="<?php echo site_url('Homeamanah') ?>">
+                                    <i class="fas fa-tachometer-alt"></i>Rekap Amanah
+                                </a>
+                            </li>
+                        </li>
+                        <li>
+                            <a style="color:#cc9933" href="<?php if ($session_data['akses']=='admin')
+                            {
+                                echo site_url('Transaksi/admin'); 
+                            }
+                            else
+                            {
+                                echo site_url('Transaksi');
+                            } ?>">
+                                <i class="fas fa-money-bill-alt"></i>Transaksi Mulia
                                 <span class="bot-line"></span>
                             </a>
                         </li>
                         <li>
-                            <a style="color:#cc9933" href="<?php echo site_url('mikro') ?>">
-                                <i class="far fa-money-bill-alt"></i>Transaksi Mikro
+                            <a style="color:#cc9933" href="<?php if ($session_data['akses']=='admin')
+                            {
+                                echo site_url('Mikro/admin'); 
+                            }
+                            else
+                            {
+                                echo site_url('Mikro');
+                            } ?>">
+                                <i class="fas fa-money-bill-alt"></i>Transaksi Mikro
                                 <span class="bot-line"></span>
                             </a>
+                        </li>
+                        <li>
+                            <a style="color:#cc9933" href="<?php if ($session_data['akses']=='admin')
+                            {
+                                echo site_url('Amanah/admin'); 
+                            }
+                            else
+                            {
+                                echo site_url('Amanah');
+                            } ?>">
+                                <i class="fas fa-money-bill-alt"></i>Transaksi Amanah
+                                <span class="bot-line"></span>
+                            </a>
+                        </li>
                         </li>
                         <li>
                             <a style="color:#cc9933" href="<?php echo site_url('user') ?>">
