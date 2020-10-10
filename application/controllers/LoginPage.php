@@ -10,5 +10,7 @@ class LoginPage extends CI_Controller {
 
 }
 
+// test
+
 /* End of file LoginPage.php */
 /* Location: ./application/controllers/LoginPage.php */?>
